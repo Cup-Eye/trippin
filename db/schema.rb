@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_27_092932) do
+ActiveRecord::Schema.define(version: 2019_08_27_111505) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "accommodations", force: :cascade do |t|
+    t.bigint "board_id"
+    t.bigint "user_id"
+    t.string "url"
+    t.string "name"
+    t.string "address"
+    t.integer "price"
+    t.string "kind"
+    t.integer "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_accommodations_on_board_id"
+    t.index ["user_id"], name: "index_accommodations_on_user_id"
+  end
 
   create_table "boards", force: :cascade do |t|
     t.bigint "trip_id"
@@ -25,7 +40,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_092932) do
     t.datetime "updated_at", null: false
     t.bigint "winning_destination_id"
     t.bigint "winning_timeframe_id"
+    t.bigint "winning_accommodation_id"
     t.index ["trip_id"], name: "index_boards_on_trip_id"
+    t.index ["winning_accommodation_id"], name: "index_boards_on_winning_accommodation_id"
     t.index ["winning_destination_id"], name: "index_boards_on_winning_destination_id"
     t.index ["winning_timeframe_id"], name: "index_boards_on_winning_timeframe_id"
   end
@@ -53,6 +70,22 @@ ActiveRecord::Schema.define(version: 2019_08_27_092932) do
     t.index ["user_id"], name: "index_timeframes_on_user_id"
   end
 
+  create_table "transportations", force: :cascade do |t|
+    t.bigint "board_id"
+    t.string "route_number"
+    t.string "booking_number"
+    t.bigint "user_id"
+    t.datetime "departure_time"
+    t.datetime "arrival_time"
+    t.string "departure_location"
+    t.string "arrival_location"
+    t.string "kind"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["board_id"], name: "index_transportations_on_board_id"
+    t.index ["user_id"], name: "index_transportations_on_user_id"
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "name"
     t.string "destination"
@@ -74,6 +107,9 @@ ActiveRecord::Schema.define(version: 2019_08_27_092932) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "accommodations", "boards"
+  add_foreign_key "accommodations", "users"
+  add_foreign_key "boards", "accommodations", column: "winning_accommodation_id"
   add_foreign_key "boards", "destinations", column: "winning_destination_id"
   add_foreign_key "boards", "timeframes", column: "winning_timeframe_id"
   add_foreign_key "boards", "trips"
@@ -81,4 +117,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_092932) do
   add_foreign_key "destinations", "users"
   add_foreign_key "timeframes", "boards"
   add_foreign_key "timeframes", "users"
+  add_foreign_key "transportations", "boards"
+  add_foreign_key "transportations", "users"
 end

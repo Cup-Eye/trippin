@@ -1,36 +1,16 @@
 class Trip < ApplicationRecord
-  has_many :boards
+  has_one :destination_board
+  has_many :destinations, through: :destination_board
+  delegate :winning_destination, to: :destination_board
 
-  # ========= BOARD CONVENIENCE METHODS ============
+  has_one :accommodation_board
+  has_many :accommodations, through: :accommodation_board
+  delegate :winning_accommodation, to: :accommodation_board
 
-  # !!! Getters, NOT SETTERS !!!
-  # !!! Set winner in a respective Board subclass. !!!
+  has_one :timeframe_board
+  has_many :timeframes, through: :timeframe_board
+  delegate :winning_timeframe, to: :timeframe_board
 
-  # Destination helpers.
-
-  def destination_board
-    boards.where(type: "DestinationBoard").first
-  end
-
-  def destinations
-    destination_board.destinations
-  end
-
-  def winning_destination
-    boards.where.not(winning_destination_id: nil).first&.winning_destination
-  end
-
-  # Timeframe helpers
-
-  def timeframe_board
-    boards.where(type: "TimeframeBoard").first
-  end
-
-  def timeframes
-    timeframe_board.timeframes
-  end
-
-  def winning_timeframe
-    boards.where.not(winning_timeframe_id: nil).first&.winning_timeframe
-  end
+  has_one :transportation_board
+  has_many :transportations, through: :transportation_board
 end
