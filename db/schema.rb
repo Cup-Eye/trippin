@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
     t.integer "price"
     t.string "kind"
     t.integer "rating"
+    t.boolean "winning", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_accommodations_on_board_id"
@@ -38,13 +39,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
     t.string "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "winning_destination_id"
-    t.bigint "winning_timeframe_id"
-    t.bigint "winning_accommodation_id"
     t.index ["trip_id"], name: "index_boards_on_trip_id"
-    t.index ["winning_accommodation_id"], name: "index_boards_on_winning_accommodation_id"
-    t.index ["winning_destination_id"], name: "index_boards_on_winning_destination_id"
-    t.index ["winning_timeframe_id"], name: "index_boards_on_winning_timeframe_id"
   end
 
   create_table "destinations", force: :cascade do |t|
@@ -52,6 +47,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
     t.string "name"
     t.bigint "user_id"
     t.text "description"
+    t.boolean "winning", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_destinations_on_board_id"
@@ -64,6 +60,7 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
     t.date "end_date"
     t.bigint "user_id"
     t.text "description"
+    t.boolean "winning", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["board_id"], name: "index_timeframes_on_board_id"
@@ -87,12 +84,15 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
   end
 
   create_table "trips", force: :cascade do |t|
+    t.bigint "user_id"
     t.string "name"
     t.string "destination"
     t.date "start_date"
     t.date "end_date"
+    t.boolean "winning", default: false, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -109,9 +109,6 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
 
   add_foreign_key "accommodations", "boards"
   add_foreign_key "accommodations", "users"
-  add_foreign_key "boards", "accommodations", column: "winning_accommodation_id"
-  add_foreign_key "boards", "destinations", column: "winning_destination_id"
-  add_foreign_key "boards", "timeframes", column: "winning_timeframe_id"
   add_foreign_key "boards", "trips"
   add_foreign_key "destinations", "boards"
   add_foreign_key "destinations", "users"
@@ -119,4 +116,5 @@ ActiveRecord::Schema.define(version: 2019_08_27_111505) do
   add_foreign_key "timeframes", "users"
   add_foreign_key "transportations", "boards"
   add_foreign_key "transportations", "users"
+  add_foreign_key "trips", "users"
 end

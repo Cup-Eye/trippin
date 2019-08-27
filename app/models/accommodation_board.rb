@@ -1,8 +1,10 @@
 class AccommodationBoard < Board
-  has_many :accommodations, foreign_key: :board_id, class_name: "Accommodation"
-  belongs_to :winning_accommodation, class_name: "Accommodation", foreign_key: "winning_accommodation_id", optional: true
+  has_many :accommodations,
+           foreign_key: :board_id,
+           class_name: "Accommodation",
+           dependent: :destroy
 
-  def whoami
-    puts "I am an accommodation board!"
+  def winning_accommodation
+    accommodations.where(winning: true).first
   end
 end

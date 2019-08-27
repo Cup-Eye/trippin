@@ -1,16 +1,58 @@
 class Trip < ApplicationRecord
-  has_one :destination_board
+  belongs_to :user
+
+  has_one :destination_board, dependent: :destroy
+  # NOTE!!! Cannot do trip.destinations << destination
+  # INSTEAD do trip.destination_board.destinations << destination
   has_many :destinations, through: :destination_board
   delegate :winning_destination, to: :destination_board
 
-  has_one :accommodation_board
+  has_one :accommodation_board, dependent: :destroy
   has_many :accommodations, through: :accommodation_board
   delegate :winning_accommodation, to: :accommodation_board
 
-  has_one :timeframe_board
+  has_one :timeframe_board, dependent: :destroy
   has_many :timeframes, through: :timeframe_board
   delegate :winning_timeframe, to: :timeframe_board
 
-  has_one :transportation_board
+  has_one :transportation_board, dependent: :destroy
   has_many :transportations, through: :transportation_board
+
+  def winning_destination=(destination)
+    destinations.each do |dest|
+      if dest == destination
+        dest.update(winning: true)
+      else
+        dest.update(winning: false)
+      end
+    end
+  end
+
+  def winning_accommodation=(accommodation)
+    accommodations.each do |acc|
+      if acc == accommodation
+        acc.update(winning: true)
+      else
+        acc.update(winning: false)
+      end
+    end
+  end
+
+  def winning_timeframe=(timeframe)
+    timeframes.each do |time|
+      if time == timeframe
+        time.update(winning: true)
+      else
+        time.update(winning: false)
+      end
+    end
+  end
+
+  def active_users
+    ids = (destinations.pluck(:user_id) +
+          accommodations.pluck(:user_id) +
+          transportations.pluck(:user_id) +
+          timeframes.pluck(:user_id)).uniq
+    User.where(id: ids)
+  end
 end

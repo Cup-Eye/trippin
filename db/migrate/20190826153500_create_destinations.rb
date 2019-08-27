@@ -5,6 +5,7 @@ class CreateDestinations < ActiveRecord::Migration[5.2]
       t.string :name
       t.references :user, foreign_key: true
       t.text :description
+      t.boolean :winning, null: false, default: false
 
       t.timestamps
     end

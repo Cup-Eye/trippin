@@ -1,4 +1,4 @@
 class Timeframe < ApplicationRecord
-  belongs_to :timeframe_board, foreign_key: :board_id
+  belongs_to :timeframe_board, optional: true
   belongs_to :user
 end

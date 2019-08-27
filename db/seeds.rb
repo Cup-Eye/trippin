@@ -1,11 +1,9 @@
-puts "Destroying boards..."
-Board.destroy_all
+[User, Trip, Board, Destination, Accommodation, Transportation, Timeframe].each do |table|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{table.table_name} CASCADE")
+end
 
-puts "Destroying trips..."
-Trip.destroy_all
 
-puts "Destroying users and their destinations, timeframes, accommodations, transportations..."
-User.destroy_all
+
 
 puts "Creating users...."
 User.create!(
@@ -28,6 +26,7 @@ User.create!(
 puts "Creating trips..."
 Trip.create!(
   {
+    user: User.first,
     name: "Bachelor's Party",
     destination: "Spain"
   }
@@ -49,7 +48,7 @@ board.destinations.create!(
   ]
 )
 
-board.winning_destination = board.destinations.sample
+board.destinations.sample.update(winning: true)
 board.save!
 
 puts "Creating accommodations..."
@@ -70,7 +69,7 @@ board.accommodations.create!(
   ]
 )
 
-board.winning_accommodation = board.accommodations.sample
+board.accommodations.sample.update(winning: true)
 board.save!
 
 puts "Creating timeframes..."
@@ -91,18 +90,9 @@ board.timeframes.create!(
   ]
 )
 
-board.winning_timeframe = board.timeframes.sample
+board.timeframes.sample.update(winning: true)
 board.save!
 
-
-      # t.string :route_number
-      # t.string :booking_number
-      # t.references :user, foreign_key: true
-      # t.datetime :departure_time
-      # t.datetime :arrival_time
-      # t.string :departure_location
-      # t.string :arrival_location
-      # t.string :kind
 
 puts "Creating transportations..."
 trip = Trip.first

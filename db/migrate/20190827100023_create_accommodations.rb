@@ -9,6 +9,7 @@ class CreateAccommodations < ActiveRecord::Migration[5.2]
       t.integer :price
       t.string :kind
       t.integer :rating
+      t.boolean :winning, null: false, default: false
 
       t.timestamps
     end

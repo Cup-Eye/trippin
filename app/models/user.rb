@@ -4,8 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :destinations, dependent: :destroy
-  has_many :accommodations, dependent: :destroy
-  has_many :timeframes, dependent: :destroy
-  has_many :transportations, dependent: :destroy
+  has_many :trips, dependent: :nullify
+
+  has_many :destinations, dependent: :nullify
+  has_many :accommodations, dependent: :nullify
+  has_many :timeframes, dependent: :nullify
+  has_many :transportations, dependent: :nullify
 end

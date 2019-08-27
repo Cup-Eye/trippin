@@ -6,6 +6,7 @@ class CreateTimeframes < ActiveRecord::Migration[5.2]
       t.date :end_date
       t.references :user, foreign_key: true
       t.text :description
+      t.boolean :winning, null: false, default: false
 
       t.timestamps
     end
