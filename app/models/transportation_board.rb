@@ -1,0 +1,2 @@
+class TransportationBoard < Board
+end
