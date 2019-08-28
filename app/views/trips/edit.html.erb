@@ -1,0 +1,18 @@
+
+  <p class="back_"><%= link_to "Back", trips_path %></p>
+      <h1> Edit your Trip: </h1>
+    </div>
+
+    <%= simple_form_for(@trip) do |f| %>
+      <div class="form-group">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :destination%>
+        <%= f.text_field :destination, class: 'form-control'%>
+      </div>
+
+      <%= f.button :submit, "Edit trip" %>
+    <% end %>
