@@ -10,5 +10,7 @@
       link = destination_board_destinations_path(board)
     end%>
   <p><%=link_to "#{board.title}", link%></p>
+  <p><%=board.description%></p>
+  <p>Status: <%=board.status%></p>
 <% end %>
 
