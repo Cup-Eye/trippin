@@ -1,5 +1,6 @@
 class DestinationsController < ApplicationController
   def index
+    @destination = Destination.new
     @destinations = Destination.all
   end
 
@@ -8,16 +9,17 @@ class DestinationsController < ApplicationController
   end
 
   def create
-    @destination_board = destination_board.find(params[:board_id])
-    @destination = Destination.new(destination_params)
-    @destination.destination_board = @destination_board
+    @board = Board.where(type: "DestinationBoard", trip_id: params[:trip_id])
+    @destination_board_id = board.first
     @destination.user = current_user
+    @destination = Destination.new
     if @destinations.save
-      redirect_to trip_destinations_path #trip_boards_path(@trip)
+      redirect_to trip_destinations_path(@board.trip)
     else
       render :new
     end
   end
+
 
   # def edit
   #   @destination = Destination.find(params[:id])
