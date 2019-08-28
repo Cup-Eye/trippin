@@ -1,15 +1,17 @@
 
-<%= link_to "Add Timeframe", new_timeframe_board_timeframe_path(@board) %>
+<h1>Proposed Timeframes: </h1>
 
 <% @timeframes.each do |tf| %>
-  <p><%= tf.start_date %> - <%= tf.end_date %></p>
+  <p><%= tf.start_date %> - <%= tf.end_date %> (<%=tf.user.first_name%>)
   <%= link_to "Edit", edit_timeframe_path(tf) %>
   <%= link_to "Delete", timeframe_path(tf),
         method: :delete,
         data: { confirm: "Are you sure you want to delete this Timeframe?" }%>
+        </p>
+  <p> <%= tf.description %> </p>
 <% end %>
 <h2></h2>
 
-
+<%= link_to "Add Timeframe", new_timeframe_board_timeframe_path(@board) %>
 <p><%= link_to "Back", trip_boards_path(@board) %></p>
 
