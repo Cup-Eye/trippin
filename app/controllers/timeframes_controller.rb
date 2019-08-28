@@ -1,26 +1,28 @@
 class TimeframesController < ApplicationController
   def index
-    @timeframes = Timeframe.all
+    @board = Board.find(params[:timeframe_board_id])
+    @timeframes = @board.timeframes
+  end
+
+  def show
+    @timeframe = Timeframe.find(params[:id])
   end
 
   def new
-    @trip = Trip.find(params[:trip_id])
+    @board = Board.find(params[:timeframe_board_id])
     @timeframe = Timeframe.new
   end
 
   def create
-    trip = Trip.find(params[:trip_id])
-    board_id = trip.timeframe_board.id
-    timeframe.board_id = board_id
-    timeframe.user = current_user
-
-    timeframe = Timeframe.new(timeframe_params)
-    if timeframe.save
-      redirect_to trip_timeframes_path
+    @timeframe = Timeframe.new(timeframe_params)
+    @board = Board.find(params[:timeframe_board_id])
+    @timeframe.board = @board
+    @timeframe.user = current_user
+    if @timeframe.save
+      redirect_to timeframe_board_timeframes_path(@board)
     else
       render :new
     end
-
   end
 
   def edit
@@ -30,18 +32,19 @@ class TimeframesController < ApplicationController
   def update
     @timeframe = Timeframe.find(params[:id])
     @timeframe.update(timeframe_params)
-    redirect_to trip_timeframes_path
+    @timeframe.user = current_user
+    redirect_to timeframe_board_timeframes_path(@timeframe.board)
   end
 
   def destroy
     @timeframe = Timeframe.find(params[:id])
-    @timeframe.destroy(timeframe_params)
-    redirect_to trip_timeframes_path
+    @timeframe.destroy
+    redirect_to timeframe_board_timeframes_path(@timeframe.board)
   end
 
   private
 
   def timeframe_params
-    params.require(:timeframe).permit(:start_date, :end_date)
+    params.require(:timeframe).permit(:start_date, :end_date, :description)
   end
 end
