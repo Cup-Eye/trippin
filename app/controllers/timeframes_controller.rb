@@ -1,5 +1,4 @@
 class TimeframesController < ApplicationController
-
   def index
     @timeframes = Timesframe.all
   end
@@ -9,13 +8,13 @@ class TimeframesController < ApplicationController
   end
 
   def create
-    @user = current_user
     @timeframe = Timeframe.new(timeframe_params)
-    @timeframe.user = @user
+    @timeframe.user = current_user
     if @timeframe.save
-      redirect_to timeframes_path
+      redirect_to trip_timeframes_path
     else
       render :new
+    end
   end
 
   def edit
@@ -25,13 +24,13 @@ class TimeframesController < ApplicationController
   def update
     @timeframe = Timeframe.find(params[:id])
     @timeframe.update(timeframe_params)
-    redirect_to timeframes_path
+    redirect_to trip_timeframes_path
   end
 
   def destroy
     @timeframe = Timeframe.find(params[:id])
     @timeframe.destroy(timeframe_params)
-    redirect_to timeframes_path
+    redirect_to trip_timeframes_path
   end
 
   private
@@ -39,5 +38,4 @@ class TimeframesController < ApplicationController
   def timeframe_params
     params.require(:timeframe).permit(:start_date, :end_date)
   end
-
 end
