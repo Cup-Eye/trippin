@@ -1,14 +1,14 @@
 <p><%= link_to "Back", trips_path %></p>
 <% @boards.each do |board| %>
   <%if board.type == "TimeframeBoard"
-      link = trip_timeframes_path
+      link = timeframe_board_timeframes_path(board)
     elsif board.type == "AccommodationBoard"
-      link = trip_accommodations_path
-    elsif board.type == "DestinationBoard"
-      link = trip_destinations_path
+      link = accommodation_board_accommodations_path(board)
     elsif board.type == "TransportationBoard"
-      link = trip_transportations_path
+      link = transportation_board_transportations_path(board)
+    elsif board.type == "DestinationBoard"
+      link = destination_board_destinations_path(board)
     end%>
-  <p><%=link_to "#{board.title}", link %></p>
+  <p><%=link_to "#{board.title}", link%></p>
 <% end %>
 
