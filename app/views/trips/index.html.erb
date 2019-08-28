@@ -1,0 +1,9 @@
+<% @trips.each do |trip| %>
+  <p><%= trip.name %>  & <%=trip.destination %></p>
+  <%= link_to "Edit trip", edit_trip_path(trip) %>
+  <%= link_to "Delete trip", trip_path(trip),
+              method: :delete,
+              data: { confirm: "Are you sure you want to delete this Boat?" }%>
+  <% end %>
+<h2> </h2>
+<%= link_to "Add trip", new_trip_path %>
