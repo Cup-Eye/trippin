@@ -32,7 +32,13 @@ Trip.create!(
 
 puts "Creating destinations..."
 trip = Trip.first
-board = trip.create_destination_board!
+board = trip.create_destination_board!({
+  title: "Destination",
+  status: "incomplete",
+  description: "Decide where you wanna go!"
+})
+
+
 board.destinations.create!(
   [
     {
@@ -51,7 +57,12 @@ board.save!
 
 puts "Creating accommodations..."
 trip = Trip.first
-board = trip.create_accommodation_board!
+board = trip.create_accommodation_board!({
+  title: "Accommodation",
+  status: "incomplete",
+  description: "Discover the perfect place to stay!"
+  })
+
 board.accommodations.create!(
   [
     {
@@ -72,7 +83,11 @@ board.save!
 
 puts "Creating timeframes..."
 trip = Trip.first
-board = trip.create_timeframe_board!
+board = trip.create_timeframe_board!({
+  title: "Time Frames",
+  status: "incomplete",
+  description: "Find the most suitable dates!"
+})
 board.timeframes.create!(
   [
     {
@@ -94,7 +109,11 @@ board.save!
 
 puts "Creating transportations..."
 trip = Trip.first
-board = trip.create_transportation_board!
+board = trip.create_transportation_board!({
+  title: "Transportation",
+  status: "incomplete",
+  description: "Coordinate your travels!"
+})
 
 # You need more fields here!
 
