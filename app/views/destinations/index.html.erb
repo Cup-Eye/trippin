@@ -1,0 +1,10 @@
+<h1> Create a new destination: </h1>
+
+<%= simple_form_for @trip, :html => { :multipart => true } do |d|
+  <div class="form-group">
+    <%= d.label :name %>
+    <%= d.text_field :description, class: 'form-control' %>
+  </div>
+
+  <%= f.button :submit, "Add destination" %>
+<% end %>
