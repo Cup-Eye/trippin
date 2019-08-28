@@ -1,0 +1,9 @@
+
+
+<% @timeframes.each do |timeframe| %>
+<p><%= timeframe %> : <%=timeframe.start_date %> - <%=timeframe.start_date %> </p>
+<%= link_to "Edit timeframe", edit_trip_timeframe(trip) %>
+  <%= link_to "Delete timeframe", trip_path(trip),
+              method: :delete,
+              data: { confirm: "Are you sure you want to delete this Boat?" }%>
+  <% end %>

@@ -1,6 +1,6 @@
 class TimeframesController < ApplicationController
   def index
-    @timeframes = Timesframe.all
+    @timeframes = Timeframe.all
   end
 
   def new
@@ -9,12 +9,12 @@ class TimeframesController < ApplicationController
   end
 
   def create
-
-    timeframe = Timeframe.new(timeframe_params)
     trip = Trip.find(params[:trip_id])
     board_id = trip.timeframe_board.id
     timeframe.board_id = board_id
     timeframe.user = current_user
+
+    timeframe = Timeframe.new(timeframe_params)
     if timeframe.save
       redirect_to trip_timeframes_path
     else
