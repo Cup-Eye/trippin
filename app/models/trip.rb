@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
   belongs_to :user
+  validates :name, presence: true
 
   has_one :destination_board, dependent: :destroy
   # NOTE!!! Cannot do trip.destinations << destination
