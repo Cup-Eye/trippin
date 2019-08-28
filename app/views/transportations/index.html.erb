@@ -1,0 +1,10 @@
+<% @transportations.each do |transport| %>
+  <p><%=transport.route_number%></p>
+  <p><%=transport.booking_number%></p>
+  <%= link_to "Edit Transportation", edit_transportation_path(transport) %>
+  <%= link_to "Delete Transportation", transportation_path(transport),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete this Transportation?" }%>
+<% end %>
+
+<%= link_to "Add Transportation", new_transportation_board_transportation_path(@board) %>
