@@ -4,17 +4,23 @@ class TimeframesController < ApplicationController
   end
 
   def new
+    @trip = Trip.find(params[:trip_id])
     @timeframe = Timeframe.new
   end
 
   def create
-    @timeframe = Timeframe.new(timeframe_params)
-    @timeframe.user = current_user
-    if @timeframe.save
+
+    timeframe = Timeframe.new(timeframe_params)
+    trip = Trip.find(params[:trip_id])
+    board_id = trip.timeframe_board.id
+    timeframe.board_id = board_id
+    timeframe.user = current_user
+    if timeframe.save
       redirect_to trip_timeframes_path
     else
       render :new
     end
+
   end
 
   def edit
