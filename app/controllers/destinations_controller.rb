@@ -1,46 +1,50 @@
 class DestinationsController < ApplicationController
   def index
-    @destination = Destination.new
-    @destinations = Destination.all
+    @board = Board.find(params[:destination_board_id])
+    @destinations = @board.destinations
+  end
+
+  def show
+    @destination = Destination.find(params[:id])
   end
 
   def new
+    @board = Board.find(params[:destination_board_id])
     @destination = Destination.new
   end
 
   def create
-    @board = Board.where(type: "DestinationBoard", trip_id: params[:trip_id])
-    @destination_board_id = board.first
+    @destination = Destination.new(destination_params)
+    @board = Board.find(params[:destination_board_id])
+    @destination.board = @board
     @destination.user = current_user
-    @destination = Destination.new
-    if @destinations.save
-      redirect_to trip_destinations_path(@board.trip)
+    if @destination.save
+      redirect_to destination_board_destinations_path(@board)
     else
       render :new
     end
   end
 
+  def edit
+    @destination = Destination.find(params[:id])
+  end
 
-  # def edit
-  #   @destination = Destination.find(params[:id])
-  # end
+  def update
+    @destination = Destination.find(params[:id])
+    @destination.update(destination_params)
+    @destination.user = current_user
+    redirect_to destination_board_destinations_path(@destination.board)
+  end
 
-  # def update
-  #   @destination = Destination.find(params[:id])
-  #   @destination.update(destination_params)
-  #   @destination.user = current_user
-  #   redirect_to trip_destinations_path #trip_boards_path(@trip)
-  # end
+  def destroy
+    @destination = Destination.find(params[:id])
+    @destination.destroy
+    redirect_to destination_board_destinations_path(@destination.board)
+  end
 
-  # def destroy
-  #   @destination = Destination.find(params[:id])
-  #   @destination.destroy
-  #   redirect_to trip_destinations_path
-  # end
+  private
 
-  # private
-
-  # def destinations_params
-  #   params.require(:destination).permit(:name, :description)
-  # end
+  def destination_params
+    params.require(:destination).permit(:name, :description)
+  end
 end
