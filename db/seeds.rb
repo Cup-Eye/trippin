@@ -3,8 +3,6 @@
 end
 
 
-
-
 puts "Creating users...."
 User.create!(
   [
