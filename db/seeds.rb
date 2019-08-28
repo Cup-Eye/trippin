@@ -10,11 +10,15 @@ User.create!(
   [
     {
       email: "ann@example.com",
-      password: "123456"
+      password: "123456",
+      first_name: "Ann",
+      last_name: "Smith"
     },
     {
       email: "bob@example.com",
-      password: "123456"
+      password: "123456",
+      first_name: "Bob",
+      last_name: "Andrews"
     }
   ]
 )
@@ -70,12 +74,14 @@ board.accommodations.create!(
     {
       user: User.first,
       name: "Ibiza Villa",
-      kind: "Private House"
+      kind: "Private House",
+      price: 300
     },
     {
       user: User.second,
       name: "Barcelona Airbnb",
       kind: "Airbnb",
+      price: 150
     },
   ]
 )
