@@ -1,1 +1,32 @@
+
 // Specific CSS for your home-page
+.btn {
+    background-color: #0c3d06;
+    border-color: #0c3d06;
+    border-radius: 6px;
+    font-family: "Roboto", sans-serif;
+    padding: 18px;
+    font-size: 21px;
+    border: 17px;
+    padding: 15px;
+    margin-left: 330px;
+    margin-right: 150;
+    margin-right: 338px;
+}
+
+.btn a {
+    color: white;
+    text-decoration: none;
+    background-color: #0c3d06;
+}
+.home-link:hover{
+  // text-decoration: none;
+  // color: white;
+  font-size: 28px;
+}
+
+.home-conatiner h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 35px;
+  text-align: center;
+}
