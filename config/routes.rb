@@ -22,8 +22,8 @@ Rails.application.routes.draw do
     resources :transportations, only: [:new, :create, :index]
   end
 
-  resources :destinations, only: [:edit, :udpate, :destroy]
+  resources :destinations, only: [:edit, :update, :destroy]
   resources :accommodations, only: [:show, :edit, :update, :destroy]
-  resources :timeframes, only: [:edit, :udpate, :destroy]
-  resources :transportations, only: [:edit, :udpate, :destroy]
+  resources :timeframes, only: [:edit, :update, :destroy]
+  resources :transportations, only: [:edit, :update, :destroy]
 end
