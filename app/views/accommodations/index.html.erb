@@ -1,0 +1,10 @@
+<% @accommodations.each do |acc| %>
+  <p><%= acc.name %></p>
+  <%= link_to "View", accommodation_path(acc) %>
+  <%= link_to "Edit Accommodation", edit_accommodation_path(acc) %>
+  <%= link_to "Delete Accommodation", accommodation_path(acc),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete this Accommodation?" }%>
+<% end %>
+<h2></h2>
+<%= link_to "Add Accommodation", new_accommodation_board_accommodation_path(@board) %>
