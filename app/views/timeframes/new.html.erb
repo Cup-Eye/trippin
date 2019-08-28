@@ -1,0 +1,26 @@
+<h1> Add Timeframe: </h1>
+<%= form_for([@board, @timeframe])  do |f| %>
+ <div class="form-group">
+  <%= f.label :start_date %>
+    <div></div>
+    <%= f.date_select :start_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+    </div>
+  </div>
+
+  <div class="form-group">
+  <%= f.label :end_date %>
+    <div></div>
+    <%= f.date_select :end_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :description%>
+    <%= f.text_field :description, class: 'form-control'%>
+  </div>
+
+  <%= f.button :submit %>
+<% end %>
+
+<p><%= link_to "Back", timeframe_board_timeframes_path(@board) %></p>
+
