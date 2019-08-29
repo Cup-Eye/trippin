@@ -1,20 +1,22 @@
-<p><%= link_to "Back", trips_path %></p>
-<h1> Edit your Trip: </h1>
-<%= simple_form_for(@trip) do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+<div class="form-container">
+  <p><%= link_to "Back", trips_path, class: "trip-btn" %></p>
+  <h1> Edit your Trip: </h1>
+  <%= simple_form_for(@trip) do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :destination%>
-    <%= f.text_field :destination, class: 'form-control'%>
-  </div>
+    <div class="form-group">
+      <%= f.label :destination%>
+      <%= f.text_field :destination, class: 'form-control'%>
+    </div>
 
-  <div class="form-group">
-    <%= f.input :photo %>
-    <%= f.input :photo_cache, as: :hidden %>
-  </div>
+    <div class="form-group">
+      <%= f.input :photo %>
+      <%= f.input :photo_cache, as: :hidden %>
+    </div>
 
-  <%= f.button :submit, "Edit trip" %>
-<% end %>
+    <%= f.button :submit, "Edit trip", class: "trip-btn" %>
+  <% end %>
+</div>
