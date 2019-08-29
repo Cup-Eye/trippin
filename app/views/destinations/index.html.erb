@@ -1,14 +1,25 @@
-<p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
-<% @destinations.each do |dest| %>
-  <h1><%= dest.name %></h1>
-  <p><%= dest.description %></p>
-  <%= link_to "Edit", edit_destination_path(dest), class: "trip-btn" %>
-  <%= link_to "Delete", destination_path(dest), class: "trip-btn",
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete this Destination?" }%>
-<% end %>
-<h2></h2>
-<%= link_to "Add Destination", new_destination_board_destination_path(@board), class: "trip-btn" %>
+<div class="destination-container">
+  <p><%= link_to "Back", trip_boards_path(@board), class: "button-secondary" %></p>
 
+  <div class="destination-card">
+    <h2><%= link_to "+ Add new Destination", new_destination_board_destination_path(@board), class: "trip-btn"%>
+    </h2>
+  </div>
 
+  <% @destinations.each do |dest| %>
+    <div class="destination-card" >
+      <div class="" class="justify-content-around">
+        <h1><%= dest.name %><b> Number of votes</b></h1>
+      </div>
+      <p><%= dest.description %></p>
+      <p>***Placeholder for user icons & vote button***</p>
+      <div class="destination-buttons">
+        <%= link_to "Delete", destination_path(dest), class: "trip-btn",
+              method: :delete,
+              data: { confirm: "Are you sure you want to delete this Destination?" }%>
+        <%= link_to "Edit", edit_destination_path(dest), class: "trip-btn" %>
+      </div>
+    </div>
+  <% end %>
 
+</div>
