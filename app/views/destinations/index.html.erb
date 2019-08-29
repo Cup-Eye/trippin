@@ -1,5 +1,6 @@
 <p><%= link_to "Back", trip_boards_path(@board), class: "button-secondary" %></p>
 
+
 <% @destinations.each do |dest| %>
   <h1><%= dest.name %></h1>
   <p><%= dest.description %></p>
@@ -10,5 +11,6 @@
 <% end %>
 <h2></h2>
 <%= link_to "Add Destination", new_destination_board_destination_path(@board) %>
+
 
 
