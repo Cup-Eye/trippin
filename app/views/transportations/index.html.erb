@@ -1,18 +1,29 @@
 <div class="transportation-container-large">
-  <p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn"%></p>
-  <div class="container">
-    <div class="row">
-      <div class="col-12 col-sm-9">
-        <div class="row">
-          <% @transportations.each do |transport| %>
-          <div class="col-12">
-          <div class="transport-container" class="justify-content-around">
-            <div class="border-pass-heads">
-              <h1> Transportation for <%=transport.user.first_name%> </h1>
-              <br>
-            <div class="boarding-pass-intro d-flex justify-content-between">
-              <p>Route Number: <b><%=transport.route_number %></b></p>
-              <p> Booking Number <strong><%=transport.booking_number%></strong></p></li>
+<p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn"%></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-9">
+      <div class="row">
+        <% @transportations.each do |transport| %>
+        <div class="col-12">
+        <div class="transport-container" class="justify-content-around">
+          <div class="border-pass-heads">
+            <div class= "d-flex justify-content-between text-align-center">
+            <h1> Transportation for <%=transport.user.first_name%> </h1>
+               <%= cl_image_tag current_user.photo,
+                width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </div>
+            <br>
+          <div class="boarding-pass-intro d-flex justify-content-between">
+            <p>Route Number: <b><%=transport.route_number %></b></p>
+            <p> Booking Number <strong><%=transport.booking_number%></strong></p></li>
+          </div>
+          </div>
+           <div class="d-flex justify-content-between align-items-center text-align-center">
+            <div class="locations-lockup">
+                <p class="title">Departure<p>
+                <h2><strong><%=transport.departure_location%></strong></h2>
+              <p><%=(transport.departure_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
             </div>
             </div>
             <div class="d-flex justify-content-between align-items-center text-align-center">
@@ -48,6 +59,3 @@
     </div>
   </div>
 </div>
-
-
-
