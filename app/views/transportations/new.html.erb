@@ -1,6 +1,7 @@
 <p><%= link_to "Back", transportation_board_transportations_path(@board) %></p>
-<h1> Add Transportation: </h1>
+
 <%= form_for([@board, @transportation])  do |f| %>
+<h1> Add Transportation: </h1>
   <div class="form-group">
     <%= f.label :route_number %>
     <%= f.text_field :route_number, class: 'form-control' %>
