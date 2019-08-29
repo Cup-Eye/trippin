@@ -1,4 +1,4 @@
-<p><%= link_to "Back", trip_boards_path(@board) %></p>
+<p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn"%></p>
 <div class="container">
   <div class="row">
     <div class="col-12 col-sm-9">
@@ -24,7 +24,7 @@
               <p><br><strong><%=(transport.arrival_time).strftime("%A, %d %b %Y %l:%M %p")%></strong></p>
             </div>
           </div>
-          <%= link_to "Edit", edit_transportation_path(transport) %>
+          <%= link_to "Edit", edit_transportation_path(transport)%>
           <%= link_to "Delete", transportation_path(transport),
                 method: :delete,
                 data: { confirm: "Are you sure you want to delete this Transportation?" }%>
@@ -32,7 +32,7 @@
         </div>
         <% end %>
         <h2></h2>
-        <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board) %>
+        <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), class: "trip-btn" %>
       </div>
     </div>
     <div class="col-12 col-sm-3" id="chat">

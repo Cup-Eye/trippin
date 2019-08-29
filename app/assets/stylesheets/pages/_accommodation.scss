@@ -1,0 +1,47 @@
+.accom-container{
+  margin: 10px auto;
+  width: 600px;
+}
+
+.accom-action{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accom-card{
+  background: white;
+  padding: 10px;
+  margin: 20px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+}
+
+.accom-card:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.accom-card-link a:link{
+  text-decoration: none;
+}
+
+.accom-card-content{
+  color: black;
+}
+
+.accom-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accom-price{
+  font-size: 20px;
+}
+
+.accom-action-list{
+  width: 550px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.accom-action-list .trip-btn{
+  margin: 5px 15px;
+}
