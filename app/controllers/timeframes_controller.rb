@@ -2,6 +2,8 @@ class TimeframesController < ApplicationController
   def index
     @board = Board.find(params[:timeframe_board_id])
     @timeframes = @board.timeframes
+    @earliest_date = @timeframes.order(start_date: :asc).first.start_date
+    @last_date = @timeframes.order(end_date: :desc).first.end_date
   end
 
   def show

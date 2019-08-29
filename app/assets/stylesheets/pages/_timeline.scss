@@ -1,0 +1,56 @@
+
+* {box-sizing: border-box;}
+.wrapper {
+  max-width: 940px;
+  margin: 0 auto;
+}
+
+.wrapper > div {
+  border: 2px solid grey;
+  border-radius: 5px;
+  padding: 1px;
+  color: black;
+}
+.wrapper {
+  display: grid;
+  // grid-template-columns: repeat(15, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(20px, 40px);
+}
+
+.one {
+  // grid-column: 1 / 10;
+  grid-row: 1;
+  background-color: lightgrey;
+}
+// .two {
+//   grid-column: 2 / 8;
+//   grid-row: 2;
+//   background-color: blue;
+// }
+// .three {
+//   grid-column: 1 / 7;
+//   grid-row: 3 / 3;
+//   background-color: green;
+// }
+// .four {
+//   grid-column: 2 / 9;
+//   grid-row: 4 / 4;
+//   background-color: yellow;
+// }
+// .five {
+//   grid-column: 2 / 9;
+//   grid-row: 5 / 5;
+//   background-color: pink;
+// }
+// .six {
+//   grid-column: 3 / 6;
+//   grid-row: 6 / 6;
+//   background-color: lightblue;
+// }
+// .seven {
+//   grid-column: 3 / 7;
+//   grid-row: 7 / 7;
+//   background-color: orange;
+// }
+
