@@ -16,12 +16,22 @@
     opacity: .5;
     font-weight: lighter;
   }
+  h2 {
+    font-size: 30px;
+    opacity: .65;
+    font-weight: lighter;
+    text-align: center;
+    font-family: Roboto;
+  }
+}
 .destination-buttons{
     display: flex;
+    justify-content: space-bewteen;
     flex-direction: column;
     position: absolute;
     top: 5px;
     right: 5px;
+    margin: 10px;
 }
 
   p {
@@ -45,7 +55,7 @@
   li {
     display: inline;
   }
-}
+
 .form-inline {
   justify-content: space-bewteen;
 }
