@@ -7,7 +7,11 @@
         <div class="col-12">
         <div class="transport-container" class="justify-content-around">
           <div class="border-pass-heads">
+            <div class= "d-flex justify-content-between text-align-center">
             <h1> Transportation for <%=transport.user.first_name%> </h1>
+               <%= cl_image_tag current_user.photo,
+                width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            </div>
             <br>
           <div class="boarding-pass-intro d-flex justify-content-between">
             <p>Route Number: <b><%=transport.route_number %></b></p>
