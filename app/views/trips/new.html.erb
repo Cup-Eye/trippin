@@ -1,3 +1,5 @@
+<br></br>
+<br></br>
 <p class="back_"><%= link_to "Back", trips_path %></p>
 <h1> Create a new Trip: </h1>
 <%= simple_form_for(@trip) do |f| %>
@@ -9,6 +11,11 @@
   <div class="form-group">
     <%= f.label :destination%>
     <%= f.text_field :destination, class: 'form-control'%>
+  </div>
+
+  <div class="form-group">
+    <%= f.input :photo %>
+    <%= f.input :photo_cache, as: :hidden %>
   </div>
 
   <%= f.button :submit, "Add trip" %>

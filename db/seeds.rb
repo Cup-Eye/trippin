@@ -17,6 +17,54 @@ User.create!(
       password: "123456",
       first_name: "Bob",
       last_name: "Andrews"
+    },
+    {
+      email: "peter@example.com",
+      password: "123456",
+      first_name: "Peter",
+      last_name: "Shaw"
+    },
+    {
+      email: "justus@example.com",
+      password: "123456",
+      first_name: "Justus",
+      last_name: "Jonas"
+    },
+    {
+      email: "monica@example.com",
+      password: "123456",
+      first_name: "Monica",
+      last_name: "Geller"
+    },
+    {
+      email: "ross@example.com",
+      password: "123456",
+      first_name: "Ross",
+      last_name: "Geller"
+    },
+    {
+      email: "joey@example.com",
+      password: "123456",
+      first_name: "Joey",
+      last_name: "Tribbiani"
+    },
+    {
+      email: "rachel@example.com",
+      password: "123456",
+      first_name: "Rachel",
+      last_name: "Green"
+    },
+    {
+      email: "phoebe@example.com",
+      password: "123456",
+      first_name: "Phoebe",
+      last_name: "Buffay"
+    },
+    {
+      email: "chandler@example.com",
+      password: "123456",
+      first_name: "Chandler",
+      last_name: "Bing"
     }
   ]
 )
