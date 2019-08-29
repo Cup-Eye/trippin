@@ -2,6 +2,8 @@ class Trip < ApplicationRecord
   belongs_to :user
   validates :name, presence: true
 
+  mount_uploader :photo, PhotoUploader
+
   has_one :destination_board, dependent: :destroy
   # NOTE!!! Cannot do trip.destinations << destination
   # INSTEAD do trip.destination_board.destinations << destination
