@@ -1,6 +1,10 @@
 // Import page-specific CSS files here.
 @import "home";
 
+body{
+  background: white;
+}
+
 .trip-container{
   margin: 80px auto;
   width: 900px
@@ -59,21 +63,6 @@
   font-size: 13px;
 }
 
-.trip-btn{
-  color: white;
-  background: #0c3d06;
-  padding: 5px 10px;
-  border-radius: 5px;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
-  transition: box-shadow .2s ease;
-}
-
-.trip-btn:hover{
-  color: white;
-  text-decoration: none;
-  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-}
-
 .board-container{
   margin: 80px auto;
   width: 900px
@@ -92,7 +81,8 @@
 }
 
 .board-card-TimeframeBoard{
-  background: #375e97;
+  // background: #375e97;
+  background: #337bae;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border-radius: 10px;
   padding: 20px;
@@ -106,7 +96,8 @@
 
 .board-card-TimeframeBoard:hover{
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-  background: #626d71;
+  // background: #626d71;
+  background: #98A6A9;
 }
 
 .board-card-AccommodationBoard{
@@ -124,7 +115,7 @@
 
 .board-card-AccommodationBoard:hover{
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-  background: #626d71;
+  background: #98A6A9;
 }
 
 .board-card-TransportationBoard{
@@ -142,11 +133,11 @@
 
 .board-card-TransportationBoard:hover{
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-  background: #626d71;
+  background: #98A6A9;
 }
 
 .board-card-DestinationBoard{
-  background: #3f681c;
+  background: #4F8224;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border-radius: 10px;
   padding: 20px;
@@ -160,11 +151,7 @@
 
 .board-card-DestinationBoard:hover{
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-  background: #626d71;
-}
-
-.board-card:hover{
-  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+  background: #98A6A9;
 }
 
 .icon::before {
@@ -175,29 +162,54 @@
     -webkit-font-smoothing: antialiased;
     color: white;
     font-size: 90px;
+    transition: color .3s ease;
   }
 
   .board-card-DestinationBoard {
+    &:hover {
+      .icon::before {
+        color: #4F8224 !important;
+      }
+    }
     .icon::before {
       font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f57d";
+      transition: color .3s ease;
     }
   }
 
   .board-card-TimeframeBoard {
+    &:hover {
+      .icon::before {
+        color: #337bae !important;
+      }
+    }
     .icon::before {
       font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f073";
+      transition: color .3s ease;
     }
   }
 
   .board-card-TransportationBoard {
+    &:hover {
+      .icon::before {
+        color: #ffbb00 !important;
+      }
+    }
     .icon::before {
       font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f072";
+      transition: color .3s ease;
     }
   }
 
    .board-card-AccommodationBoard {
+    &:hover {
+      .icon::before {
+        color: #fb6542 !important;
+      }
+    }
     .icon::before {
       font-family: "Font Awesome 5 Free"; font-weight: 900; content: "\f015";
+      transition: color .3s ease;
     }
   }
 
