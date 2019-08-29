@@ -10,15 +10,24 @@
   display: flex;
 }
 
+.trip-card-link{
+   color: black;
+}
+
+.trip-card-link a:link{
+  text-decoration: none;
+}
+
 .trip-card{
   background: white;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border-radius: 2px;
-  padding: 20px;
+  padding: 10px;
   margin-right: 20px;
   margin-top: 20px;
-  width: 250px;
+  width: 220px;
   height: 300px;
+  align-items: center;
   transition: box-shadow .2s ease;
 }
 
@@ -26,10 +35,22 @@
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
 }
 
+.trip-photo{
+  margin: 10px auto;
+  margin-bottom: 20px;
+  width: 160px;
+  box-shadow: inset 0 0 6px #000000;
+}
+
+.trip-card-content{
+  color: black;
+}
+
 .trip-action-list p{
   color: black;
   display: inline;
   margin: 0 5px;
+  font-size: 13px;
 }
 
 .trip-btn{
