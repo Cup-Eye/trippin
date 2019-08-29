@@ -1,0 +1,9 @@
+.button-secondary {
+  border: solid 1px grey;
+  color: grey;
+  padding: 3px 10px;
+  &:hover {
+    color: white;
+    background-color: grey;
+  }
+}

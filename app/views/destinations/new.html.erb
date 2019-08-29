@@ -1,5 +1,7 @@
+<p><%= link_to "Back", destination_board_destinations_path(@board) %></p>
+
+<%= simple_form_for([@board, @destination])  do |f| %>
 <h1> Add Destination: </h1>
-<%= form_for([@board, @destination])  do |f| %>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
@@ -10,5 +12,5 @@
     <%= f.text_field :description, class: 'form-control' %>
   </div>
 
-  <%= f.button :submit %>
+  <%= f.button :submit, "Add destination"%>
 <% end %>
