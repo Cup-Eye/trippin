@@ -1,0 +1,36 @@
+.border-pass-heads {
+  border-bottom: dashed 1px #6c6c6c;
+  .boarding-pass-intro {
+    border-bottom: dashed 1px #6c6c6c;
+    border-top: dashed 1px #6c6c6c;
+    padding-top: 17px;
+  }
+}
+
+
+.buttons-container {
+  text-align: center;
+  margin: 14px;
+  a {
+    border: dashed 1px;
+    padding: 4px 22px;
+    &:hover {
+      background-color: #167FFB;
+      color: white;
+    }
+  }
+}
+
+.locations-lockup {
+  p {
+    margin: 0;
+  }
+  h2 {
+     font-family: "Roboto";
+  }
+  .title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    opacity: .5;
+  }
+}

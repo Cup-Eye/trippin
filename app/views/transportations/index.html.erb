@@ -1,16 +1,52 @@
-<p><%= link_to "Back", trip_boards_path(@board) %></p>
-<% @transportations.each do |transport| %>
-  <p> Transportation for <%=transport.user.first_name%> </p>
-  <p>Route Number: <strong><%=transport.route_number%></strong></p>
-  <p>Booking Number: <strong><%=transport.booking_number%></strong></p>
-  <p>Departure Time: <strong><%=transport.departure_time%></strong></p>
-  <p>Arrival Time: <strong><%=transport.arrival_time%></strong></p>
-  <p>Departure Location: <strong><%=transport.departure_location%></strong></p>
-  <p>Arrival Location: <strong><%=transport.arrival_location%></strong></p>
-  <%= link_to "Edit", edit_transportation_path(transport) %>
-  <%= link_to "Delete", transportation_path(transport),
-        method: :delete,
-        data: { confirm: "Are you sure you want to delete this Transportation?" }%>
-<% end %>
-<h2></h2>
-<%= link_to "Add Transportation", new_transportation_board_transportation_path(@board) %>
+<div class="transportation-container-large">
+<p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-9">
+      <div class="row">
+        <% @transportations.each do |transport| %>
+        <div class="col-12">
+        <div class="transport-container" class="justify-content-around">
+          <div class="border-pass-heads">
+            <h1> Transportation for <%=transport.user.first_name%> </h1>
+            <br>
+          <div class="boarding-pass-intro d-flex justify-content-between">
+            <p>Route Number: <b><%=transport.route_number %></b></p>
+            <p> Booking Number <strong><%=transport.booking_number%></strong></p></li>
+          </div>
+          </div>
+           <div class="d-flex justify-content-between align-items-center text-align-center">
+            <div class="locations-lockup">
+                <p class="title">Departure<p>
+                <h2><strong><%=transport.departure_location%></strong></h2>
+              <p><%=(transport.departure_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
+            </div>
+            <div>
+               <p><i class="fas fa-plane fa-2x"></i></p>
+            </div>
+            <div class="locations-lockup">
+              <p class="title">Arrival</p>
+              <h2><strong><%=transport.arrival_location%></strong></h2>
+              <p><%=(transport.arrival_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
+            </div>
+          </div>
+          <div class="buttons-container">
+            <%= link_to "Edit", edit_transportation_path(transport) %>
+            <%= link_to "Delete", transportation_path(transport),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this Transportation?" }%>
+          </div>
+          </div>
+        </div>
+        <% end %>
+        <h2></h2>
+        <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), class: "trans-btn" %>
+      </div>
+    </div>
+    <div class="col-12 col-sm-3" id="chat">
+    </div>
+  </div>
+
+
+</div>
+</div>

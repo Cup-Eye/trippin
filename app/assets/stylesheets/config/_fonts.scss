@@ -1,11 +1,11 @@
 // Import Google fonts
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Raleway:400,100,300,700,500");
-@import url('https://fonts.googleapis.com/css?family=Cabin|Lobster&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Comfortaa|Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Comfortaa:400,500,600,700&display=swap');
 // Define fonts for body and headers
-$body-font: "Open Sans", "Helvetica", "Cabin", "Roboto", "sans-serif";
-$headers-font: "Comfortaa", "curivse";
-$headers-font: "Raleway", "Helvetica", "sans-serif";
+$body-font: "Open Sans", "Helvetica", "Roboto", "sans-serif";
+$headers-font: "Comfortaa", "cursive";
+$headers-font: "Raleway", "Helvetica", "Roboto", "sans-serif";
 
 // To use a font file (.woff) uncomment following lines
 // @font-face {
