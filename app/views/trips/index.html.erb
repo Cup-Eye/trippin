@@ -1,14 +1,19 @@
 <div class="trip-container">
-  <% @trips.each do |trip| %>
-  <div class = "trip-card">
-    <p><%= trip.name %> to <%=trip.destination %></p>
-    <%= link_to "View", trip_boards_path(trip) %>
-    <%= link_to "Edit trip", edit_trip_path(trip) %>
-    <%= link_to "Delete trip", trip_path(trip),
+  <h2>Your Trips:</h2>
+  <div class="trip-card-container">
+    <% @trips.each do |trip| %>
+    <div class = "trip-card">
+      <p><%= trip.name %> to <%=trip.destination %></p>
+      <div class="trip-action-list">
+        <p><%= link_to "View", trip_boards_path(trip), class: "trip-btn" %></p>
+        <p><%= link_to "Edit", edit_trip_path(trip), class: "trip-btn" %></p>
+        <p><%= link_to "Delete", trip_path(trip),
               method: :delete,
-              data: { confirm: "Are you sure you want to delete this Trip?" }%>
+              data: { confirm: "Are you sure you want to delete this Trip?" }, class: "trip-btn"%></p>
+      </div>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-  <h2> </h2>
-  <%= link_to "Add trip", new_trip_path %>
+  <br> </br>
+  <%= link_to "Add trip", new_trip_path, class: "trip-btn" %>
 </div>

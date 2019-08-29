@@ -1,2 +1,130 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.trip-container{
+  margin: 80px auto;
+  width: 900px
+}
+
+.trip-card-container{
+  display: flex;
+}
+
+.trip-card{
+  background: white;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  border-radius: 2px;
+  padding: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 250px;
+  height: 300px;
+  transition: box-shadow .2s ease;
+}
+
+.trip-card:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.trip-action-list p{
+  color: black;
+  display: inline;
+  margin: 0 5px;
+}
+
+.trip-btn{
+  color: white;
+  background: #0c3d06;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  transition: box-shadow .2s ease;
+}
+
+.trip-btn:hover{
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.board-container{
+  margin: 80px auto;
+  width: 900px
+}
+
+.board-container-small{
+  width: 700px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.board-container-card a:link{
+  text-decoration: none;
+}
+
+.board-card-TimeframeBoard{
+  background: #e4b600;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  width: 300px;
+  margin: auto;
+  transition: box-shadow .2s ease;
+}
+
+.board-card-TimeframeBoard:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.board-card-AccommodationBoard{
+  background: #f78b2d;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  width: 300px;
+  margin: auto;
+  transition: box-shadow .2s ease;
+}
+
+.board-card-AccommodationBoard:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.board-card-TransportationBoard{
+  background: #c7db00;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  width: 300px;
+  margin: auto;
+  transition: box-shadow .2s ease;
+}
+
+.board-card-TransportationBoard:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.board-card-DestinationBoard{
+  background: #7aa802;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  padding: 20px;
+  color: black;
+  width: 300px;
+  margin: auto;
+  transition: box-shadow .2s ease;
+}
+
+.board-card-DestinationBoard:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
+.board-card:hover{
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
+
