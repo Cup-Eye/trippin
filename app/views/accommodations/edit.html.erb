@@ -1,25 +1,26 @@
-<p><%= link_to "Back", accommodation_board_accommodations_path(@accommodation.board) %></p>
-<h1> Edit Accommodation: </h1>
-<%= form_for([@board, @accommodation])  do |f| %>
-  <div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control' %>
-  </div>
+<div class="form-container">
+  <p><%= link_to "Back", accommodation_board_accommodations_path(@accommodation.board), class: "trip-btn" %></p>
+  <h1> Edit Accommodation: </h1>
+  <%= simple_form_for([@board, @accommodation])  do |f| %>
+    <div class="form-group">
+      <%= f.label :name %>
+      <%= f.text_field :name, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :url %>
-    <%= f.text_field :url, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.label :url %>
+      <%= f.text_field :url, class: 'form-control' %>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :address%>
-    <%= f.text_field :address, class: 'form-control'%>
-  </div>
+    <div class="form-group">
+      <%= f.label :address%>
+      <%= f.text_field :address, class: 'form-control'%>
+    </div>
 
-  <div class="form-group">
-    <%= f.label :kind %>
-    <%= f.text_field :kind, class: 'form-control' %>
-  </div>
+    <div class="form-group">
+      <%= f.input :kind, collection: ["Private House", "Hotel", "Airbnb", "Hostel", "Villa", "Appartment", "Camping Ground"], class: 'form-control' %>
+    </div>
 
-  <%= f.button :submit %>
-<% end %>
+    <%= f.button :submit, class: "trip-btn" %>
+  <% end %>
+</div>
