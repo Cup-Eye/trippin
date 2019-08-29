@@ -1,7 +1,7 @@
 <p><%= link_to "Back", destination_board_destinations_path(@board) %></p>
 
-<h1> Add Destination: </h1>
 <%= form_for([@board, @destination])  do |f| %>
+<h1> Add Destination: </h1>
   <div class="form-group">
     <%= f.label :name %>
     <%= f.text_field :name, class: 'form-control' %>
