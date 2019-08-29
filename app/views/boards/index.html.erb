@@ -14,7 +14,8 @@
       <div class="board-container-card">
         <%= link_to link do %>
           <div class=<%="board-card-#{board.type}"%>>
-            <h3><%=board.title%></h3>
+            <span class="icon"></span>
+            <h2><%=board.title%></h2>
             <p><%=board.description%></p>
             <p>Status: <%=board.status.capitalize%></p>
           </div>

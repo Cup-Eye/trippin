@@ -1,6 +1,16 @@
 <div class="trip-container">
   <h2>Your Trips:</h2>
   <div class="trip-card-container">
+    <div class="trip-card-link">
+      <%= link_to new_trip_path do %>
+        <div class = "trip-card">
+          <div class = "trip-card-content">
+            <div class="trip-photo"><p><i class="fas fa-plus"></i></p></div>
+            <h4>Add Trip</h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
     <% @trips.each do |trip| %>
     <div class="trip-card-link">
       <%= link_to trip_boards_path(trip) do %>
@@ -9,7 +19,7 @@
           <% unless trip.photo.nil? %>
             <div class="trip-photo"><%= cl_image_tag trip.photo, height: 170, width: 160, crop: :fill %></div>
           <% end %>
-          <p><%= trip.name %> to <%=trip.destination %></p>
+          <h4><%= trip.name %> to <%=trip.destination %></h4>
           <div class="trip-action-list">
             <p><%= link_to "Edit", edit_trip_path(trip), class: "trip-btn" %></p>
             <p><%= link_to "Delete", trip_path(trip),
@@ -22,6 +32,4 @@
     </div>
     <% end %>
   </div>
-  <br> </br>
-  <%= link_to "Add trip", new_trip_path, class: "trip-btn" %>
 </div>
