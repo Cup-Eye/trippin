@@ -18,6 +18,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :price%>
+      <%= f.text_field :price, class: 'form-control'%>
+    </div>
+
+    <div class="form-group">
       <%= f.input :kind, collection: ["Private House", "Hotel", "Airbnb", "Hostel", "Villa", "Appartment", "Camping Ground"], class: 'form-control' %>
     </div>
 
