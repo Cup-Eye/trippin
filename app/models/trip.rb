@@ -68,9 +68,9 @@ class Trip < ApplicationRecord
   private
 
   def create_four_boards
-    create_accommodation_board
-    create_transportation_board
-    create_timeframe_board
-    create_destination_board
+    create_accommodation_board(status: "incomplete", description: "Discover the perfect place to stay!")
+    create_transportation_board(status: "incomplete", description: "Coordinate your travels!")
+    create_timeframe_board(status: "incomplete", description: "Find the most suitable dates!")
+    create_destination_board(status: "incomplete", description: "Decide where you wanna go!")
   end
 end
