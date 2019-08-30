@@ -2,6 +2,9 @@ class TransportationsController < ApplicationController
   def index
     @board = Board.find(params[:transportation_board_id])
     @transportations = @board.transportations
+    @boardD = Board.find_by(type: "DestinationBoard")
+    @boardA = Board.find_by(type: "AccommodationBoard")
+    @boardTf = Board.find_by(type: "TimeframeBoard")
   end
 
   def show

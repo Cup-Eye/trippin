@@ -1,5 +1,5 @@
 <div class="board-container">
-  <p><%= link_to "Back", trip_path(@trip), class: "trip-btn" %></p>
+  <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
   <div class="board-container-small">
     <% @boards.each do |board| %>
       <%if board.type == "TimeframeBoard"

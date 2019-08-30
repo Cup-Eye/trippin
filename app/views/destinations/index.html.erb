@@ -12,21 +12,22 @@
 
       <div class= "side-button" id="A">
         <i class="fas fa-home fa-2x"></i>
-        <%= link_to "Accommodation", '#', id: "Al"%>
+        <%= link_to "Accommodation", accommodation_board_accommodations_path(@boardA), id: "Al"%>
       </div>
 
       <div class="side-button" id="TF">
         <i class="far fa-calendar-alt fa-2x"></i>
-        <%= link_to "Time Frames", '#', id: "TFl"%>
+        <%= link_to "Time Frames", timeframe_board_timeframes_path(@boardTf), id: "TFl"%>
       </div>
 
       <div class="side-button" id="T">
         <i class="fas fa-plane fa-2x"></i>
-        <%= link_to "Transportation", '#', id: "Tl"%>
+        <%= link_to "Transportation", transportation_board_transportations_path(@boardT), id: "Tl"%>
       </div>
     </div>
     <div class="col-12 col-lg-6">
       <div class="destination-container">
+        <h2>Destination</h2>
         <div class="destination-card">
           <h2><%= link_to "+ Add new Destination", new_destination_board_destination_path(@board), class: "trip-btn"%></h2>
         </div>

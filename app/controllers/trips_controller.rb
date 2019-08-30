@@ -2,6 +2,7 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
     @boards = @trip.boards
+    @user = @trip.user
   end
 
   def new
@@ -19,6 +20,7 @@ class TripsController < ApplicationController
   end
 
   def edit
+    @user = current_user
     @trip = Trip.find(params[:id])
   end
 
@@ -31,8 +33,10 @@ class TripsController < ApplicationController
 
   def destroy
     @trip = Trip.find(params[:id])
+    @user = current_user
     @trip.destroy
-    redirect_to trips_path
+    raise
+    redirect_to dashboard_path(@user)
   end
 
   private
