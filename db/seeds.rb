@@ -74,6 +74,7 @@ User.create!(
 # User.second.update()
 
 puts "Creating trips..."
+Trip.skip_callback(:commit, :after, :create_four_boards)
 Trip.create!(
   {
     user: User.first,
@@ -81,6 +82,7 @@ Trip.create!(
     destination: "Spain"
   }
 )
+Trip.set_callback(:commit, :after, :create_four_boards)
 
 puts "Creating destinations..."
 trip = Trip.first
