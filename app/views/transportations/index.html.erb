@@ -12,17 +12,17 @@
 
       <div class= "side-button" id="D">
         <i class="fas fa-globe-americas fa-2x"></i>
-        <%= link_to "Destintion", "#", id: "Dl"%>
+        <%= link_to "Destintion", destination_board_destinations_path(@boardD), id: "Dl"%>
       </div>
 
       <div class= "side-button" id="A">
         <i class="fas fa-home fa-2x"></i>
-        <%= link_to "Accommodation", '#', id: "Al"%>
+        <%= link_to "Accommodation", accommodation_board_accommodations_path(@boardA), id: "Al"%>
       </div>
 
       <div class="side-button" id="TF">
         <i class="far fa-calendar-alt fa-2x"></i>
-        <%= link_to "Time Frames", '#', id: "TFl"%>
+        <%= link_to "Time Frames", timeframe_board_timeframes_path(@boardTf), id: "TFl"%>
       </div>
     </div>
     <div class="col-12 col-lg-6">
@@ -30,6 +30,7 @@
         <div class="row">
           <div class="col-12">
             <div class="row">
+              <h2>Transportation</h2>
               <% @transportations.each do |transport| %>
                 <div class="col-12">
                   <div class="transport-container" class="justify-content-around">

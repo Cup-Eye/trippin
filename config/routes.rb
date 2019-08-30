@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :trips, except: :index
-  resources :dashboard, only: [:show]
+  resources :dashboard, only: [:show, :destroy]
 
   resources :accommodation_board, only: [] do
     resources :accommodations, only: [:new, :create, :index]
