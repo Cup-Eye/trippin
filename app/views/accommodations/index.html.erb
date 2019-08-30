@@ -2,27 +2,27 @@
   <div class="row">
     <div class="col-12 col-lg-3">
       <div class="side-button" id="B">
-        <%= link_to "All Trips", trips_path, id: "Bl"%>
+        <%= link_to "All Trips", dashboard_path(@board.trip.user_id), id: "Bl"%>
       </div>
 
       <div class= "side-button" id="A">
         <i class="fas fa-home fa-2x"></i>
-        <%= link_to "Add Accommodation",new_accommodation_board_accommodation_path(@board), id: "Al"%>
+        <%= link_to "Add Accommodation", new_accommodation_board_accommodation_path(@board), id: "Al"%>
       </div>
 
       <div class= "side-button" id="D">
         <i class="fas fa-globe-americas fa-2x"></i>
-        <%= link_to "Destintion", destination_board_destinations_path(@board), id: "Dl"%>
+        <%= link_to "Destintion", '#', id: "Dl"%>
       </div>
 
       <div class="side-button" id="TF">
         <i class="far fa-calendar-alt fa-2x"></i>
-        <%= link_to "Time Frames", timeframe_board_timeframes_path(@board), id: "TFl"%>
+        <%= link_to "Time Frames", '#', id: "TFl"%>
       </div>
 
       <div class="side-button" id="T">
         <i class="fas fa-plane fa-2x"></i>
-        <%= link_to "Transportation", transportation_board_transportations_path(@board), id: "Tl"%>
+        <%= link_to "Transportation", '#', id: "Tl"%>
       </div>
 
     </div>
