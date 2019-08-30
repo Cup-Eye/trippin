@@ -5,7 +5,7 @@
 
 * {box-sizing: border-box;}
 .wrapper {
-  max-width: 940px;
+  max-width: 1050px;
   margin: 0 auto;
 }
 
@@ -18,14 +18,20 @@
 .wrapper {
   display: grid;
   // grid-template-columns: repeat(15, 1fr);
-  grid-gap: 10px;
-  grid-auto-rows: minmax(20px, 40px);
+  // grid-gap: 10px;
+  grid-auto-rows: minmax(50px, 70px);
+  overflow-x: scroll;
 }
 
 .one {
   // grid-column: 1 / 10;
-  grid-row: 1;
+  // grid-row: 1;
   background-color: lightgrey;
+}
+
+.grid-day {
+  background: yellow;
+
 }
 // .two {
 //   grid-column: 2 / 8;
