@@ -13,7 +13,7 @@
     </div>
     <% @trips.each do |trip| %>
     <div class="trip-card-link">
-      <%= link_to trip_boards_path(trip) do %>
+      <%= link_to trip_path(trip) do %>
       <div class = "trip-card">
         <div class="trip-card-content">
           <% unless trip.photo.nil? %>

@@ -1,52 +1,77 @@
 <div class="transportation-container-large">
-<p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
-<div class="container">
   <div class="row">
-    <div class="col-12 col-sm-9">
-      <div class="row">
-        <% @transportations.each do |transport| %>
-        <div class="col-12">
-        <div class="transport-container" class="justify-content-around">
-          <div class="border-pass-heads">
-            <h1> Transportation for <%=transport.user.first_name%> </h1>
-            <br>
-          <div class="boarding-pass-intro d-flex justify-content-between">
-            <p>Route Number: <b><%=transport.route_number %></b></p>
-            <p> Booking Number <strong><%=transport.booking_number%></strong></p></li>
-          </div>
-          </div>
-           <div class="d-flex justify-content-between align-items-center text-align-center">
-            <div class="locations-lockup">
-                <p class="title">Departure<p>
-                <h2><strong><%=transport.departure_location%></strong></h2>
-              <p><%=(transport.departure_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
+    <div class="col-12 col-lg-3">
+      <div class="side-button" id="B">
+        <%= link_to "All Trips", dashboard_path(@board.trip.user_id), id: "Bl"%>
+      </div>
+
+      <div class="side-button" id="T">
+        <i class="fas fa-plane fa-2x"></i>
+        <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), id: "Tl"%>
+      </div>
+
+      <div class= "side-button" id="D">
+        <i class="fas fa-globe-americas fa-2x"></i>
+        <%= link_to "Destintion", "#", id: "Dl"%>
+      </div>
+
+      <div class= "side-button" id="A">
+        <i class="fas fa-home fa-2x"></i>
+        <%= link_to "Accommodation", '#', id: "Al"%>
+      </div>
+
+      <div class="side-button" id="TF">
+        <i class="far fa-calendar-alt fa-2x"></i>
+        <%= link_to "Time Frames", '#', id: "TFl"%>
+      </div>
+    </div>
+    <div class="col-12 col-lg-6">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="row">
+              <% @transportations.each do |transport| %>
+                <div class="col-12">
+                  <div class="transport-container" class="justify-content-around">
+                    <div class="border-pass-heads">
+                      <h1> Transportation for <%=transport.user.first_name%> </h1>
+                      <br>
+                      <div class="boarding-pass-intro d-flex justify-content-between">
+                        <p>Route Number: <b><%=transport.route_number %></b></p>
+                        <p> Booking Number <strong><%=transport.booking_number%></strong></p></li>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center text-align-center">
+                      <div class="locations-lockup">
+                        <p class="title">Departure<p>
+                        <h2><strong><%=transport.departure_location%></strong></h2>
+                        <p><%=(transport.departure_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
+                      </div>
+                    <div>
+                    <p><i class="fas fa-plane fa-2x"></i></p>
+                  </div>
+                  <div class="locations-lockup">
+                    <p class="title">Arrival</p>
+                    <h2><strong><%=transport.arrival_location%></strong></h2>
+                    <p><%=(transport.arrival_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
+                  </div>
+                </div>
+                <div class="buttons-container">
+                  <%= link_to "Edit", edit_transportation_path(transport) %>
+                  <%= link_to "Delete", transportation_path(transport),
+                      method: :delete,
+                      data: { confirm: "Are you sure you want to delete this Transportation?" }%>
+                </div>
+              </div>
             </div>
-            <div>
-               <p><i class="fas fa-plane fa-2x"></i></p>
-            </div>
-            <div class="locations-lockup">
-              <p class="title">Arrival</p>
-              <h2><strong><%=transport.arrival_location%></strong></h2>
-              <p><%=(transport.arrival_time).strftime("%A, %d %b %Y %l:%M %p")%></p>
-            </div>
-          </div>
-          <div class="buttons-container">
-            <%= link_to "Edit", edit_transportation_path(transport) %>
-            <%= link_to "Delete", transportation_path(transport),
-                  method: :delete,
-                  data: { confirm: "Are you sure you want to delete this Transportation?" }%>
-          </div>
-          </div>
+          <% end %>
+          <h2></h2>
+          <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), class: "trans-btn" %>
         </div>
-        <% end %>
-        <h2></h2>
-        <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), class: "trans-btn" %>
       </div>
     </div>
     <div class="col-12 col-sm-3" id="chat">
     </div>
   </div>
-
-
 </div>
 </div>

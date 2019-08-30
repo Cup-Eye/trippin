@@ -14,14 +14,14 @@
 
 
 <%= link_to "Add Timeframe", new_timeframe_board_timeframe_path(@board) %>
-<p><%= link_to "Back", trip_boards_path(@board) %></p>
+<p><%= link_to "Back", trip_path(@board) %></p>
 
 
 
 <% i = 2 %>
 <% col = 1 %>
 
-<div class="wrapper" style="grid-template-columns: repeat(<%= (@last_date - @earliest_date).to_i %>, minmax(200px, 200px));">
+<div class="wrapper" style="grid-template-columns: repeat(<%= (@last_date - @earliest_date).to_i %>, minmax(20px, 40px));">
 
 
 

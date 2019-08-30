@@ -1,10 +1,7 @@
 class TripsController < ApplicationController
-  def index
-    @trips = Trip.all
-  end
-
   def show
-    @trip = Trip.find(id)
+    @trip = Trip.find(params[:id])
+    @boards = @trip.boards
   end
 
   def new
@@ -15,7 +12,7 @@ class TripsController < ApplicationController
     @trip = Trip.new(trip_params)
     @trip.user = current_user
     if @trip.save
-      redirect_to trip_boards_path(@trip)
+      redirect_to trip_path(@trip)
     else
       render :new
     end
