@@ -145,6 +145,8 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.2.0)
       loofah (~> 2.2, >= 2.2.2)
+    rails-jquery-autocomplete (1.0.5)
+      rails (>= 3.2)
     railties (5.2.3)
       actionpack (= 5.2.3)
       activesupport (= 5.2.3)
@@ -228,6 +230,7 @@ DEPENDENCIES
   pry-rails
   puma
   rails (= 5.2.3)
+  rails-jquery-autocomplete
   redis
   sassc-rails
   simple_form
