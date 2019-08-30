@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-12 col-lg-3">
       <div class="side-button" id="B">
-        <%= link_to "All Trips", dashboard_path(@board.trip.user_id), id: "Bl"%>
+        <%= link_to "All Trips", dashboard_path, id: "Bl"%>
       </div>
 
       <div class="side-button" id="T">
@@ -67,7 +67,6 @@
             </div>
           <% end %>
           <h2></h2>
-          <%= link_to "Add Transportation", new_transportation_board_transportation_path(@board), class: "trans-btn" %>
         </div>
       </div>
     </div>
