@@ -21,6 +21,12 @@ class Trip < ApplicationRecord
   has_one :transportation_board, dependent: :destroy
   has_many :transportations, through: :transportation_board
 
+  after_commit :create_four_boards
+
+  def boards
+    [accommodation_board, destination_board, timeframe_board, transportation_board]
+  end
+
   def winning_destination=(destination)
     destinations.each do |dest|
       if dest == destination
@@ -57,5 +63,14 @@ class Trip < ApplicationRecord
           transportations.pluck(:user_id) +
           timeframes.pluck(:user_id)).uniq
     User.where(id: ids)
+  end
+
+  private
+
+  def create_four_boards
+    create_accommodation_board
+    create_transportation_board
+    create_timeframe_board
+    create_destination_board
   end
 end

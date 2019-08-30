@@ -1,5 +1,5 @@
 <div class="destination-container">
-  <p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
+  <p><%= link_to "Back", trip_path(@board.trip), class: "trip-btn" %></p>
   <div class="destination-card">
     <h2><%= link_to "+ Add new Destination", new_destination_board_destination_path(@board), class: "trip-btn"%>
     </h2>

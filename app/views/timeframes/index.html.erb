@@ -1,5 +1,5 @@
 <div class="timeframes-container">
-  <p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
+  <p><%= link_to "Back", trip_path(@board.trip), class: "trip-btn" %></p>
   <h1>Proposed Timeframes: </h1>
   <% @timeframes.each do |tf| %>
     <p><%= tf.start_date %> - <%= tf.end_date %> (<%=tf.user.first_name%>)
