@@ -216,5 +216,129 @@ body{
 #plus{
   color: #626d71;
   padding-top: 60px;
+  padding-left: 60px;
   font-size: 50px;
 }
+
+.side-button{
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+  #A{
+    background: #fb6542;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    width: 250px;
+    border-radius: 10px;
+    color: white;
+    border: 2px solid #fb6542;
+    &:hover{
+      background: white;
+      color: #fb6542;
+      text-decoration: none;
+      #Al{
+        color: #fb6542;
+        text-decoration: none;
+      }
+    }
+    #Al{
+      color:white;
+    }
+  }
+
+
+  #B{
+    background: #626d71;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #626d71;
+    &:hover{
+      background: white;
+      color: #626d71;
+      text-decoration: none;
+      #Bl{
+        color: #626d71;
+        text-decoration: none;
+      }
+    }
+    #Bl{
+      color:white;
+    }
+  }
+
+  #D{
+    background: #4F8224;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #4F8224;
+    &:hover{
+      background: white;
+      color: #4F8224;
+      text-decoration: none;
+      #Dl{
+        color: #4F8224;
+        text-decoration: none;
+      }
+    }
+    #Dl{
+      color:white;
+    }
+  }
+
+  #TF{
+    background: #337bae;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #337bae;
+    &:hover{
+      background: white;
+      color: #337bae;
+      text-decoration: none;
+      #TFl{
+        color: #337bae;
+        text-decoration: none;
+      }
+    }
+    #TFl{
+      color: white;
+    }
+  }
+
+  #T{
+    background: #ffbb00;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: white;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #ffbb00;
+    &:hover{
+      background: white;
+      color: #ffbb00;
+      text-decoration: none;
+      #Tl{
+        color: #ffbb00;
+        text-decoration: none;
+      }
+    }
+    #Tl{
+      color: white;
+    }
+  }
