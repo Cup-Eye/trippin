@@ -1,35 +1,60 @@
-<div class="timeframes-container">
-  <p><%= link_to "Back", trip_path(@board.trip), class: "trip-btn" %></p>
-  <h1>Proposed Timeframes: </h1>
-  <% @timeframes.each do |tf| %>
-    <p><%= tf.start_date %> - <%= tf.end_date %> (<%=tf.user.first_name%>)
-      <%= link_to "Edit", edit_timeframe_path(tf), class: "time-btn"  %>
-      <%= link_to "Delete", timeframe_path(tf),
+<h1>Proposed Timeframes: </h1>
+
+<% @timeframes.each do |tf| %>
+  <p><%= tf.start_date %> - <%= tf.end_date %> (<%=tf.user.first_name%>)
+
+
+  <%= link_to "Edit", edit_timeframe_path(tf) %>
+  <%= link_to "Delete", timeframe_path(tf),
         method: :delete,
-        data: { confirm: "Are you sure you want to delete this Timeframe?" }, class: "time-btn" %>
-    </p>
-    <p> <%= tf.description %> </p>
+        data: { confirm: "Are you sure you want to delete this Timeframe?" }%>
+        </p>
+  <p> <%= tf.description %> </p>
+<% end %>
+
+
+<%= link_to "Add Timeframe", new_timeframe_board_timeframe_path(@board) %>
+<p><%= link_to "Back", trip_path(@board) %></p>
+
+
+
+<% i = 2 %>
+<% col = 1 %>
+
+<div class="wrapper" style="grid-template-columns: repeat(<%= (@last_date - @earliest_date).to_i %>, minmax(20px, 40px));">
+
+
+
+  <%=  @total_dates.times do %>
+    <div class="grid-day" style='grid-column: <%= col %>
+       / span 1 ; grid-row: 1/ span 1;'><%= (@first_day_grid.next_day).strftime('%a') %>
+        </div>
+      <% col += 1 %>
+      <% @first_day_grid += 1 %>
+
+    <% end %>
+
+
+
+
+ <% @timeframes.each do |tf| %>
+  <!-- <%#= 1 + (tf.start_date - <%= @earliest_date%>).to_i %> -->
+
+  <div class="one" style='grid-column: <%= 1 + (tf.start_date - @earliest_date).to_i %>
+  / <%= 1 + (tf.start_date - @earliest_date).to_i + (tf.end_date - tf.start_date).to_i %>; grid-row: <%= i %>/ <%= i %> ;'>
+
+<div class="d-flex justify-content-between"><%=tf.user.first_name%>:
+  <%= link_to "edit", edit_timeframe_path(tf) %></div>
+  <br>
+  <%= (tf.start_date).strftime('%e.%m') %> - <%= (tf.end_date).strftime('%e.%m') %>
+  <%#= link_to "🗑", timeframe_path(tf),
+        method: :delete,
+        data: { confirm: "Are you sure you want to delete this Timeframe?" }%>
+
+</div>
+  <br>
+  <% i += 1 %>
   <% end %>
-  <h2></h2>
-
-  <%= link_to "Add Timeframe", new_timeframe_board_timeframe_path(@board), class: "time-btn" %>
-
-  <% i = 1 %>
-  <div class="wrapper" style="grid-template-columns: repeat(<%= (@last_date - @earliest_date).to_i %>, 1fr);">
-   <% @timeframes.each do |tf| %>
-   <!-- <%#= 1 + (tf.start_date - <%= @earliest_date%>).to_i %> -->
-
-   <div class="one" style='grid-column: <%= 1 + (tf.start_date - @earliest_date).to_i %>
-   / <%= 1 + (tf.start_date - @earliest_date).to_i + (tf.end_date - tf.start_date).to_i %>; grid-row: <%= i %>/ <%= i %> ;'><%=tf.user.first_name%>: <%= tf.start_date %> - <%= tf.end_date %>
-   <%= link_to "✏️", edit_timeframe_path(tf) %>
-   <%= link_to "🗑", timeframe_path(tf),
-    method: :delete,
-    data: { confirm: "Are you sure you want to delete this Timeframe?" }%>
-  </div>
- <br>
- <% i += 1 %>
- <% end %>
-  </div>
 </div>
 
 
