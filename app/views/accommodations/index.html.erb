@@ -1,6 +1,6 @@
 <div class="accom-container">
   <div class="accom-action">
-    <p><%= link_to "Back", trip_boards_path(@board), class: "trip-btn" %></p>
+    <p><%= link_to "Back", trip_path(@board.trip), class: "trip-btn" %></p>
     <%= link_to "Add Accommodation", new_accommodation_board_accommodation_path(@board), class: "accom-btn" %>
   </div>
   <% @accommodations.each do |acc| %>
