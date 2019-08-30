@@ -117,6 +117,12 @@ board = trip.create_accommodation_board!({
   description: "Discover the perfect place to stay!"
   })
 
+  # validates :name, presence: true, length: { maximum: 50 }
+  # validates :url, presence: true, uniqueness: true
+  # validates :address, presence: true, length: { maximum: 100 }
+  # validates :price, presence: true, length: { maximum: 10 }
+  # validates :kind, presence: true
+
 board.accommodations.create!(
   [
     {
