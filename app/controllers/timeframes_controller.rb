@@ -5,7 +5,7 @@ class TimeframesController < ApplicationController
     if @timeframes.any?
       @earliest_date = @timeframes.order(start_date: :asc).first.start_date
       @last_date = @timeframes.order(end_date: :desc).first.end_date
-      @total_dates = (@last_date - @earliest_date).to_i
+      @total_dates = (@last_date - @earliest_date).to_i + 1
       @first_day_grid = @timeframes.order(start_date: :asc).first.start_date
     end
   end
