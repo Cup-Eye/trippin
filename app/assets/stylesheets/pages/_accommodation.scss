@@ -24,19 +24,24 @@
 
 .accom-card-link a:link{
   text-decoration: none;
+  color: black;
 }
 
-.accom-card-content{
+.accom-card-content p{
   color: black;
 }
 
 .accom-header{
   display: flex;
   justify-content: space-between;
+  color: black;
 }
 
 .accom-price{
   font-size: 20px;
+  color: black;
+  // display: flex;
+  // justify-content: flex-end;
 }
 
 .accom-action-list{
@@ -45,6 +50,22 @@
   justify-content: flex-end;
 }
 
-.accom-action-list .trip-btn{
-  margin: 5px 15px;
+
+.vote-list li{
+  display: inline;
 }
+
+.voted {
+  border: 4px solid #6EB5C0;
+}
+
+.accom-vote-info{
+  display: flex;
+  justify-content: space-between;
+}
+
+.accom-bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
