@@ -7,6 +7,7 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
 
   has_many :trips, dependent: :nullify
+  has_many :comments
 
   has_many :destinations, dependent: :nullify
   has_many :accommodations, dependent: :nullify

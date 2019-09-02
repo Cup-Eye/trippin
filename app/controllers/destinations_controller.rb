@@ -3,6 +3,8 @@ class DestinationsController < ApplicationController
     @board = Board.find(params[:destination_board_id])
     @trip = @board.trip
     @destinations = @board.destinations
+    @comment = Comment.new
+    @board.comments
   end
 
   def new

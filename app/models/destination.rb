@@ -1,5 +1,5 @@
 class Destination < ApplicationRecord
-  belongs_to :board, optional: :true
+  belongs_to :board, optional: true
   belongs_to :user
 
   validates :name, presence: true, uniqueness: true, length: { minimum: 3 }
