@@ -11,18 +11,18 @@
         </div>
       <% end %>
     </div>
-    <% @trips.each do |trip| %>
+    <% @participants.each do |participant| %>
     <div class="trip-card-link">
-      <%= link_to trip_path(trip) do %>
+      <%= link_to trip_path(participant.trip) do %>
       <div class = "trip-card">
         <div class="trip-card-content">
-          <% unless trip.photo.nil? %>
-            <div class="trip-photo"><%= cl_image_tag trip.photo, height: 170, width: 160, crop: :fill %></div>
+          <% unless participant.trip.photo.nil? %>
+            <div class="trip-photo"><%= cl_image_tag participant.trip.photo, height: 170, width: 160, crop: :fill %></div>
           <% end %>
-          <h4><%= trip.name %> to <%=trip.destination %></h4>
+          <h4><%= participant.trip.name %> to <%=participant.trip.destination %></h4>
           <div class="trip-action-list">
-            <p><%= link_to "Edit", edit_trip_path(trip), class: "trip-btn" %></p>
-            <p><%= link_to "Delete", trip_path(trip),
+            <p><%= link_to "Edit", edit_trip_path(participant.trip), class: "trip-btn" %></p>
+            <p><%= link_to "Delete", trip_path(participant.trip),
               method: :delete,
               data: { confirm: "Are you sure you want to delete this Trip?" }, class: "trip-btn"%></p>
 

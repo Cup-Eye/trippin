@@ -1,4 +1,5 @@
 <div class="board-container">
+  <%= link_to "Add participants", new_trip_participant_path(@trip), class: "trip-btn" %>
   <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
   <div class="board-container-small">
     <% @boards.each do |board| %>

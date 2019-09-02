@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   has_many :trips, dependent: :nullify
   has_many :comments
+  has_many :participants
 
   has_many :destinations, dependent: :nullify
   has_many :accommodations, dependent: :nullify
