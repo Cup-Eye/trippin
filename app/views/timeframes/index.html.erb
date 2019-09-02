@@ -21,13 +21,14 @@
 
   <% if @timeframes.any? %>
 
+  <%  x = "something to repush " %>
+
     <div class="wrapper" style="grid-template-columns: repeat(<%= @total_dates + 1%>, minmax(30px, 40px));">
 
 
     <!-- display month -->
 
     <!-- display weekdays and dates -->
-
 
     <% @total_dates.times do |i| %>
       <span class="<%="grid-month-#{@first_day_grid.month}"%>"></span>
