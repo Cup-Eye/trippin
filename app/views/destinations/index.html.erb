@@ -5,49 +5,47 @@
 
         <div class=side-link>
           <%= link_to (trip_path(@trip)) do %>
-            <div class="side-button" id="B">
-              <div id="Bl">Back to Boards </div>
-            </div>
+          <div class="side-button" id="B">
+            <div id="Bl">Back to Boards </div>
+          </div>
           <%end%>
         </div>
 
         <div class="side-link">
           <%= link_to (timeframe_board_timeframes_path(@trip.timeframe_board)) do %>
-            <div class="side-button" id="TF">
-              <i class="far fa-calendar-alt fa-2x"></i>
-              <div id="Tfl">Time Frames</div>
-            </div>
+          <div class="side-button" id="TF">
+            <i class="far fa-calendar-alt fa-2x"></i>
+            <div id="Tfl">Time Frames</div>
+          </div>
           <%end%>
         </div>
 
         <div class="side-link">
           <%= link_to (destination_board_destinations_path(@trip.destination_board)) do %>
-            <div class= "side-button" id="active">
-              <i class="fas fa-globe-americas fa-2x"></i>
-              <div id="Active">Destination</div>
-            </div>
+          <div class= "side-button" id="active">
+            <i class="fas fa-globe-americas fa-2x"></i>
+            <div id="Active">Destination</div>
+          </div>
           <%end%>
         </div>
 
         <div class="side-link">
           <%= link_to (transportation_board_transportations_path(@trip.transportation_board)) do %>
-            <div class="side-button" id="T">
-              <i class="fas fa-plane fa-2x"></i>
-              <div id="Tl">Transportation</div>
-            </div>
+          <div class="side-button" id="T">
+            <i class="fas fa-plane fa-2x"></i>
+            <div id="Tl">Transportation</div>
+          </div>
           <%end%>
         </div>
 
         <div class="side-link">
           <%= link_to (accommodation_board_accommodations_path(@trip.accommodation_board)) do %>
-            <div class= "side-button" id="A">
-              <i class="fas fa-home fa-2x"></i>
-              <div id="Al">Accommodation</div>
-            </div>
+          <div class= "side-button" id="A">
+            <i class="fas fa-home fa-2x"></i>
+            <div id="Al">Accommodation</div>
+          </div>
           <%end%>
         </div>
-
-
       </div>
     </div>
     <div class="col-12 col-lg-7">
@@ -57,58 +55,64 @@
           <%= link_to "+ Add Destination", new_destination_board_destination_path(@board), class: "add"%>
         </div>
         <% @destinations.each do |dest| %>
-          <div class="destination-card-link <%= 'voted' if current_user.liked? dest %>" >
-            <div class="destination-card" class="justify-content-around">
-              <h1><%= dest.name %></h1>
-              <p><%= dest.description %></p>
-              <% if current_user.liked? dest%>
-              <p><%= link_to destination_destination_votes_path(dest), method: :delete do %>
-              <i class="fas fa-check-square fa-2x"></i>
-              <% end %>
-              </p>
-              <% else %>
-              <p><%= link_to destination_destination_votes_path(dest), method: :post do %>
-              <i class="far fa-check-square fa-2x"></i>
-              <% end %>
-              </p>
-              <% end %>
-              <p>Votes: <%= dest.votes_for.size %></p>
-              <p>Voted by:</p>
-              <ul>
-                <% dest.find_votes_for.each do |vote| %>
-                  <li>
-                    <%= cl_image_tag vote.voter.photo,
-                      width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-                  </li>
+        <div class="destination-card-link" >
+          <div class="destination-card <%= 'voted' if current_user.liked? dest %>" class="justify-content-around">
+            <h1><%= dest.name %></h1>
+            <p><%= dest.description %></p>
+            <% if current_user.liked? dest%>
+              <p>
+                <%= link_to destination_destination_votes_path(dest), method: :delete do %>
+                  <i class="fas fa-check-square fa-2x"></i>
                 <% end %>
-              </ul>
-            </div>
-            <div class="destination-buttons">
-              <%= link_to "Delete", destination_path(dest), class: "dest-btn",
-                method: :delete,
-                data: { confirm: "Are you sure you want to delete this Destination?" }%>
-              <%= link_to "Edit", edit_destination_path(dest), class: "dest-btn" %>
+              </p>
+            <% else %>
+              <p>
+                <%= link_to destination_destination_votes_path(dest), method: :post do %>
+                  <i class="far fa-check-square fa-2x"></i>
+                <% end %>
+              </p>
+            <% end %>
+            <div class="dest-bottom">
+              <div class="dest-vote-info">
+                <p><%= dest.votes_for.size %> Votes by:</p>
+                <ul>
+                  <% dest.find_votes_for.each do |vote| %>
+                    <li>
+                      <%= cl_image_tag vote.voter.photo,
+                        width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                    </li>
+                  <% end %>
+                </ul>
+              </div>
+              <div class="destination-buttons">
+                <%= link_to "Edit", edit_destination_path(dest), class: "dest-btn" %>
+                <%= link_to "Delete", destination_path(dest), class: "dest-btn",
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this Destination?" }%>
+              </div>
             </div>
           </div>
         <% end %>
+      </div>
+    </div>
       </div>
     </div>
     <div class="col-12 col-lg-3">
       <div class="comment-container">
         <div class="comment-list">
           <% @board.comments.each do |comment| %>
-            <div class="message-container">
-              <p class="sender"><%=comment.user.first_name%> <%=comment.user.photo%></p>
-              <div class="message"><%= comment.content %></div>
-            </div>
+          <div class="message-container">
+            <p class="sender"><%=comment.user.first_name%> <%=comment.user.photo%></p>
+            <div class="message"><%= comment.content %></div>
+          </div>
           <%end%>
         </div>
         <div class="comment-form">
           <%= simple_form_for ([@board, @comment]), html: { autocomplete: 'off' } do |f| %>
-            <%= f.input :content, label: false  %>
-            <%= f.submit "Send", class: "send-btn"%>
+          <%= f.input :content, label: false  %>
+          <%= f.submit "Send", class: "send-btn"%>
           <%end%>
         </div>
       </div>
+    </div>
   </div>
-</div>
