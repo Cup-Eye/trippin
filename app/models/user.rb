@@ -13,4 +13,5 @@ class User < ApplicationRecord
   has_many :accommodations, dependent: :nullify
   has_many :timeframes, dependent: :nullify
   has_many :transportations, dependent: :nullify
+  acts_as_voter
 end
