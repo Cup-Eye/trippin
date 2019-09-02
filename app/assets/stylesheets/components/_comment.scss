@@ -5,6 +5,12 @@
   text-align: right;
 }
 
+.comment-list{
+  overflow: auto;
+  height: 500px;
+  text-align: justify;
+}
+
 .message-container{
   margin-top: 10px;
 }
@@ -28,6 +34,9 @@
 
 .comment-form{
   margin-top: 20px;
+  // position: absolute;
+  // bottom: 10px;
+  // width: 85%;
 }
 
 .send-btn{
