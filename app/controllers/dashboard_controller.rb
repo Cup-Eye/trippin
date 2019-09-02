@@ -1,5 +1,5 @@
 class DashboardController < ApplicationController
   def show
-    @trips = current_user.trips
+    @participants = current_user.participants
   end
 end

@@ -1,5 +1,6 @@
 class Trip < ApplicationRecord
   belongs_to :user
+  has_many :participants, dependent: :destroy
   validates :name, presence: true
 
   mount_uploader :photo, PhotoUploader
@@ -22,6 +23,7 @@ class Trip < ApplicationRecord
   has_many :transportations, through: :transportation_board
 
   after_commit :create_four_boards, on: :create
+  after_commit :create_participant_for_admin, on: :create
 
   def boards
     [accommodation_board, destination_board, timeframe_board, transportation_board]
@@ -67,10 +69,14 @@ class Trip < ApplicationRecord
 
   private
 
+  def create_participant_for_admin
+    Participant.create(trip: self, user: user)
+  end
+
   def create_four_boards
-    create_accommodation_board(status: "incomplete", description: "Discover the perfect place to stay!")
-    create_transportation_board(status: "incomplete", description: "Coordinate your travels!")
     create_timeframe_board(status: "incomplete", description: "Find the most suitable dates!")
     create_destination_board(status: "incomplete", description: "Decide where you wanna go!")
+    create_transportation_board(status: "incomplete", description: "Coordinate your travels!")
+    create_accommodation_board(status: "incomplete", description: "Discover the perfect place to stay!")
   end
 end
