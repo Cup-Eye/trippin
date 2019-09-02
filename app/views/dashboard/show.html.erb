@@ -19,7 +19,7 @@
           <% unless participant.trip.photo.nil? %>
             <div class="trip-photo"><%= cl_image_tag participant.trip.photo, height: 170, width: 160, crop: :fill %></div>
           <% end %>
-          <h4><%= participant.trip.name %> to <%=participant.trip.destination %></h4>
+          <h4><%= participant.trip.name %><%=participant.trip.destination %></h4>
           <div class="trip-action-list">
             <p><%= link_to "Edit", edit_trip_path(participant.trip), class: "trip-btn" %></p>
             <p><%= link_to "Delete", trip_path(participant.trip),
