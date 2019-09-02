@@ -346,3 +346,42 @@ body{
       color: white;
     }
   }
+
+  #active{
+    background: white;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: #d9d9d9;
+    width: 250px;
+    border-radius: 10px;
+    border: 2px solid #d9d9d9;
+    &:hover{
+      text-decoration: none;
+      color: #d9d9d9;
+      #Active{
+        color: #d9d9d9;
+        text-decoration: none;
+      }
+    }
+    #Active{
+      color: #d9d9d9;
+    }
+  }
+
+  .head{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .add{
+    color: black;
+    font-size: 18px;
+    padding-top: 5px;
+    transition: font-size .2s ease;
+    &:hover{
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
+    }
+  }
