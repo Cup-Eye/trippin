@@ -35,7 +35,6 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @user = current_user
     @trip.destroy
-    raise
     redirect_to dashboard_path(@user)
   end
 

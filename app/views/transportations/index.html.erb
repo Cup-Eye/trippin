@@ -12,17 +12,17 @@
 
       <div class= "side-button" id="D">
         <i class="fas fa-globe-americas fa-2x"></i>
-        <%= link_to "Destintion", destination_board_destinations_path(@boardD), id: "Dl"%>
+        <%= link_to "Destintion", destination_board_destinations_path(@trip.destination_board), id: "Dl"%>
       </div>
 
       <div class= "side-button" id="A">
         <i class="fas fa-home fa-2x"></i>
-        <%= link_to "Accommodation", accommodation_board_accommodations_path(@boardA), id: "Al"%>
+        <%= link_to "Accommodation", accommodation_board_accommodations_path(@trip.accommodation_board), id: "Al"%>
       </div>
 
       <div class="side-button" id="TF">
         <i class="far fa-calendar-alt fa-2x"></i>
-        <%= link_to "Time Frames", timeframe_board_timeframes_path(@boardTf), id: "TFl"%>
+        <%= link_to "Time Frames", timeframe_board_timeframes_path(@trip.timeframe_board), id: "TFl"%>
       </div>
     </div>
     <div class="col-12 col-lg-6">

@@ -1,6 +1,14 @@
-[User, Trip, Board, Destination, Accommodation, Transportation, Timeframe].each do |table|
-  ActiveRecord::Base.connection.execute("TRUNCATE #{table.table_name} CASCADE")
-end
+# [User, Trip, Board, Destination, Accommodation, Transportation, Timeframe].each do |table|
+#   ActiveRecord::Base.connection.execute("TRUNCATE #{table.table_name} CASCADE")
+# end
+
+Timeframe.destroy_all
+Transportation.destroy_all
+Accommodation.destroy_all
+Destination.destroy_all
+Board.destroy_all
+Trip.destroy_all
+User.destroy_all
 
 
 puts "Creating users...."
@@ -74,40 +82,53 @@ User.create!(
 # User.second.update()
 
 puts "Creating trips..."
-Trip.skip_callback(:commit, :after, :create_four_boards)
-Trip.create!(
+# Trip.skip_callback(:commit, :after, :create_four_boards)
+trip1 = Trip.create!(
   {
     user: User.first,
     name: "Bachelor's Party",
     destination: "Spain"
   }
 )
-Trip.set_callback(:commit, :after, :create_four_boards)
 
-puts "Creating destinations..."
-trip = Trip.first
-board = trip.create_destination_board!({
-  title: "Destination",
-  status: "incomplete",
-  description: "Decide where you wanna go!"
-})
+dest_board = trip1.destination_board
 
-
-board.destinations.create!(
-  [
+Destination.create([
     {
       user: User.first,
-      name: "Ibiza"
+      name: "Ibiza",
+      board: dest_board,
+      winning: true
     },
     {
       user: User.second,
-      name: "Barcelona"
+      name: "Barcelona",
+      board: dest_board
     },
-  ]
-)
+  ])
+#Trip.set_callback(:commit, :after, :create_four_boards)
 
-board.destinations.sample.update(winning: true)
-board.save!
+# puts "Creating destinations..."
+# trip = Trip.first
+# board = trip.create_destination_board!({
+#   title: "Destination",
+#   status: "incomplete",
+#   description: "Decide where you wanna go!"
+# })
+
+
+# board.destinations.create!(
+#   [
+#     {
+#       user: User.first,
+#       name: "Ibiza"
+#     },
+#     {
+#       user: User.second,
+#       name: "Barcelona"
+#     },
+#   ]
+# )
 
 puts "Creating accommodations..."
 trip = Trip.first
@@ -115,7 +136,7 @@ board = trip.create_accommodation_board!({
   title: "Accommodation",
   status: "incomplete",
   description: "Discover the perfect place to stay!"
-  })
+})
 
   # validates :name, presence: true, length: { maximum: 50 }
   # validates :url, presence: true, uniqueness: true

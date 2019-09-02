@@ -21,7 +21,7 @@ class Trip < ApplicationRecord
   has_one :transportation_board, dependent: :destroy
   has_many :transportations, through: :transportation_board
 
-  after_commit :create_four_boards
+  after_commit :create_four_boards, on: :create
 
   def boards
     [accommodation_board, destination_board, timeframe_board, transportation_board]
