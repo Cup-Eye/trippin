@@ -1,32 +1,57 @@
 <div class="accom-container-large">
   <div class="row">
-    <div class="col-12 col-lg-3">
-      <div class="side-button" id="B">
-        <%= link_to "Back to all Boards", trip_path(@trip), id: "Bl"%>
-      </div>
+    <div class="col-12 col-lg-2">
+      <div class="side-menu">
 
-      <div class="side-button" id="TF">
-        <i class="far fa-calendar-alt fa-2x"></i>
-        <%= link_to "Time Frames", timeframe_board_timeframes_path(@trip.timeframe_board), id: "TFl"%>
-      </div>
+        <div class=side-link>
+          <%= link_to (trip_path(@trip)) do %>
+            <div class="side-button" id="B">
+              <div id="Bl">Back to Boards </div>
+            </div>
+          <%end%>
+        </div>
 
-      <div class= "side-button" id="D">
-        <i class="fas fa-globe-americas fa-2x"></i>
-        <%= link_to "Destination", destination_board_destinations_path(@trip.destination_board), id: "Dl"%>
-      </div>
+        <div class="side-link">
+          <%= link_to (timeframe_board_timeframes_path(@trip.timeframe_board)) do %>
+            <div class="side-button" id="TF">
+              <i class="far fa-calendar-alt fa-2x"></i>
+              <div id="Tfl">Time Frames</div>
+            </div>
+          <%end%>
+        </div>
 
-      <div class="side-button" id="T">
-        <i class="fas fa-plane fa-2x"></i>
-        <%= link_to "Transportation", transportation_board_transportations_path(@trip.transportation_board), id: "Tl"%>
-      </div>
 
-      <div class= "side-button" id="active">
-        <i class="fas fa-home fa-2x"></i>
-        <%= link_to "Accommodation", accommodation_board_accommodations_path(@trip.accommodation_board), id: "Active"%>
+        <div class="side-link">
+          <%=link_to (destination_board_destinations_path(@trip.destination_board)) do %>
+            <div class= "side-button" id="D">
+              <i class="fas fa-globe-americas fa-2x"></i>
+              <div id="Dl">Destination</div>
+            </div>
+          <%end%>
+        </div>
+
+
+        <div class="side-link">
+          <%= link_to (transportation_board_transportations_path(@trip.transportation_board)) do %>
+            <div class="side-button" id="T">
+              <i class="fas fa-plane fa-2x"></i>
+              <div id="Tl">Transportation</div>
+            </div>
+          <%end%>
+        </div>
+
+        <div class="side-link">
+          <%= link_to (accommodation_board_accommodations_path(@trip.accommodation_board)) do %>
+            <div class= "side-button" id="active">
+              <i class="fas fa-home fa-2x"></i>
+              <div id="Active">Accommodation</div>
+            </div>
+          <%end%>
+        </div>
       </div>
     </div>
 
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-7">
       <div class="accom-container">
         <div class="head">
           <h2>Accommodation</h2>
@@ -71,7 +96,7 @@
           <%end%>
         </div>
         <div class="comment-form">
-          <%= simple_form_for ([@board, @comment]) do |f| %>
+          <%= simple_form_for ([@board, @comment]), html: { autocomplete: 'off' } do |f| %>
             <%= f.input :content, label: false %>
             <%= f.submit "Send", class: "send-btn"%>
           <%end%>
