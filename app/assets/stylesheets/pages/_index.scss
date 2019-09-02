@@ -1,5 +1,11 @@
 // Import page-specific CSS files here.
 @import "home";
+$trip_color: #626d71;
+$accom_color: #fb6542;
+$dest_color: #4F8224;
+$trans_color: #ffbb00;
+$time_color: #337bae;
+$boxshadow_normal: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
 
 body{
   background: white;
@@ -24,7 +30,7 @@ body{
 
 .trip-card{
   background: white;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  box-shadow: $boxshadow_normal;
   border-radius: 2px;
   padding: 10px;
   margin-right: 20px;
@@ -52,7 +58,7 @@ body{
 }
 
 .trip-card-content h4{
-  color: #626d71;
+  color: $trip_color;
   padding-bottom: 10px;
 }
 
@@ -81,9 +87,8 @@ body{
 }
 
 .board-card-TimeframeBoard{
-  // background: #375e97;
-  background: #337bae;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  background: $time_color;
+  box-shadow: $boxshadow_normal;
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -96,13 +101,12 @@ body{
 
 .board-card-TimeframeBoard:hover{
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
-  // background: #626d71;
   background: #98A6A9;
 }
 
 .board-card-AccommodationBoard{
-  background: #fb6542;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  background: $accom_color;
+  box-shadow: $boxshadow_normal;
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -119,7 +123,7 @@ body{
 }
 
 .board-card-TransportationBoard{
-  background: #ffbb00;
+  background: $trans_color;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border-radius: 10px;
   padding: 20px;
@@ -137,8 +141,8 @@ body{
 }
 
 .board-card-DestinationBoard{
-  background: #4F8224;
-  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  background: $dest_color;
+  box-shadow: $boxshadow_normal;
   border-radius: 10px;
   padding: 20px;
   color: white;
@@ -168,7 +172,7 @@ body{
   .board-card-DestinationBoard {
     &:hover {
       .icon::before {
-        color: #4F8224 !important;
+        color: $dest_color !important;
       }
     }
     .icon::before {
@@ -180,7 +184,7 @@ body{
   .board-card-TimeframeBoard {
     &:hover {
       .icon::before {
-        color: #337bae !important;
+        color: $time_color !important;
       }
     }
     .icon::before {
@@ -192,7 +196,7 @@ body{
   .board-card-TransportationBoard {
     &:hover {
       .icon::before {
-        color: #ffbb00 !important;
+        color: $trans_color !important;
       }
     }
     .icon::before {
@@ -204,7 +208,7 @@ body{
    .board-card-AccommodationBoard {
     &:hover {
       .icon::before {
-        color: #fb6542 !important;
+        color: $accom_color !important;
       }
     }
     .icon::before {
@@ -214,10 +218,16 @@ body{
   }
 
 #plus{
-  color: #626d71;
+  color: $trip_color;
   padding-top: 60px;
   padding-left: 60px;
   font-size: 50px;
+}
+
+.side-menu{
+  // border-right: double 7px #dee1ec;
+  background: #f5f5f5;
+  padding: 20px 0;
 }
 
 .side-button{
@@ -225,23 +235,28 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 50px;
+}
+
+.side-link a:link{
+  text-decoration: none;
 }
 
   #A{
-    background: #fb6542;
+    background: $accom_color;
     opacity: 1;
     padding: 8px;
     margin: 10px;
-    width: 250px;
+    width: 190px;
     border-radius: 10px;
     color: white;
-    border: 2px solid #fb6542;
+    border: 2px solid $accom_color;
     &:hover{
       background: white;
-      color: #fb6542;
+      color: $accom_color;
       text-decoration: none;
       #Al{
-        color: #fb6542;
+        color: $accom_color;
         text-decoration: none;
       }
     }
@@ -252,20 +267,20 @@ body{
 
 
   #B{
-    background: #626d71;
+    background: $trip_color;
     opacity: 1;
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 250px;
+    width: 190px;
     border-radius: 10px;
-    border: 2px solid #626d71;
+    border: 2px solid $trip_color;
     &:hover{
       background: white;
-      color: #626d71;
+      color: $trip_color;
       text-decoration: none;
       #Bl{
-        color: #626d71;
+        color: $trip_color;
         text-decoration: none;
       }
     }
@@ -275,20 +290,20 @@ body{
   }
 
   #D{
-    background: #4F8224;
+    background: $dest_color;
     opacity: 1;
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 250px;
+    width: 190px;
     border-radius: 10px;
-    border: 2px solid #4F8224;
+    border: 2px solid $dest_color;
     &:hover{
       background: white;
-      color: #4F8224;
+      color: $dest_color;
       text-decoration: none;
       #Dl{
-        color: #4F8224;
+        color: $dest_color;
         text-decoration: none;
       }
     }
@@ -298,20 +313,20 @@ body{
   }
 
   #TF{
-    background: #337bae;
+    background: $time_color;
     opacity: 1;
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 250px;
+    width: 190px;
     border-radius: 10px;
-    border: 2px solid #337bae;
+    border: 2px solid $time_color;
     &:hover{
       background: white;
-      color: #337bae;
+      color: $time_color;
       text-decoration: none;
       #TFl{
-        color: #337bae;
+        color: $time_color;
         text-decoration: none;
       }
     }
@@ -321,24 +336,63 @@ body{
   }
 
   #T{
-    background: #ffbb00;
+    background: $trans_color;
     opacity: 1;
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 250px;
+    width: 190px;
     border-radius: 10px;
-    border: 2px solid #ffbb00;
+    border: 2px solid $trans_color;
     &:hover{
       background: white;
-      color: #ffbb00;
+      color: $trans_color;
       text-decoration: none;
       #Tl{
-        color: #ffbb00;
+        color: $trans_color;
         text-decoration: none;
       }
     }
     #Tl{
       color: white;
+    }
+  }
+
+  #active{
+    background: white;
+    opacity: 1;
+    padding: 8px;
+    margin: 10px;
+    color: #d9d9d9;
+    width: 190px;
+    border-radius: 10px;
+    border: 2px solid #d9d9d9;
+    &:hover{
+      text-decoration: none;
+      color: #d9d9d9;
+      #Active{
+        color: #d9d9d9;
+        text-decoration: none;
+      }
+    }
+    #Active{
+      color: #d9d9d9;
+    }
+  }
+
+  .head{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .add{
+    color: black;
+    font-size: 18px;
+    padding-top: 5px;
+    transition: font-size .2s ease;
+    &:hover{
+      text-decoration: none;
+      color: black;
+      font-size: 20px;
     }
   }

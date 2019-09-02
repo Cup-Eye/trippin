@@ -9,17 +9,41 @@
   margin: 0 auto;
 }
 
+
 .wrapper > div {
-  border: 2px solid grey;
+  border: 1px solid grey;
   border-radius: 5px;
   padding: 1px;
   color: black;
 }
+.grid-month- {
+  &9 {
+    border-bottom: solid 10px;
+    margin-bottom: 10px;
+    border-color: grey
+  }
+  &10 {
+    border-bottom: solid 10px;
+    margin-bottom: 10px;
+    border-color: blue
+  }
+   &11 {
+    border-bottom: solid 10px;
+    margin-bottom: 10px;
+    border-color: green
+  }
+   &12 {
+    border-bottom: solid 10px;
+    margin-bottom: 10px;
+    border-color: orange
+  }
+}
+
 .wrapper {
   display: grid;
   // grid-template-columns: repeat(15, 1fr);
   // grid-gap: 10px;
-  grid-auto-rows: minmax(50px, 70px);
+  grid-auto-rows: minmax(50px, 50px);
   overflow-x: scroll;
 }
 
@@ -30,7 +54,7 @@
 }
 
 .grid-day {
-  background: yellow;
+  background: beige;
 
 }
 // .two {
