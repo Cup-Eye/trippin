@@ -12,7 +12,7 @@
 
       <div class= "side-button" id="D">
         <i class="fas fa-globe-americas fa-2x"></i>
-        <%= link_to "Destintion", destination_board_destinations_path(@trip.destination_board), id: "Dl"%>
+        <%= link_to "Destination", destination_board_destinations_path(@trip.destination_board), id: "Dl"%>
       </div>
 
       <div class="side-button" id="TF">
@@ -30,9 +30,9 @@
       <div class="accom-container">
         <h2>Accommodation</h2>
         <% @accommodations.each do |acc| %>
-          <div class="accom-card-link">
+          <div class="accom-card-link <%= 'voted' if current_user.liked? acc %>" >
             <%= link_to ("#{acc.url}"), target: :_blank do %>
-              <div class="accom-card">
+              <div class="accom-card>
                 <div class="accom-card-content">
                   <div class="accom-header">
                     <h3><strong><%=acc.name%></strong></h3>
@@ -43,6 +43,34 @@
                     <p>Accommodation Type: <%=acc.kind%></p>
                     <p class="accom-price"><strong><%=acc.price%>$</strong>/day</p>
                   </div>
+                  <div class="accom-votes">
+
+                    <% if current_user.liked? acc%>
+                    <p><%= link_to accommodation_accommodation_votes_path(acc), method: :delete do %>
+                    <i class="fas fa-check-square fa-2x"></i>
+                    <% end %>
+                    </p>
+                    <% else %>
+                    <p><%= link_to accommodation_accommodation_votes_path(acc), method: :post do %>
+                    <i class="far fa-check-square fa-2x"></i>
+                    <% end %>
+                    </p>
+                    <% end %>
+
+                    <p>Votes: <%= acc.votes_for.size %></p>
+                    <p>Voted by:</p>
+                    <ul>
+                    <% acc.find_votes_for.each do |vote| %>
+                      <li>
+                  <%= cl_image_tag vote.voter.photo,
+                    width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+
+
+
+                      </li>
+                    <% end %>
+                  </ul>
+                 </div>
                 </div>
                 <div class="accom-action-list">
                   <%= link_to "Edit", edit_accommodation_path(acc), class: "accom-btn" %>

@@ -32,22 +32,32 @@
           <h2><%= link_to "+ Add new Destination", new_destination_board_destination_path(@board), class: "trip-btn"%></h2>
         </div>
         <% @destinations.each do |dest| %>
-          <div class="destination-card <%= 'voted' if current_user.liked? dest %>" >
-            <div class="" class="justify-content-around">
-              <h1><%= dest.name %><b> Number of votes</b></h1>
-            </div>
-            <p><%= dest.description %></p>
-            <p><%= link_to 'Vote', destination_destination_votes_path(dest), method: :post %></p>
-            <p><%= link_to 'Unvote', destination_destination_votes_path(dest), method: :delete %></p>
-            <p>Votes: <%= dest.votes_for.size %></p>
-            <p>Voted by:</p>
-            <ul>
-              <% dest.find_votes_for.each do |vote| %>
-                <li>
-                  <%= vote.voter.email %>
-                </li>
+          <div class="destination-card-link <%= 'voted' if current_user.liked? dest %>" >
+            <div class="destination-card" class="justify-content-around">
+              <h1><%= dest.name %></h1>
+              <p><%= dest.description %></p>
+              <% if current_user.liked? dest%>
+              <p><%= link_to destination_destination_votes_path(dest), method: :delete do %>
+              <i class="fas fa-check-square fa-2x"></i>
               <% end %>
-            </ul>
+              </p>
+              <% else %>
+              <p><%= link_to destination_destination_votes_path(dest), method: :post do %>
+              <i class="far fa-check-square fa-2x"></i>
+              <% end %>
+              </p>
+              <% end %>
+              <p>Votes: <%= dest.votes_for.size %></p>
+              <p>Voted by:</p>
+              <ul>
+                <% dest.find_votes_for.each do |vote| %>
+                  <li>
+                    <%= cl_image_tag vote.voter.photo,
+                      width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
             <div class="destination-buttons">
               <%= link_to "Delete", destination_path(dest), class: "dest-btn",
                 method: :delete,
