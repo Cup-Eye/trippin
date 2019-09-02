@@ -1,28 +1,46 @@
-<div class="board-container">
-  <%= link_to "Add participants", new_trip_participant_path(@trip), class: "trip-btn" %>
-  <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
-  <div class="board-container-small">
-    <% @boards.each do |board| %>
-      <%if board.type == "TimeframeBoard"
-        link = timeframe_board_timeframes_path(board)
-      elsif board.type == "AccommodationBoard"
-        link = accommodation_board_accommodations_path(board)
-      elsif board.type == "TransportationBoard"
-        link = transportation_board_transportations_path(board)
-      elsif board.type == "DestinationBoard"
-        link = destination_board_destinations_path(board)
-      end%>
-      <div class="board-container-card">
-        <%= link_to link do %>
-          <div class=<%="board-card-#{board.type}"%>>
-            <span class="icon"></span>
-            <h2><%=board.name %></h2>
-            <p><%=board.description%></p>
-            <p>Status: <%=board.status&.capitalize%></p>
+
+<div class= "container-index">
+  <div class="banner-index">
+      <br>
+      <h1> Dashboard for your trip: <%= @trip.name %> </h1>
+      <br>
+    <div>
+      <p> Your travel group:
+        <%= cl_image_tag current_user.photo,
+                width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %> </p>
+    </div>
+  </div>
+    <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
+    <%= link_to "Add participants", new_trip_participant_path(@trip), class: "trip-btn" %>
+
+  <div class="home-container">
+
+      <div class="index-container">
+            <% @boards.each do |board| %>
+          <%if board.type == "TimeframeBoard"
+            link = timeframe_board_timeframes_path(board)
+          elsif board.type == "AccommodationBoard"
+            link = accommodation_board_accommodations_path(board)
+          elsif board.type == "TransportationBoard"
+            link = transportation_board_transportations_path(board)
+          elsif board.type == "DestinationBoard"
+            link = destination_board_destinations_path(board)
+          end%>
+            <div class="board-container-card">
+                <%= link_to link do %>
+              <div class=<%="board-card-#{board.type}"%>>
+                <span class="icon"></span>
+                <h2><%=board.name %></h2>
+                <p>Status: <%=board.status&.capitalize%></p>
+                <p><%=board.description%></p>
+              </div>
+              <% end %>
           </div>
-        <% end %>
+          <% end %>
       </div>
-    <% end %>
+    </div>
   </div>
 </div>
+
+
 
