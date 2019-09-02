@@ -32,9 +32,11 @@ Rails.application.routes.draw do
     resource :destination_votes, only: :destroy
   end
 
-  resources :accommodations, only: [:show, :edit, :update, :destroy]
+   resources :accommodations, only: [:show, :edit, :update, :destroy] do
+    resources :accommodation_votes, only: [:create]
+    resource :accommodation_votes, only: :destroy
+  end
+
   resources :timeframes, only: [:edit, :update, :destroy]
   resources :transportations, only: [:edit, :update, :destroy]
-
-
 end
