@@ -1,4 +1,5 @@
 class Destination < ApplicationRecord
+  acts_as_votable
   belongs_to :board, optional: :true
   belongs_to :user
 

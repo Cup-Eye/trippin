@@ -21,7 +21,11 @@ Rails.application.routes.draw do
     resources :transportations, only: [:new, :create, :index]
   end
 
-  resources :destinations, only: [:edit, :update, :destroy]
+  resources :destinations, only: [:edit, :update, :destroy] do
+    resources :destination_votes, only: [:create]
+    resource :destination_votes, only: :destroy
+  end
+
   resources :accommodations, only: [:show, :edit, :update, :destroy]
   resources :timeframes, only: [:edit, :update, :destroy]
   resources :transportations, only: [:edit, :update, :destroy]
