@@ -2,6 +2,8 @@
 #   ActiveRecord::Base.connection.execute("TRUNCATE #{table.table_name} CASCADE")
 # end
 
+Comment.destroy_all
+Participant.destroy_all
 Timeframe.destroy_all
 Transportation.destroy_all
 Accommodation.destroy_all
