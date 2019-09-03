@@ -1,5 +1,4 @@
 class DestinationVotesController < ApplicationController
-
   def create
     # Get the destination (find)
     @destination = Destination.find(params[:destination_id])

@@ -1,5 +1,4 @@
 class AccommodationVotesController < ApplicationController
-
   def create
     @accommodation = Accommodation.find(params[:accommodation_id])
     @accommodation.liked_by current_user
