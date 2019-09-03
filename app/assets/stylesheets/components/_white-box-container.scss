@@ -1,8 +1,8 @@
 $trip_color: #626d71;
-$accom_color: #5ca0d3;
+$accom_color: #00bdaa;
 $dest_color: #30e3ca;
-$trans_color: #00bdaa;
-$time_color: #6bc5d2;
+$trans_color: #6bc5d2;
+$time_color: #5ca0d3;
 $grey: #98A6A9;
 $background_grey: #FEFEFE;
 
@@ -30,9 +30,9 @@ $background_grey: #FEFEFE;
 }
 
 #one_{
-  border-color: $accom_color;
+  border-color: $time_color;
   & .fas{
-    color: $accom_color;
+    color: $time_color;
     margin-bottom: 30px;
   }
 }
@@ -48,17 +48,17 @@ $background_grey: #FEFEFE;
 }
 
 #three_{
-  border-color: $time_color;
+  border-color: $trans_color;
   & .fas{
-    color: $time_color;
+    color: $trans_color;
     margin-bottom: 30px;
   }
 }
 
 #four_{
-  border-color: $trans_color;
+  border-color: $accom_color;
   & .far{
-    color: $trans_color;
+    color: $accom_color;
     margin-bottom: 30px;
   }
 }
