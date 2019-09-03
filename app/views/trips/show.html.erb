@@ -18,6 +18,7 @@
       <div class="index-container">
             <% @boards.each do |board| %>
           <%if board.type == "TimeframeBoard"
+
             link = timeframe_board_timeframes_path(board)
           elsif board.type == "AccommodationBoard"
             link = accommodation_board_accommodations_path(board)
