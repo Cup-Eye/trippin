@@ -161,13 +161,15 @@ board.accommodations.create!(
       user: User.first,
       name: "Ibiza Villa",
       kind: "Private House",
-      price: 300
+      price: 300,
+      address: "Av. 8 d'Agost, 07800 Ibiza, Islas Baleares, Spain"
     },
     {
       user: User.second,
       name: "Barcelona Airbnb",
       kind: "Airbnb",
-      price: 150
+      price: 150,
+      address: "Passeig de Gràcia, 92, 08008 Barcelona, Spain"
     },
   ]
 )
