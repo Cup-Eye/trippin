@@ -9,6 +9,7 @@ class TimeframesController < ApplicationController
       @total_dates = (@last_date - @earliest_date).to_i + 1
       @first_day_grid = @timeframes.order(start_date: :asc).first.start_date
     end
+    @timeframe = Timeframe.new
   end
 
   def show
@@ -25,7 +26,7 @@ class TimeframesController < ApplicationController
     @board = Board.find(params[:timeframe_board_id])
     @timeframe.board = @board
     @timeframe.user = current_user
-    if @timeframe.save
+    if @timeframe.save!
       redirect_to timeframe_board_timeframes_path(@board)
     else
       flash[:alert] = "Timeframes cannot overlap!"

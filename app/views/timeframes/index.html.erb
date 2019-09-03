@@ -54,8 +54,29 @@
   <div class="large-time-container">
     <div class="time-header">
       <h1>Proposed Timeframes: </h1>
-      <%= link_to "+ Add a Timeframe", new_timeframe_board_timeframe_path(@board), class: "add" %>
     </div>
+    <div class="form-container-index">
+    <%= form_for([@board, @timeframe])  do |f| %>
+    <div class="index-cont">
+        <div class="form-field">
+          <%= f.label :start_date %>
+        <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
+        </div>
+        <div class="form-field">
+          <%= f.label :end_date %>
+          <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
+        </div>
+
+       <%= f.submit "Add to calendar", class: "submit-button" %>
+    </div>
+  <% end %>
+    </div>
+  </div>
+
+
+    <!-- prevent users from submitting a timeframe overlapping another of their own timeframes -->
+
+
     <% if @timeframes.any? %>
       <div class="year">
         <p>Year <%=@first_day_grid.strftime('%Y')%></p>
@@ -120,4 +141,6 @@
     </p>
     <p> <#%= tf.description %> </p>
   <#% end %> -->
+
+
 

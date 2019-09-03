@@ -62,8 +62,8 @@
         <% @destinations.each do |dest| %>
           <div class="destination-card-link" >
             <div class="destination-card <%= 'voted' if current_user.liked? dest %>" class="justify-content-around">
-              <h1><%= dest.name %></h1>
-              <p><%= dest.description %></p>
+              <div class="dest-top">
+              <div class="dest-title"><h1><%= dest.name %></h1><p>by <%=dest.user.first_name%></p></div>
               <% if current_user.liked? dest%>
                 <p>
                   <%= link_to destination_destination_votes_path(dest), method: :delete do %>
@@ -77,6 +77,7 @@
                   <% end %>
                 </p>
               <% end %>
+            </div>
               <div class="dest-bottom">
                 <div class="dest-vote-info">
                   <p><%= dest.votes_for.size %> Votes by:</p>

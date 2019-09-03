@@ -1,6 +1,8 @@
 
 import "bootstrap";
 
+import "../plugins/flatpickr";
+
 import { initUpdateNavbarOnScroll } from '../components/navbar';
 // initUpdateNavbarOnScroll();
 
@@ -15,4 +17,5 @@ import 'mapbox-gl/dist/mapbox-gl.css'; // <-- you need to uncomment the styleshe
 import { initAllMaps } from '../plugins/init_mapbox';
 
 initAllMaps();
+
 
