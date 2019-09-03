@@ -2,7 +2,7 @@ class AccommodationsController < ApplicationController
   def index
     @board = Board.find(params[:accommodation_board_id])
     @trip = @board.trip
-    @accommodations = @board.accommodations.sort_by {|accommodation| -accommodation.votes_for.size }
+    @accommodations = @board.accommodations.sort_by {|accommodation| - accommodation.votes_for.size }
     @comment = Comment.new
     @board.comments
   end
