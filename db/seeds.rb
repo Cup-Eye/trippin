@@ -20,61 +20,71 @@ User.create!(
       email: "ann@example.com",
       password: "123456",
       first_name: "Ann",
-      last_name: "Smith"
+      last_name: "Smith",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570154/mz1dxgkq3prjnnainmou.jpg"
     },
     {
       email: "bob@example.com",
       password: "123456",
       first_name: "Bob",
-      last_name: "Andrews"
+      last_name: "Andrews",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570157/tbwy4whzgkrsa8pkyu1o.jpg"
     },
     {
       email: "peter@example.com",
       password: "123456",
       first_name: "Peter",
-      last_name: "Shaw"
+      last_name: "Shaw",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570159/i01si0lq4fbd8x1zxz7t.jpg"
     },
     {
       email: "justus@example.com",
       password: "123456",
       first_name: "Justus",
-      last_name: "Jonas"
+      last_name: "Jonas",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570155/jxvo3eraojpteyhvreqp.jpg"
     },
     {
       email: "monica@example.com",
       password: "123456",
       first_name: "Monica",
-      last_name: "Geller"
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570158/yqrjbhytbilqvfm27oy3.jpg"
     },
     {
       email: "ross@example.com",
       password: "123456",
       first_name: "Ross",
-      last_name: "Geller"
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570154/y3uy4ntpemrotqhcjwlf.jpg"
     },
     {
       email: "joey@example.com",
       password: "123456",
       first_name: "Joey",
-      last_name: "Tribbiani"
+      last_name: "Tribbiani",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567495080/jared-sluyter-das6NrjLoM0-unsplash_ngwylp.jpg"
     },
     {
       email: "rachel@example.com",
       password: "123456",
       first_name: "Rachel",
-      last_name: "Green"
+      last_name: "Green",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570160/jkchsgick9gufqhycn2u.jpg"
     },
     {
       email: "phoebe@example.com",
       password: "123456",
       first_name: "Phoebe",
-      last_name: "Buffay"
+      last_name: "Buffay",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570156/vlimetua3o1d9ocvgrfh.jpg"
     },
     {
       email: "chandler@example.com",
       password: "123456",
       first_name: "Chandler",
-      last_name: "Bing"
+      last_name: "Bing",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567495083/ivana-cajina-_7LbC5J-jw4-unsplash_dku2xe.jpg"
     }
   ]
 )
