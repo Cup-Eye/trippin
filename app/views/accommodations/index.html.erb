@@ -69,36 +69,39 @@
                         style="width: 220px;
                         height: 220px;"
                         data-markers="<%= marker(acc).to_json %>"
-                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-                      >
+                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
                       </div>
                   </div>
                   <div class="accom-card-text">
                     <div class="accom-header">
                       <h3><strong><%=acc.name%></strong></h3>
-                      <p> <%=acc.kind%> suggested by <strong><%=acc.user.first_name%></strong></p>
+                      <% if current_user.liked? acc%>
+                        <p>
+                          <%= link_to accommodation_accommodation_votes_path(acc), method: :delete do %>
+                            <i class="fas fa-check-square fa-2x"></i>
+                          <% end %>
+                        </p>
+                      <% else %>
+                        <p>
+                          <%= link_to accommodation_accommodation_votes_path(acc), method: :post do %>
+                            <i class="far fa-check-square fa-2x"></i>
+                          <% end %>
+                        </p>
+                      <% end %>
                     </div>
-                  <div class=accom-header>
+                    <div class="accom-header">
+                      <p> <%=acc.kind%> suggested by <strong><%=acc.user.first_name%></strong></p>
+                      <div class="accom-price"><strong><%=acc.price%>$</strong>/day</div>
+                    </div>
                     <p>Address: <%=acc.address%></p>
-                    <div class="accom-price"><strong><%=acc.price%>$</strong>/day</div>
-                  </div>
                   <div class="accom-votes">
-                    <% if current_user.liked? acc%>
-                      <p>
-                        <%= link_to accommodation_accommodation_votes_path(acc), method: :delete do %>
-                          <i class="fas fa-check-square fa-2x"></i>
-                        <% end %>
-                      </p>
-                    <% else %>
-                      <p>
-                        <%= link_to accommodation_accommodation_votes_path(acc), method: :post do %>
-                          <i class="far fa-check-square fa-2x"></i>
-                        <% end %>
-                      </p>
-                    <% end %>
                     <div class="accom-bottom">
                       <div class="accom-vote-info">
-                        <p><%= acc.votes_for.size %> Votes by</p>
+                        <%if acc.votes_for.size == 1 %>
+                          <p><%=acc.votes_for.size %> Vote by </p>
+                        <% else %>
+                          <p><%= acc.votes_for.size %> Votes by</p>
+                        <% end %>
                         <ul class="vote-list">
                           <% acc.find_votes_for.each do |vote| %>
                             <li>
