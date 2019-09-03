@@ -26,7 +26,9 @@ class TimeframesController < ApplicationController
     @board = Board.find(params[:timeframe_board_id])
     @timeframe.board = @board
     @timeframe.user = current_user
+    
     if @timeframe.save!
+      @timeframe.board.check_status
       redirect_to timeframe_board_timeframes_path(@board)
     else
       flash[:alert] = "Timeframes cannot overlap!"
@@ -53,6 +55,7 @@ class TimeframesController < ApplicationController
   def destroy
     @timeframe = Timeframe.find(params[:id])
     @timeframe.destroy
+    @timeframe.board.check_status
     redirect_to timeframe_board_timeframes_path(@timeframe.board)
   end
 

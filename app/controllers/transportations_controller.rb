@@ -23,6 +23,7 @@ class TransportationsController < ApplicationController
     @transportation.user = current_user
     if @transportation.save
       redirect_to transportation_board_transportations_path(@board)
+      @transportation.board.check_status
     else
       render :new
     end
@@ -42,6 +43,7 @@ class TransportationsController < ApplicationController
   def destroy
     @transportation = Transportation.find(params[:id])
     @transportation.destroy
+    @transportation.board.check_status
     redirect_to transportation_board_transportations_path(@transportation.board)
   end
 
