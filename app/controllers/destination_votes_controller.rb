@@ -1,11 +1,16 @@
 class DestinationVotesController < ApplicationController
   def create
-    # Get the destination (find)
     @destination = Destination.find(params[:destination_id])
-    # current user like destination
-    @destination.liked_by current_user
-    # redirect to the destinatation board
-    redirect_to destination_board_destinations_path(@destination.board)
+    if @destination.board.destinations.count == 1
+      @destination.liked_by current_user
+      redirect_to destination_board_destinations_path(@destination.board)
+    elsif current_user.get_voted(Destination).size == @destination.board.destinations.count - 1
+      @destination.liked_by current_user
+      redirect_to destination_board_destinations_path(@destination.board)
+    else
+      flash[:alert] = "Sorry, you cannot chose all options!"
+      redirect_to destination_board_destinations_path(@destination.board)
+    end
   end
 
   def destroy

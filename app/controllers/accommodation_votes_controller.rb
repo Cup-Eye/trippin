@@ -1,8 +1,16 @@
 class AccommodationVotesController < ApplicationController
   def create
     @accommodation = Accommodation.find(params[:accommodation_id])
-    @accommodation.liked_by current_user
-    redirect_to accommodation_board_accommodations_path(@accommodation.board)
+    if @accommodation.board.accommodations.count == 1
+      @accommodation.liked_by current_user
+      redirect_to accommodation_board_accommodations_path(@accommodation.board)
+    elsif current_user.get_voted(Accommodation).size == @accommodation.board.accommodations.count - 1
+      @accommodation.liked_by current_user
+      redirect_to accommodation_board_accommodations_path(@accommodation.board)
+    else
+      flash[:alert] = "Sorry, you cannot chose all options!"
+      redirect_to accommodation_board_accommodations_path(@accommodation.board)
+    end
   end
 
   def destroy
