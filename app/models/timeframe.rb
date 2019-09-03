@@ -7,7 +7,6 @@ class Timeframe < ApplicationRecord
   validates :description, length: { maximum: 100 }
   validate :cannot_overlap_another_timeframe
 
-
   def cannot_overlap_another_timeframe
     condition_on_create = user.timeframes.where('start_date <= ?', start_date).where('end_date >= ?', start_date).any? ||
       user.timeframes.where('start_date <= ?', end_date).where('end_date >= ?', end_date).any?
