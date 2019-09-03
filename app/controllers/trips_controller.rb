@@ -30,7 +30,7 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
     @trip.user = current_user
-    redirect_to trip_boards_path(@trip)
+    redirect_to dashboard_path(@user)
   end
 
   def destroy
