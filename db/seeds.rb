@@ -162,7 +162,7 @@ board.accommodations.create!(
       name: "Ibiza Villa",
       kind: "Private House",
       price: 300,
-      address: "Av. 8 d'Agost, 07800 Ibiza, Islas Baleares, Spain"
+      address: "Carrer d'Antoni Palau, 7, 07800 Eivissa, Illes Balears, Spain"
     },
     {
       user: User.second,
