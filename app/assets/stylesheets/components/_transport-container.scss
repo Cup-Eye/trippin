@@ -8,7 +8,7 @@
 
 .transport-container {
   background: white;
-  padding: 18px;
+  padding: 15px;
   border-radius: 7px;
   border-color: #104a05;
   // width: 37%;
@@ -42,10 +42,6 @@
 
 .trans-header{
   display: flex;
-  justify-content: space-bewteen;
-   margin-left: 280px;
+  justify-content: space-bewteen !important;
 }
 
-.trans-header .avatar{
-  margin-left: 220px;
-}

@@ -10,12 +10,13 @@
 
 .buttons-container {
   text-align: center;
-  margin: 14px;
+  padding-left: 520px;
+  // margin: 14px;
   a {
     border: dashed 1px;
     padding: 4px 22px;
     &:hover {
-      background-color: #ffbb00;
+      // background-color: #ffbb00;
       color: white;
     }
   }
