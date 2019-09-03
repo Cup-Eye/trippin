@@ -1,8 +1,8 @@
 $trip_color: #626d71;
-$accom_color: #fb6542;
-$dest_color: #4F8224;
-$trans_color: #ffbb00;
-$time_color: #337bae;
+$accom_color: #00bdaa;
+$dest_color: #30e3ca;
+$trans_color: #6bc5d2;
+$time_color: #5ca0d3;
 
 
 // .button-secondary {
@@ -18,11 +18,12 @@ $time_color: #337bae;
 .trip-btn{
   color: white;
   background: $trip_color;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: 3px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   transition: box-shadow .2s ease;
-  font-size: 15px;
+  font-size: 17px;
+  margin: 10px 0;
 }
 
 .trip-btn:hover{
@@ -32,21 +33,22 @@ $time_color: #337bae;
 }
 
 .accom-btn{
-  color: $accom_color;
+  color: $accom_color !important;
   background: white;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $accom_color;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  padding: 2px 5px;
+  margin: 2px 5px;
   transition: box-shadow .2s ease;
-  height: 40px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .accom-btn:hover{
   background: $accom_color;
   text-decoration: none;
-  color: white;
+  color: white !important;
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
 }
 
@@ -56,10 +58,11 @@ $time_color: #337bae;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $dest_color;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  padding: 2px 5px;
+  margin: 2px 5px;
   transition: box-shadow .2s ease;
-  height: 40px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .dest-btn:hover{
@@ -75,14 +78,15 @@ $time_color: #337bae;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $trans_color;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  padding: 2px 5px;
+  margin: 2px 5px;
   transition: box-shadow .2s ease;
-  height: 40px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .trans-btn:hover{
-  background: $trans_color;
+  background: $trans_color !important;
   color: white;
   text-decoration: none;
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
@@ -94,10 +98,11 @@ $time_color: #337bae;
   border-radius: 5px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $time_color;
-  padding: 5px 10px;
-  margin: 5px 10px;
+  padding: 2px 5px;
+  margin: 2px 5px;
   transition: box-shadow .2s ease;
-  height: 40px;
+  height: 30px;
+  font-size: 15px;
 }
 
 .time-btn:hover{

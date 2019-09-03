@@ -98,8 +98,7 @@ puts "Creating trips..."
 trip1 = Trip.create!(
   {
     user: User.first,
-    name: "Bachelor's Party",
-    destination: "Spain"
+    name: "Bachelor's Party"
   }
 )
 
@@ -162,13 +161,15 @@ board.accommodations.create!(
       user: User.first,
       name: "Ibiza Villa",
       kind: "Private House",
-      price: 300
+      price: 300,
+      address: "Carrer d'Antoni Palau, 7, 07800 Eivissa, Illes Balears, Spain"
     },
     {
       user: User.second,
       name: "Barcelona Airbnb",
       kind: "Airbnb",
-      price: 150
+      price: 150,
+      address: "Passeig de Gràcia, 92, 08008 Barcelona, Spain"
     },
   ]
 )
