@@ -1,24 +1,21 @@
 <div class="form-container">
   <p><%= link_to "Back", timeframe_board_timeframes_path(@timeframe.board), class: "trip-btn" %></p>
   <h1> Edit your Timeframe: </h1>
-  <%= form_for([@board, @timeframe])  do |f| %>
-    <div class="form-group">
-      <%= f.label :start_date %>
-      <div></div>
-      <%= f.date_select :start_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-    </div>
+  <div class="form-container-index">
+    <%= form_for([@board, @timeframe])  do |f| %>
+    <div class="index-cont">
+          <div class="index-cont">
+        <div class="form-field">
+          <%= f.label :start_date %>
+        <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
+        </div>
+        <div class="form-field">
+          <%= f.label :end_date %>
+          <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
+        </div>
 
-    <div class="form-group">
-      <%= f.label :end_date %>
-      <div></div>
-      <%= f.date_select :end_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :description%>
-      <%= f.text_field :description, class: 'form-control'%>
-    </div>
-
-    <%= f.button :submit, class: "trip-btn" %>
-  <% end %>
+       <%= f.submit "Add to calendar", class: "submit-button" %>
+      </div>
+    <% end %>
+  </div>
 </div>
