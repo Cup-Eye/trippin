@@ -34,7 +34,7 @@
 
 .accom-card-text{
   width:  550px;
-  margin-left: 10px;
+  margin-left: 20px;
 }
 
 .accom-card-content p{
@@ -42,7 +42,12 @@
 }
 
 .accom-card-map{
-  margin: auto;
+  margin: 0px;
+  justify-content: space-arround;
+}
+
+.map{
+  margin: 0px;
 }
 
 

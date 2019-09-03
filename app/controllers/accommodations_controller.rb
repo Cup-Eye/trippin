@@ -8,13 +8,6 @@ class AccommodationsController < ApplicationController
 
     @accommodations = Accommodation.geocoded
 
-    @markers = @accommodations.map do |acc|
-      {
-        lat: acc.latitude,
-        lng: acc.longitude,
-        accommodation_id: acc.id
-      }
-    end
   end
 
   def show
