@@ -17,6 +17,9 @@
   <div></div>
     <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
 
+    <%= link_to "Add participants", new_trip_participant_path(@trip), class: "trip-btn" %>
+    <p><%= link_to "Edit", edit_trip_path(@trip), class: "trip-btn" %></p>
+
 
   <div class="home-container">
 
