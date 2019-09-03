@@ -63,13 +63,24 @@
             <%= link_to ("#{acc.url}"), target: :_blank do %>
               <div class="accom-card <%= 'voted' if current_user.liked? acc %>" >
                 <div class="accom-card-content">
-                  <div class="accom-header">
-                    <h3><strong><%=acc.name%></strong></h3>
-                    <p> <%=acc.kind%> suggested by <strong><%=acc.user.first_name%></strong></p>
+                  <div class="accom-card-map">
+                    <div
+                        class='map'
+                        style="width: 220px;
+                        height: 220px;"
+                        data-markers="<%= marker(acc).to_json %>"
+                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                      >
+                      </div>
                   </div>
+                  <div class="accom-card-text">
+                    <div class="accom-header">
+                      <h3><strong><%=acc.name%></strong></h3>
+                      <p> <%=acc.kind%> suggested by <strong><%=acc.user.first_name%></strong></p>
+                    </div>
                   <div class=accom-header>
-                  <p>Address: <%=acc.address%></p>
-                  <div class="accom-price"><strong><%=acc.price%>$</strong>/day</div>
+                    <p>Address: <%=acc.address%></p>
+                    <div class="accom-price"><strong><%=acc.price%>$</strong>/day</div>
                   </div>
                   <div class="accom-votes">
                     <% if current_user.liked? acc%>
@@ -107,6 +118,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             <%end%>
           </div>
         <%end%>

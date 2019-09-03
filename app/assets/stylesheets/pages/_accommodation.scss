@@ -27,9 +27,29 @@
   color: black;
 }
 
+.accom-card-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.accom-card-text{
+  width:  550px;
+  margin-left: 20px;
+}
+
 .accom-card-content p{
   color: black;
 }
+
+.accom-card-map{
+  margin: 0px;
+  justify-content: space-arround;
+}
+
+.map{
+  margin: 0px;
+}
+
 
 .accom-header{
   display: flex;
