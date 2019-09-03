@@ -98,8 +98,7 @@ puts "Creating trips..."
 trip1 = Trip.create!(
   {
     user: User.first,
-    name: "Bachelor's Party",
-    destination: "Spain"
+    name: "Bachelor's Party"
   }
 )
 

@@ -1,5 +1,5 @@
 <div class="form-container">
-  <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
+  <p><%= link_to "Back", trip_path(@trip), class: "trip-btn" %></p>
   <h1> Edit your Trip: </h1>
   <%= simple_form_for(@trip) do |f| %>
     <div class="form-group">
