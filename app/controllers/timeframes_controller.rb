@@ -28,6 +28,7 @@ class TimeframesController < ApplicationController
     if @timeframe.save
       redirect_to timeframe_board_timeframes_path(@board)
     else
+      flash[:alert] = "Timeframes cannot overlap!"
       render :new
     end
   end
@@ -40,7 +41,12 @@ class TimeframesController < ApplicationController
     @timeframe = Timeframe.find(params[:id])
     @timeframe.update(timeframe_params)
     @timeframe.user = current_user
-    redirect_to timeframe_board_timeframes_path(@timeframe.board)
+    if @timeframe.save
+      redirect_to timeframe_board_timeframes_path(@timeframe.board)
+    else
+      flash[:alert] = "Timeframes cannot overlap!"
+      render :edit
+    end
   end
 
   def destroy
