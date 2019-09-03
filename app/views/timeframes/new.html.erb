@@ -4,21 +4,15 @@
   <%= form_for([@board, @timeframe])  do |f| %>
     <div class="form-group">
       <%= f.label :start_date %>
-      <div></div>
-      <%= f.date_select :start_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+      <div>
+      <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: 'mm/dd/yyyy' %>
     </div>
 
     <div class="form-group">
       <%= f.label :end_date %>
-      <div></div>
-      <%= f.date_select :end_date, as: :string, label: "Start", input_html: { class: "datepicker", value: Time.now.strftime('%m/%d/%Y') } %>
+      <div>
+      <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker", placeholder: 'mm/dd/yyyy' %>
     </div>
-
-    <div class="form-group">
-      <%= f.label :description%>
-      <%= f.text_field :description, class: 'form-control'%>
-    </div>
-
 
     <!-- prevent users from submitting a timeframe overlapping another of their own timeframes -->
 
