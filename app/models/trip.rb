@@ -26,7 +26,7 @@ class Trip < ApplicationRecord
   after_commit :create_participant_for_admin, on: :create
 
   def boards
-    [accommodation_board, destination_board, timeframe_board, transportation_board]
+    [timeframe_board, destination_board, transportation_board, accommodation_board]
   end
 
   def winning_destination=(destination)
