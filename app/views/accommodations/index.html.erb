@@ -63,6 +63,18 @@
             <%= link_to ("#{acc.url}"), target: :_blank do %>
               <div class="accom-card <%= 'voted' if current_user.liked? acc %>" >
                 <div class="accom-card-content">
+                  <div class="accom-card-map">
+                    <div
+                        id="map"
+                        style="width: 214px;
+                        height: 214px;"
+                        data-markers="<%= @markers.to_json %>"
+                        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+                      >
+                      <!-- @markers.find{|marker| marker[:accommodation_id]==acc.id}.to_json %>" -->
+                      </div>
+                  </div>
+                  <div class="accom-card-text">
                   <div class="accom-header">
                     <h3><strong><%=acc.name%></strong></h3>
                     <p> <%=acc.kind%> suggested by <strong><%=acc.user.first_name%></strong></p>
@@ -107,6 +119,7 @@
                   </div>
                 </div>
               </div>
+            </div>
             <%end%>
           </div>
         <%end%>

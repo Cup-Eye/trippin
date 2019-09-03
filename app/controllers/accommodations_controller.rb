@@ -5,6 +5,16 @@ class AccommodationsController < ApplicationController
     @accommodations = @board.accommodations.sort_by {|accommodation| - accommodation.votes_for.size }
     @comment = Comment.new
     @board.comments
+
+    @accommodations = Accommodation.geocoded
+
+    @markers = @accommodations.map do |acc|
+      {
+        lat: acc.latitude,
+        lng: acc.longitude,
+        accommodation_id: acc.id
+      }
+    end
   end
 
   def show

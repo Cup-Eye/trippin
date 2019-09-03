@@ -7,4 +7,6 @@ class Accommodation < ApplicationRecord
   # validates :address, presence: true, length: { maximum: 100 }
   validates :price, presence: true, length: { maximum: 10 }
   validates :kind, presence: true
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
