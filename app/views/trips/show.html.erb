@@ -37,8 +37,8 @@
               <div class=<%="board-card-#{board.type}"%>>
                 <span class="icon"></span>
                 <h2><%=board.name %></h2>
-                <p>Status: <%=board.status&.capitalize%></p>
-                <p><%=board.description%></p>
+                <p class="desc"><%=board.description%></p>
+                <p class="status">Status: <em><%=board.status&.capitalize%></em></p>
               </div>
               <% end %>
           </div>
