@@ -31,6 +31,7 @@
 // }
 
 .submit-button {
+    line-height: normal;
     color: white;
     background: #626d71;
     padding: 10px;
@@ -57,7 +58,7 @@
   padding: 10px;
   padding-right: 10px;
   display: grid;
-  grid-auto-rows: minmax(50px, 50px);
+  grid-auto-rows: minmax(55px, 50px);
   overflow-x: scroll;
   // box-shadow: 26px 34px 29px -49px rgba(0,0,0,0.75);
 }
@@ -73,12 +74,12 @@
   &9 {
     border-bottom: solid 10px;
     margin-bottom: 10px;
-    // border-color: #59d4e8;
+    border-color: #caa5f1;
   }
   &10 {
     border-bottom: solid 10px;
     margin-bottom: 10px;
-    border-color: #caa5f1;
+    border-color: #b6e6bd;
   }
    &11 {
     border-bottom: solid 10px;
@@ -88,7 +89,7 @@
    &12 {
     border-bottom: solid 10px;
     margin-bottom: 10px;
-    border-color: #59d4e8;
+    border-color: #b0deff;
   }
 }
 
@@ -118,6 +119,10 @@
   display: flex;
   justify-content: space-between;
   margin: 20px 40px;
+}
+
+.time-sub-header {
+  margin: 40px 40px;
 }
 
 .year{
