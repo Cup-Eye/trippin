@@ -319,7 +319,7 @@ body{
     padding: 8px;
     margin: 10px;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     color: white;
     border: 2px solid $accom_color;
     &:hover{
@@ -344,7 +344,7 @@ body{
     margin: 10px;
     color: white;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid $trip_color;
     &:hover{
       background: white;
@@ -367,7 +367,7 @@ body{
     margin: 10px;
     color: white;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid $dest_color;
     &:hover{
       background: white;
@@ -390,7 +390,7 @@ body{
     margin: 10px;
     color: white;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid $time_color;
     &:hover{
       background: white;
@@ -413,7 +413,7 @@ body{
     margin: 10px;
     color: white;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid $trans_color;
     &:hover{
       background: white;
@@ -436,7 +436,7 @@ body{
     margin: 10px;
     color: #d9d9d9;
     width: 190px;
-    border-radius: 10px;
+    border-radius: 3px;
     border: 2px solid #d9d9d9;
     &:hover{
       text-decoration: none;
