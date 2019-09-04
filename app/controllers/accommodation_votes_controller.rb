@@ -14,6 +14,7 @@ class AccommodationVotesController < ApplicationController
   def destroy
     @accommodation = Accommodation.find(params[:accommodation_id])
     @accommodation.unliked_by current_user
+    @accommodation.board.check_status
     redirect_to accommodation_board_accommodations_path(@accommodation.board)
   end
 

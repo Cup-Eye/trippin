@@ -38,6 +38,7 @@ class DestinationsController < ApplicationController
   def destroy
     @destination = Destination.find(params[:id])
     @destination.destroy
+    @destination.board.check_status
     redirect_to destination_board_destinations_path(@destination.board)
   end
 

@@ -22,8 +22,8 @@ class TransportationsController < ApplicationController
     @transportation.board = @board
     @transportation.user = current_user
     if @transportation.save
-      redirect_to transportation_board_transportations_path(@board)
       @transportation.board.check_status
+      redirect_to transportation_board_transportations_path(@board)
     else
       render :new
     end

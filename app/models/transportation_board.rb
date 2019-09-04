@@ -7,7 +7,8 @@ class TransportationBoard < Board
   def check_status
     all_users = trip.participants.map { |participant| participant.user }
     all_participated = all_users.all? do |user|
-      items = user.transportations.present?
+      items = user.transportations
+      items.any? { |item| item.board == self }
     end
     status = all_participated ? 'Completed' : 'Incomplete'
     update(status: status)
