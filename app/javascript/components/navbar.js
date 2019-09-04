@@ -16,3 +16,8 @@
 
 // export { initUpdateNavbarOnScroll };
 
+
+document.querySelector('.icon-card').addEventListener('click', (event) => {
+  console.log(document.querySelector('.dropdown-menu'))
+  document.querySelector('#dropdown-settings').classList.toggle("show")
+})
