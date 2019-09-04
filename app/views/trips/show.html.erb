@@ -15,6 +15,18 @@
       <%= link_to "Add participants", new_trip_participant_path(@trip), class: "ptc-btn" %>
     </div>
   </div>
+
+ <% if @trip.accommodation_board.status == "Completed" && @trip.transportation_board.status == "Completed" && @trip.timeframe_board.status == "Completed" && @trip.destination_board.status == "Completed"  %>
+      <div class="summary-container">
+          <h4>🎉 Your trip is ready to go 🎉 </h4>
+          <div class="summary">
+            <p>Destination: <strong><%= @trip.winning_destination.name  %></strong> </p>
+            <p>Timeframe: <strong><%= (@trip.winning_timeframe.start_date).strftime('%a %e.%m') %> - <%= (@trip.winning_timeframe.start_date).strftime('%a %e.%m') %></strong> </p>
+             <p>  Accommodation: <strong><%= @trip.winning_accommodation.name %></strong> </p>
+          </div>
+      </div>
+<% end %>
+
   <div class="trip-show-action">
     <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
     <p><%= link_to "Edit Trip", edit_trip_path(@trip), class: "trip-btn" %></p>
@@ -47,6 +59,10 @@
     </div>
   </div>
 </div>
+
+
+
+
 
 
 

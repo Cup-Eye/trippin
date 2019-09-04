@@ -509,3 +509,21 @@ body{
   .fa-check-square{
     color: #00e3e3;
   }
+
+  .summary-container{
+  margin: 20px auto 0px auto;
+  width: 600px;
+  text-align: center;
+  padding: 20px;
+  border-style: solid;
+  border-color: pink;
+  border-width: 5px;
+  & p{
+    font-size: 20px;
+    margin: 0;
+    text-align: center;
+  }
+  & .summary{
+    margin-top: 30px;
+  }
+}
