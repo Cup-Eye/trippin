@@ -19,7 +19,7 @@ $time_color: #5ca0d3;
   color: white;
   background: $trip_color;
   padding: 5px 8px;
-  border-radius: 3px;
+  border-radius: 2px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   transition: box-shadow .2s ease;
   font-size: 17px;
@@ -35,7 +35,7 @@ $time_color: #5ca0d3;
 .accom-btn{
   color: $accom_color !important;
   background: white;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $accom_color;
   padding: 2px 5px;
@@ -55,7 +55,7 @@ $time_color: #5ca0d3;
 .dest-btn{
   color: $dest_color;
   background: white;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $dest_color;
   padding: 2px 5px;
@@ -75,7 +75,7 @@ $time_color: #5ca0d3;
 .trans-btn{
   color: $trans_color;
   background: white;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $trans_color;
   padding: 2px 5px;
@@ -95,7 +95,7 @@ $time_color: #5ca0d3;
 .time-btn{
   color: $time_color;
   background: white;
-  border-radius: 5px;
+  border-radius: 2px;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   border: solid 2px $time_color;
   padding: 2px 5px;
