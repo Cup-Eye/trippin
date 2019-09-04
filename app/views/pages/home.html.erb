@@ -1,8 +1,10 @@
 <div class="container-landing"></div>
   <div class="banner-parent">
-    <div id="landing-page" class="banner" class="navbar-landing">
-      <p>Organize your next <br><br> group trip!</p>
-      <div class="home-btn"><%= link_to "Create your first trip", new_trip_path %></div>
+    <div class="home-con">
+      <div id="landing-page" class="banner" class="navbar-landing">
+        <p>Organize your next <br><br> group trip!</p>
+        <div><%= link_to "Create first trip", new_trip_path, class:"home-btn" %></div>
+      </div>
     </div>
   </div>
 </div>
@@ -18,30 +20,32 @@
 
   <div class="white-boxes">
     <div class="white-box-container" id="one_">
-        <div><i class="fas fa-envelope-open-text fa-4x"></i></div>
+        <div class="icon-homepage"><i class="fas fa-envelope-open-text fa-4x"></i></div>
         <p>Invite your friends</p>
     </div>
 
     <div class="white-box-container" id="two_">
-      <div class="d-flex justify-content-around">
-        <div><i class="far fa-calendar-alt fa-2x"></i></div>
-        <div><i class="fas fa-globe-americas fa-2x"></i></div>
-      </div>
-      <div class="d-flex justify-content-around">
-        <div><i class="fas fa-plane fa-2x"></i></div>
-        <div><i class="fas fa-home fa-2x"></i></div>
-      </div>
+      <div class="icon-homepage">
+        <div class="d-flex justify-content-around">
+          <div><i class="far fa-calendar-alt fa-2x"></i></div>
+          <div><i class="fas fa-globe-americas fa-2x"></i></div>
+        </div>
+        <div class="d-flex justify-content-around">
+          <div><i class="fas fa-plane fa-2x"></i></div>
+          <div><i class="fas fa-home fa-2x"></i></div>
+        </div>
+       </div>
       <p>Decide Collaboratively</p>
     </div>
 
 
     <div class="white-box-container" id="three_">
-        <div><i class="fas fa-tasks fa-4x"></i></div>
+        <div class="icon-homepage"><i class="fas fa-tasks fa-4x"></i></div>
         <p>Stay Organized</p>
     </div>
 
     <div class="white-box-container" id="four_">
-      <div><i class="far fa-smile fa-4x"></i></div>
+      <div class="icon-homepage"><i class="far fa-smile fa-4x"></i></div>
       <p>Enjoy the trip</p>
     </div>
   </div>
@@ -50,18 +54,19 @@
     <h4>What our users have said: </h4>
     <div class="testimonial">
       <p><em>"This app revolutionized the way I plan trips with my friends! It facilitates collaboration and helped me efficiently organize the planning progress."</em></p>
-      <p>- Jim</p>
+        <div class="test-box">
+        <%= image_tag "https://images.unsplash.com/photo-1517365830460-955ce3ccd263?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80", class: "avatar-large", alt: "avatar-large" %>
+        <p>Marie</p>
+      </div>
     </div>
     <div class="testimonial">
       <p><em>"I wish I would have discovered this website earlier. Planning a trip with my friends has never been easier!"</em></p>
-      <p>- Marie</p>
+       <div class="test-box">
+        <%= image_tag "https://images.unsplash.com/photo-1564061143352-92f7dfac7df3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=967&q=80", class: "avatar-medium", alt: "avatar-large" %>
+        <p>Freddy</p>
+        </div>
+      </div>
     </div>
   </div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
   <br>
 

@@ -10,6 +10,20 @@
     background-color: transparent !important;
     box-shadow: none;
   }
+
+  #landing-drop {
+    font-family: "Cabin", sans-serif;
+    background-color: transparent;
+    display: block;
+    width: 100%;
+    padding: 0.25rem 1.5rem;
+    clear: both;
+    font-weight: 400;
+    color: white;
+    text-align: inherit;
+    white-space: nowrap;
+    border: 0;
+  }
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -17,7 +31,7 @@
 }
 
 .navbar-lewagon .navbar-brand img {
-  width: 125px;
+  width: 137px;
 }
 
 .navbar-lewagon-white {
