@@ -18,15 +18,14 @@ body{
     // background-opacity: rgba(0.5, 0, 0, 0.5);
     background-size: cover;
     background-position: center;
-    // background-color: #d6d3d3;
     height: 283px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    // text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    opacity: 1;
 
     h1 {
       font-family: "Comfortaa", cursive;
@@ -41,12 +40,38 @@ body{
       color: #40404d;
       font-weight: bold;
     }
-
+    & .trip-dash-avatar{
+      margin: 0 5px;
+      width: 40px;
+      border-radius: 50%;
+    }
+    & .ptc-btn{
+      opacity: 1;
+    }
 }
 
+.trip-participants{
+  display: flex;
+  flex-direction: column;
+}
 
+.ptc-btn{
+  color: white;
+  background: $trip_color;
+  padding: 5px 8px;
+  border-radius: 2px;
+  box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
+  transition: box-shadow .2s ease;
+  font-size: 17px;
+  opacity: 1;
+  margin: 10px auto;
+}
 
-
+.ptc-btn:hover{
+  color: white;
+  text-decoration: none;
+  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
+}
 
 .trip-show-action{
   display: flex;
@@ -471,10 +496,14 @@ body{
   .participant-list{
     padding: 10px;
     margin: 10px;
+    & p{
+      font-size: 20px;
+      opacity: 1;
+    }
   }
 
-  .participant-list p{
-    font-size: 20px;
+  .participants p{
+    font-size: 18px;
   }
 
   .fa-check-square{

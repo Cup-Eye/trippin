@@ -1,16 +1,18 @@
 <div class= "container-index">
   <div class="banner-index">
-      <br>
-      <h1> <strong>Dashboard for your trip  </strong> </h1>
-      <br>
-      <h2>"<%= @trip.name %>"</h2>
-      <br>
-    <div>
-      <p><% @trip.participants.each do |participant| %>
+    <br>
+    <h1> <strong>Dashboard for your trip  </strong> </h1>
+    <br>
+    <h2>"<%= @trip.name %>"</h2>
+    <br>
+    <div class="trip-participants">
+      <div>
+        <% @trip.participants.each do |participant| %>
           <%= cl_image_tag participant.user.photo,
-                width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            width: 40, height: 40, gravity: :face, class: "trip-dash-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
         <% end %>
-      <p><%= link_to "Add participants", new_trip_participant_path(@trip), class: "trip-btn" %></p>
+      </div>
+      <%= link_to "Add participants", new_trip_participant_path(@trip), class: "ptc-btn" %>
     </div>
   </div>
   <div class="trip-show-action">
