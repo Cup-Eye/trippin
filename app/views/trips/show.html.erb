@@ -18,10 +18,11 @@
 
  <% if @trip.accommodation_board.status == "Completed" && @trip.transportation_board.status == "Completed" && @trip.timeframe_board.status == "Completed" && @trip.destination_board.status == "Completed"  %>
       <div class="summary-container">
-          <h4>🎉 Your trip is ready to go 🎉 </h4>
+          <h4>🎉 Congrats! You're ready to go on your trip 🎉 </h4>
           <div class="summary">
             <p>Destination: <strong><%= @trip.winning_destination.name  %></strong> </p>
-            <p>Timeframe: <strong><%= (@trip.winning_timeframe.start_date).strftime('%a %e.%m') %> - <%= (@trip.winning_timeframe.start_date).strftime('%a %e.%m') %></strong> </p>
+            <p>Arrival: <strong><%= (@trip.winning_timeframe.start_date).strftime('%a %e. %B %Y') %> </p>
+            <p>Departure: <strong><%= (@trip.winning_timeframe.end_date).strftime('%a %e. %B %Y') %></strong> </p>
              <p>  Accommodation: <strong><%= @trip.winning_accommodation.name %></strong> </p>
           </div>
       </div>
