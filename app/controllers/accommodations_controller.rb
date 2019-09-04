@@ -2,11 +2,10 @@ class AccommodationsController < ApplicationController
   def index
     @board = Board.find(params[:accommodation_board_id])
     @trip = @board.trip
-    @accommodations = @board.accommodations.sort_by {|accommodation| - accommodation.votes_for.size }
     @comment = Comment.new
     @board.comments
-
-    @accommodations = Accommodation.geocoded
+    @maps = Accommodation.geocoded
+    @accommodations = @board.accommodations.sort_by { |accommodation| - accommodation.votes_for.size }
 
   end
 
@@ -45,6 +44,7 @@ class AccommodationsController < ApplicationController
   def destroy
     @accommodation = Accommodation.find(params[:id])
     @accommodation.destroy
+    @accommodation.board.check_status
     redirect_to accommodation_board_accommodations_path(@accommodation.board)
   end
 
