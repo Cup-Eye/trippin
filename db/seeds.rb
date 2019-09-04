@@ -24,27 +24,6 @@ User.create!(
       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570154/mz1dxgkq3prjnnainmou.jpg"
     },
     {
-      email: "bob@example.com",
-      password: "123456",
-      first_name: "Bob",
-      last_name: "Andrews",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570157/tbwy4whzgkrsa8pkyu1o.jpg"
-    },
-    {
-      email: "peter@example.com",
-      password: "123456",
-      first_name: "Peter",
-      last_name: "Shaw",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570159/i01si0lq4fbd8x1zxz7t.jpg"
-    },
-    {
-      email: "justus@example.com",
-      password: "123456",
-      first_name: "Justus",
-      last_name: "Jonas",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570155/jxvo3eraojpteyhvreqp.jpg"
-    },
-    {
       email: "monica@example.com",
       password: "123456",
       first_name: "Monica",
@@ -97,8 +76,8 @@ puts "Creating trips..."
 # Trip.skip_callback(:commit, :after, :create_four_boards)
 trip1 = Trip.create!(
   {
-    user: User.first,
-    name: "Bachelor's Party"
+    user: User.third,
+    name: "Europe Trip"
   }
 )
 
@@ -106,14 +85,24 @@ dest_board = trip1.destination_board
 
 Destination.create([
     {
-      user: User.first,
-      name: "Ibiza",
+      user: User.fourth,
+      name: "Italy",
       board: dest_board,
       winning: true
     },
     {
-      user: User.second,
-      name: "Barcelona",
+      user: User.fifth,
+      name: "Spain",
+      board: dest_board
+    },
+    {
+      user: User.third,
+      name: "Greece",
+      board: dest_board
+    },
+    {
+      user: User.fourth,
+      name: "Portugal",
       board: dest_board
     },
   ])
@@ -158,14 +147,14 @@ board = trip.create_accommodation_board!({
 board.accommodations.create!(
   [
     {
-      user: User.first,
-      name: "Ibiza Villa",
+      user: User.fourth,
+      name: "Rome Villa",
       kind: "Private House",
       price: 300,
-      address: "Carrer d'Antoni Palau, 7, 07800 Eivissa, Illes Balears, Spain"
+      address: "Via Vittorio Veneto, 70, 00187 Roma RM, Italy"
     },
     {
-      user: User.second,
+      user: User.fifth,
       name: "Barcelona Airbnb",
       kind: "Airbnb",
       price: 150,
@@ -187,12 +176,12 @@ board = trip.create_timeframe_board!({
 board.timeframes.create!(
   [
     {
-      user: User.first,
+      user: User.third,
       start_date: 8.weeks.from_now,
       end_date: 10.weeks.from_now
     },
     {
-      user: User.second,
+      user: User.fifth,
       start_date: 10.weeks.from_now,
       end_date: 12.weeks.from_now
     },
@@ -216,7 +205,7 @@ board = trip.create_transportation_board!({
 board.transportations.create!(
   [
     {
-      user: User.first,
+      user: User.fourth,
       kind: "Plane",
       booking_number: "A45666YTZ",
       route_number: "AF1080",
