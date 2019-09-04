@@ -29,6 +29,8 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
     @trip.update(trip_params)
+    @trip.update(start_date: params[:trip][:start_date])
+    @trip.update(end_date: params[:trip][:end_date])
     @trip.user = current_user
     redirect_to dashboard_path(@user)
   end
