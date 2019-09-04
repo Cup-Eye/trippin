@@ -50,37 +50,13 @@
         </div>
       </div>
     </div>
+
   <div class="col-12 col-lg-10">
-  <div class="large-time-container">
-    <div class="time-header">
-      <h1>Proposed Timeframes: </h1>
-    </div>
-    <div class="form-container-index">
-    <%= form_for([@board, @timeframe])  do |f| %>
-    <div class="index-cont">
-        <div class="form-field">
-          <%= f.label :start_date %>
-        <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
-        </div>
-        <div class="form-field">
-          <%= f.label :end_date %>
-          <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
-        </div>
-
-       <%= f.submit "Add to calendar", class: "submit-button" %>
-    </div>
-  <% end %>
-    </div>
-  </div>
-
-
     <!-- prevent users from submitting a timeframe overlapping another of their own timeframes -->
-
-
+    <div class="time-header">
+      <h1>Timeframe overview </h1>
+    </div>
     <% if @timeframes.any? %>
-      <div class="year">
-        <p>Year <%=@first_day_grid.strftime('%Y')%></p>
-      </div>
       <div class="wrapper" style="grid-template-columns: repeat(<%= @total_dates + 1%>, minmax(45px, 50px));">
 
       <!-- display month -->
@@ -92,7 +68,7 @@
         <% @total_dates.times do |i| %>
           <span class="<%="grid-month-#{@first_day_grid.month}"%>">
             <%if i==0 || @first_day_grid.strftime('%e').to_i == 1 %>
-              <%= (@first_day_grid).strftime('%B') %>
+              <%= (@first_day_grid).strftime('%b %y')%>
             <%end%>
           </span>
           <div class="grid-day" style='grid-column: <%= i + 1 %> / span 1 ; grid-row: 2/ span 1;'>
@@ -122,9 +98,33 @@
         <% end %>
       </div>
     <% end %>
+    <div class="large-time-container">
+      <div class="time-sub-header">
+        <h1>Select your travel times! </h1>
+      </div>
+      <div class="form-container-index">
+      <%= form_for([@board, @timeframe])  do |f| %>
+      <div class="index-cont">
+          <div class="form-field">
+            <%= f.label :start_date %>
+          <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
+          </div>
+          <div class="form-field">
+            <%= f.label :end_date %>
+            <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
+          </div>
+
+         <%= f.submit "Add to calendar", class: "submit-button" %>
+      </div>
+    <% end %>
+      </div>
+    </div>
   </div>
 </div>
 </div>
+
+
+
 <!--
   <br>
   <br>
