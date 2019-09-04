@@ -20,7 +20,8 @@ class ParticipantsController < ApplicationController
   def destroy
     @participant = Participant.find(params[:id])
     @participant.destroy
-    redirect_to
+    @trip = Trip.find(params[:trip_id])
+    redirect_to new_trip_participant_path(@trip)
   end
 
   private

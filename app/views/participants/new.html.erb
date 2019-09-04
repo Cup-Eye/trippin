@@ -1,12 +1,20 @@
 <div class="row">
   <div class="col-12 col-lg-3">
     <div class="participant-list">
-      <p>Added Participants:</p>
-      <ul>
+      <p><u>Added Participants:</u></p>
+      <div class="participants">
         <% @trip.participants.each do |participant| %>
-          <li><%= participant.user.first_name %> <%=participant.user.last_name%></li>
+            <p>
+              <%= cl_image_tag participant.user.photo,
+                   gravity: :face, class: "avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= participant.user.first_name %> <%=participant.user.last_name%>
+              <%= link_to "🗑", trip_participant_path(@trip, participant),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to remove this Participant?" }%>
+
+            </p>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 
