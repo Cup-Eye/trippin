@@ -104,10 +104,29 @@
       <div class="comment-container">
         <div class="comment-list">
           <% @board.comments.each do |comment| %>
-            <div class="message-container">
-              <p class="sender"><%= comment.user.first_name %> </p>
-              <div class="message"><%= comment.content %></div>
+            <% if comment.user == current_user %>
+            <div class="message-right">
+              <div class="current_user-message-container">
+                <div class="sender">
+                  <%= cl_image_tag comment.user.photo,
+                   gravity: :face, class: "chat-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= comment.user.first_name %>
+                </div>
+                <div class="current_user-message"><%= comment.content %></div>
+              </div>
             </div>
+            <%else%>
+            <div class="message-left">
+              <div class="other_user-message-container">
+                <div class="sender">
+                  <%= cl_image_tag comment.user.photo,
+                    gravity: :face, class: "chat-avatar", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <%= comment.user.first_name %>
+                </div>
+                <div class="other_user-message"><%= comment.content %></div>
+              </div>
+            </div>
+            <%end%>
           <%end%>
         </div>
         <div class="comment-form">
