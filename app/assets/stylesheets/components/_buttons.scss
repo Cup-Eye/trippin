@@ -32,6 +32,30 @@ $time_color: #5ca0d3;
   box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);  box-shadow: 0 9px 9px 0 rgba(0,0,0,0.14), 0 8px 12px 0 rgba(0,0,0,0.12), 0 10px 8px -9px rgba(0,0,0,0.2);
 }
 
+.finish-btn{
+  color: white ;
+  background: #6ce5e4;
+  padding: 5px 8px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 10px lightgrey;
+  transition: box-shadow .2s ease;
+  font-size: 17px;
+  margin: 10px 0;
+  width: 100%;
+  text-align: center;
+  &:hover{
+    box-shadow: 10 9px 39px rgba(0, 0, 0, 0.14), 0 8px 12px 0 rgba(0, 0, 0, 0.12), 0 10px 8px -9px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.fbtn{
+    color: white;
+  &:hover{
+    text-decoration: none;
+    color: white;
+  }
+}
+
 .accom-btn{
   color: $accom_color !important;
   background: white;

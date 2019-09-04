@@ -15,7 +15,7 @@
 
         <div class="side-link">
           <%= link_to (timeframe_board_timeframes_path(@trip.timeframe_board)) do %>
-            <div class="side-button" id="active">
+            <div class="side-button" id="TF">
               <i class="far fa-calendar-alt fa-2x"></i>
               <div id="Active">Time Frames</div>
             </div>
@@ -24,7 +24,7 @@
 
         <div class="side-link">
           <%=link_to (destination_board_destinations_path(@trip.destination_board)) do %>
-            <div class= "side-button" id="D">
+            <div class= "side-button" id="active">
               <i class="fas fa-globe-americas fa-2x"></i>
               <div id="Dl">Destination</div>
             </div>
@@ -33,7 +33,7 @@
 
         <div class="side-link">
           <%= link_to (transportation_board_transportations_path(@trip.transportation_board)) do %>
-            <div class="side-button" id="T">
+            <div class="side-button" id="active">
               <i class="fas fa-plane fa-2x"></i>
               <div id="Tl">Transportation</div>
             </div>
@@ -42,7 +42,7 @@
 
         <div class="side-link">
           <%= link_to (accommodation_board_accommodations_path(@trip.accommodation_board)) do %>
-            <div class= "side-button" id="A">
+            <div class= "side-button" id="active">
               <i class="fas fa-home fa-2x"></i>
               <div id="Al">Accommodation</div>
             </div>
@@ -53,7 +53,7 @@
   <div class="col-12 col-lg-10">
   <div class="large-time-container">
     <div class="time-header">
-      <h1>Proposed Timeframes: </h1>
+      <h2>Find your <span>Timeframe</span></h2>
     </div>
     <div class="form-container-index">
     <%= form_for([@board, @timeframe])  do |f| %>
