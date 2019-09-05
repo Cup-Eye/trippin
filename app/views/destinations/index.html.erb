@@ -101,10 +101,15 @@
               </ul>
             </div>
             <div class="destination-buttons">
-              <%= link_to "Edit", edit_destination_path(dest), class: "dest-btn" %>
-              <%= link_to "Delete", destination_path(dest), class: "dest-btn",
-              method: :delete,
-              data: { confirm: "Are you sure you want to delete this Destination?" }%>
+              <%= link_to edit_destination_path(dest), class: "dest-edit" do %>
+                <i class="far fa-edit"></i>
+              <% end %>
+              <%= link_to destination_path(dest),
+                  method: :delete,
+                  data: { confirm: "Are you sure you want to delete this Transportation?" },
+                  class: "dest-delete" do %>
+                    <i class="far fa-trash-alt"></i>
+              <% end %>
             </div>
           </div>
         </div>

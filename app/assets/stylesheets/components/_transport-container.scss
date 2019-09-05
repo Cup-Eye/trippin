@@ -45,3 +45,22 @@
   justify-content: space-bewteen !important;
 }
 
+.trans-edit{
+  font-size: 25px;
+  color: #6bc5d2;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+.trans-delete{
+  font-size: 25px;
+  color: #6bc5d2;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+

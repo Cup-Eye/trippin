@@ -108,3 +108,23 @@
 #destination-winner {
   border: 4px solid pink;
 }
+
+.dest-edit{
+  font-size: 25px;
+  color: #30e3ca;
+  margin: 0 10px;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+.dest-delete{
+  font-size: 25px;
+  color: #30e3ca;
+  margin: 0 10px;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}

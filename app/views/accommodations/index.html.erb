@@ -114,10 +114,15 @@
                         </ul>
                       </div>
                       <div class="accom-action-list">
-                        <%= link_to "Edit", edit_accommodation_path(acc), class: "accom-btn" %>
-                        <%= link_to "Delete", accommodation_path(acc),
+                        <%= link_to edit_accommodation_path(acc), class: "accom-edit" do %>
+                          <i class="far fa-edit"></i>
+                        <% end %>
+                        <%= link_to accommodation_path(acc),
                             method: :delete,
-                            data: { confirm: "Are you sure you want to delete this Accommodation?" }, class: "accom-btn"%>
+                            data: { confirm: "Are you sure you want to delete this Transportation?" },
+                            class: "accom-delete" do %>
+                              <i class="far fa-trash-alt"></i>
+                        <% end %>
                       </div>
                     </div>
                   </div>
