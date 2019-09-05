@@ -77,7 +77,7 @@ puts "Creating trips..."
 trip1 = Trip.create!(
   {
     user: User.first,
-    name: "France Wine🍷 & Cheese🧀"
+    name: "Wine & Cheese"
   }
 )
 
