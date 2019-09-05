@@ -125,6 +125,7 @@
                           <% end %>
                         </ul>
                       </div>
+                      <% if acc.user == current_user %>
                       <div class="accom-action-list">
                         <%= link_to edit_accommodation_path(acc), class: "accom-edit" do %>
                           <i class="far fa-edit"></i>
@@ -136,6 +137,7 @@
                               <i class="far fa-trash-alt"></i>
                         <% end %>
                       </div>
+                      <% end %>
                     </div>
                   </div>
                 </div>

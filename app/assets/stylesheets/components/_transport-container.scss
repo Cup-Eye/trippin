@@ -41,6 +41,10 @@
   li {
     display: inline;
   }
+  .trans-user{
+  font-size: 30px;
+  margin: 0;
+}
 }
 
 .form-inline {
@@ -49,11 +53,11 @@
 
 .trans-header{
   display: flex;
-  justify-content: space-bewteen !important;
+  justify-content: space-between !important;
 }
 
 .trans-edit{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   &:hover{
     text-decoration: none;
@@ -62,7 +66,7 @@
 }
 
 .trans-delete{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   &:hover{
     text-decoration: none;

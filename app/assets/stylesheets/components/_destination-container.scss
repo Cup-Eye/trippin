@@ -84,7 +84,7 @@
 .dest-top{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 33px;
+  padding-bottom: 3px;
 }
 
 .dest-title{
@@ -114,7 +114,7 @@
 }
 
 .dest-edit{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   margin: 0 10px;
   &:hover{
@@ -124,7 +124,7 @@
 }
 
 .dest-delete{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   margin: 0 10px;
   &:hover{
