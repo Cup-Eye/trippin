@@ -47,7 +47,7 @@
 
 
 .timeframes-container{
-  margin: 10px;
+  // margin: 10px;
 }
 
 * {box-sizing: border-box;}
@@ -133,6 +133,25 @@
   font-size: 20px;
   opacity: 1;
   margin: 0;
+}
+
+
+.time-edit{
+  font-size: 15px;
+  color: #5ca0d3;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+.time-delete{
+  font-size: 15px;
+  color: #5ca0d3;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
 }
 
 // .two {

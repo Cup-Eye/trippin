@@ -485,8 +485,9 @@ h1, h2, p{
 .side-menu{
   // border-right: double 7px #dee1ec;
   background: #F7F7F7;
-  padding: 20px 0;
+  padding: 20px 1px;
   text-align: center;
+  margin: 0 auto;
 }
 
 .side-button{
@@ -653,6 +654,7 @@ h1, h2, p{
     border: solid 2px #75e8e8;
     box-shadow: 1px 1px 10px lightgrey;
     transition: box-shadow .2s ease;
+    margin-right: 20px;
     &:hover{
       text-decoration: none;
       color: #75e8e8;
@@ -721,12 +723,19 @@ h1, h2, p{
 
 #dropdown-settings{
   text-align: center;
-  height: 42px;
+  height: 63px;
   min-width: 90px;
   right: -37px;
   a {
     color: black;
     text-align: center;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+  ul{
+    list-style: none;
+    padding: 0 !important;
   }
 }
 
