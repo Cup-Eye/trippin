@@ -55,19 +55,10 @@
 
     <!-- prevent users from submitting a timeframe overlapping another of their own timeframes -->
     <div class="time-header">
-
       <h2>Find your <span>Timeframe</span></h2>
-
     </div>
-   <% if @timeframes.any? %>
-     <div class=“wrapper” style=“grid-template-columns: repeat(<%= @total_dates + 1%>, minmax(45px, 50px));“>
-
-      <!-- display month -->
-      <!-- display weekdays and dates -->
-
-<!--    <span class="<#%="grid-month-#{@first_day_grid.month}"%>">
-            <#%= (@first_day_grid).strftime('%B') %>
-        </span> -->
+    <% if @timeframes.any? %>
+     <div class=“wrapper” style="grid-template-columns: repeat(<%= @total_dates + 1%>, minmax(50px, 50px));">
         <% @total_dates.times do |i| %>
           <span class="<%="grid-month-#{@first_day_grid.month}"%>">
             <%if i==0 || @first_day_grid.strftime('%e').to_i == 1 %>
@@ -81,14 +72,8 @@
         <% end %>
 
         <% @board.trip.active_users.each_with_index do |user, index| %>
-       <!--    <div class="two" style='grid-column: 1 / span 2 ; grid-row: <#%= index + 3 %> / <#%= index + 3 %> ;'>
-            <%= user.first_name %>:
-          </div> -->
           <% user.timeframes.where(board: @board).each do |timeframe| %>
             <div class="one" style='grid-column: <%= 1 + (timeframe.start_date - @earliest_date).to_i %> / <%= (timeframe.start_date - @earliest_date).to_i + 2 + (timeframe.end_date - timeframe.start_date).to_i %>; grid-row: <%= index + 3 %>/ <%= index + 3 %> ;'>
-              <!-- <div class="d-flex justify-content-between">
-                <#%= (timeframe.start_date).strftime('%e.%m') %> - <#%= (timeframe.end_date).strftime('%e.%m') %>
-              </div> -->
               <%= user.first_name %>
               <div class="time-action-list">
                 <%= link_to "✏️", edit_timeframe_path(timeframe), class: "time-action" %>
@@ -106,66 +91,44 @@
         <h1>Select your travel times! </h1>
       </div>
       <div class="form-container-index">
-      <%= form_for([@board, @timeframe])  do |f| %>
-      <div class="index-cont">
-          <div class="form-field">
-            <%= f.label :start_date %>
-          <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
-          </div>
-          <div class="form-field">
-            <%= f.label :end_date %>
-            <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
-          </div>
-
-         <%= f.submit "Add to calendar", class: "submit-button" %>
-      </div>
-    <% end %>
-      </div>
-              <% if @trip.user == current_user %>
-      <div class="large-time-container">
-            <div class="time-sub-header">
-              <h1>Please set the final timeframe</h1>
+        <%= form_for([@board, @timeframe])  do |f| %>
+          <div class="index-cont">
+            <div class="form-field">
+              <%= f.label :start_date %>
+              <%= f.text_field :start_date, as: :string, label: "Start", id:"range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
             </div>
-            <div class="form-container-index">
+            <div class="form-field">
+              <%= f.label :end_date %>
+              <%= f.text_field :end_date, as: :string, label: "Start", id:"range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
+            </div>
+            <%= f.submit "Add to calendar", class: "submit-button" %>
+          </div>
+        <% end %>
+      </div>
+      <% if @trip.user == current_user %>
+        <div class="large-time-container">
+          <div class="time-sub-header">
+            <h1>Please set the final timeframe</h1>
+          </div>
+          <div class="form-container-index">
             <%= form_for([@board, @trip], url: trip_path(@trip.id), method: :patch) do |f| %>
-            <div class="index-cont">
+              <div class="index-cont">
                 <div class="form-field">
                   <%= f.label :start_date %>
-                <%= f.text_field :start_date, as: :string, label: "Start", id:"final_range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
+                  <%= f.text_field :start_date, as: :string, label: "Start", id:"final_range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
                 </div>
                 <div class="form-field">
                   <%= f.label :end_date %>
                   <%= f.text_field :end_date, as: :string, label: "Start", id:"final_range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
                 </div>
-
-               <%= f.submit "Set final travel time", class: "submit-button" %>
-            </div>
-          <% end %>
+                <%= f.submit "Set final travel time", class: "submit-button" %>
+              </div>
+            <% end %>
+          </div>
         </div>
+      <%end%>
     </div>
   </div>
-    </div>
-  <% end %>
 </div>
-</div>
-
-
-<!--
-  <br>
-  <br>
-  <p>------------------------</p>
-
-    <#% @timeframes.each do |tf| %>
-    <p><#%= tf.start_date.strftime('%e.%m') %> - <#%= tf.end_date.strftime('%e.%m.%Y') %> (<#%=tf.user.first_name%>)
-
-
-      <#%= link_to "Edit", edit_timeframe_path(tf) %>
-      <#%= link_to "Delete", timeframe_path(tf),
-      method: :delete,
-      data: { confirm: "Are you sure you want to delete this Timeframe?" }%>
-    </p>
-    <p> <#%= tf.description %> </p>
-  <#% end %> -->
-
 
 
