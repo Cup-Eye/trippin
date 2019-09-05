@@ -1,7 +1,6 @@
 <div class= "container-index">
   <div class="banner-index">
     <div class="banner-index-content">
-      <h1> <strong>Trip Dashboard  </strong> </h1>
       <h2><%= @trip.name %></h2>
       <%= link_to edit_trip_path(@trip), class: "edit" do %>
         <i class="far fa-edit"></i>
@@ -49,7 +48,7 @@
                 <span class="icon"></span>
                 <h2><%=board.name %></h2>
                 <p class="desc"><%=board.description%></p>
-                <p class="status">Status: <em><%=board.status&.capitalize%></em></p>
+                <p class="status"><em><%=board.status&.capitalize%></em></p>
               </div>
               <% end %>
           </div>
