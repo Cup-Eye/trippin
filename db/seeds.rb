@@ -88,7 +88,6 @@ Destination.create([
       user: User.fourth,
       name: "Paris",
       board: dest_board,
-      winning: true
     },
     {
       user: User.fifth,
@@ -104,7 +103,6 @@ Destination.create([
       user: User.second,
       name: "Biaritz",
       board: dest_board,
-      winning: true
     },
     {
       user: User.fourth,
