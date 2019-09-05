@@ -5,6 +5,7 @@ class DestinationsController < ApplicationController
     @destinations = @board.destinations.sort_by {|destination| - destination.votes_for.size }
     @comment = Comment.new
     @board.comments
+
   end
 
   def new
