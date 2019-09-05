@@ -11,7 +11,7 @@
   position: relative;
   background: white;
   padding: 10px;
-  width: 760px;
+  width: 700px;
   margin: 20px auto;
   border-radius: 2px;
   border-color: #104a05;
@@ -30,6 +30,9 @@
   }
   p {
     line-height: 1.4;
+  }
+  .dest-right{
+    width: 506px;
   }
 }
 .destination-buttons{
@@ -84,7 +87,7 @@
 .dest-top{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 33px;
+  padding-bottom: 3px;
 }
 
 .dest-title{
@@ -114,7 +117,7 @@
 }
 
 .dest-edit{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   margin: 0 10px;
   &:hover{
@@ -124,7 +127,7 @@
 }
 
 .dest-delete{
-  font-size: 25px;
+  font-size: 20px;
   color: #1c4f6d;
   margin: 0 10px;
   &:hover{
