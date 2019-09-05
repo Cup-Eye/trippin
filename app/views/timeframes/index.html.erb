@@ -60,7 +60,6 @@
 
    <% if @timeframes.any? %>
      <div class="wrapper" style="grid-template-columns: repeat(<%= @total_dates + 1%>, minmax(45px, 50px));">
-
         <% @total_dates.times do |i| %>
           <span class="<%="grid-month-#{@first_day_grid.month}"%>">
             <%if i==0 || @first_day_grid.strftime('%e').to_i == 1 %>
@@ -72,11 +71,10 @@
           </div>
           <% @first_day_grid += 1 %>
         <% end %>
-
+        <% colors = ["#58FA82", "#00BFFF", "#CC2EFA", "#FFBF00","#FFBF00", "#FA5858"] %>
         <% @board.trip.active_users.each_with_index do |user, index| %>
-
-          <% user.timeframes.where(board: @board).each do |timeframe| %>
-            <div class="one" style='grid-column: <%= 1 + (timeframe.start_date - @earliest_date).to_i %> / <%= (timeframe.start_date - @earliest_date).to_i + 2 + (timeframe.end_date - timeframe.start_date).to_i %>; grid-row: <%= index + 3 %>/ <%= index + 3 %> ;'>
+          <% user.timeframes.where(board: @board).each_with_index do |timeframe| %>
+            <div class="one" style='grid-column: <%= 1 + (timeframe.start_date - @earliest_date).to_i %> / <%= (timeframe.start_date - @earliest_date).to_i + 2 + (timeframe.end_date - timeframe.start_date).to_i %>; grid-row: <%= index + 3 %>/ <%= index + 3 %> ; background-color: <%= colors[index]%>;'>
               <%= user.first_name %>
               <div class="time-action-list">
                 <%= link_to edit_timeframe_path(timeframe), class: "time-edit" do %>
