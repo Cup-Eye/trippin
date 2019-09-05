@@ -46,6 +46,6 @@ class DestinationsController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:name, :description, :winning)
+    params.require(:destination).permit(:name, :description, :winning, :photo)
   end
 end

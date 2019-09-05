@@ -59,10 +59,11 @@
           <h2>Find your <span>Accommodation</span></h2>
           <%= link_to "+ Add Accommodation", new_accommodation_board_accommodation_path(@board), class: "add"%>
         </div>
-        <% @accommodations.each do |acc| %>
+        <% @accommodations.each_with_index do |acc, index| %>
           <div class="accom-card-link" >
             <%= link_to ("#{acc.url}"), target: :_blank do %>
-              <div class="accom-card <%= 'voted' if current_user.liked? acc %>" >
+              <div class="accom-card <%= 'voted' if current_user.liked? acc %>
+                justify-content-around" id="<%= 'accommodation-winner' if index == 0 %>">
                 <div class="accom-card-content">
                   <div class="accom-card-map">
                     <div
@@ -77,18 +78,28 @@
                     <div class="accom-header">
                       <h3><strong><%=acc.name%></strong></h3>
                       <% if current_user.liked? acc%>
+                      <div class="votes-cta">
+                        <div class="pr-2">
+                            <p> Voted! </p>
+                        </div>
                         <p>
                           <%= link_to accommodation_accommodation_votes_path(acc), method: :delete do %>
                             <i class="fas fa-check-square fa-2x"></i>
                           <% end %>
                         </p>
+                      </div>
                       <% else %>
+                      <div class="votes-cta">
+                        <div class="pr-2">
+                          <p> Vote here! </p>
+                        </div>
                         <p>
                           <%= link_to accommodation_accommodation_votes_path(acc), method: :post do %>
                             <!-- <i class="far fa-check-square fa-2x"></i> -->
                             <i class="far fa-square fa-2x"></i>
                           <% end %>
                         </p>
+                      </div>
                       <% end %>
                     </div>
 
