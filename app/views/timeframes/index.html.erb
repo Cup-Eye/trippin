@@ -72,7 +72,7 @@
           </div>
           <% @first_day_grid += 1 %>
         <% end %>
-        <% colors = ["#58FA82", "#00BFFF", "#CC2EFA", "#FFBF00","#FFBF00", "#FA5858"] %>
+        <% colors = ["#58FA82", "#00BFFF", "#CC2EFA", "#FFBF00","#FE2EF7", "#FA5858"] %>
         <% @board.trip.active_users.each_with_index do |user, index| %>
           <% user.timeframes.where(board: @board).each_with_index do |timeframe| %>
             <div class="one" style='grid-column: <%= 1 + (timeframe.start_date - @earliest_date).to_i %> / <%= (timeframe.start_date - @earliest_date).to_i + 2 + (timeframe.end_date - timeframe.start_date).to_i %>; grid-row: <%= index + 3 %>/ <%= index + 3 %> ; background-color: <%= colors[index]%>;'>
