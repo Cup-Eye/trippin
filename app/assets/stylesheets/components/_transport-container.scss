@@ -41,6 +41,10 @@
   li {
     display: inline;
   }
+  .trans-user{
+  font-size: 30px;
+  margin: 0;
+}
 }
 
 .form-inline {
@@ -49,7 +53,7 @@
 
 .trans-header{
   display: flex;
-  justify-content: space-bewteen !important;
+  justify-content: space-between !important;
 }
 
 .trans-edit{

@@ -68,6 +68,7 @@
                 <div class="trans-header">
                   <%= cl_image_tag transport.user.photo,
                         width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+                  <p class="trans-user"><%=transport.user.first_name%>'s Boarding Pass</p>
                   <div class="buttons-container">
                     <%= link_to edit_transportation_path(transport), class: "trans-edit" do %>
                       <i class="far fa-edit"></i>
