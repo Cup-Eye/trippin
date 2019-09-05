@@ -8,6 +8,7 @@
         <div class=side-link>
           <%= link_to (trip_path(@trip)) do %>
             <div class="side-button" id="B">
+              <i class="fas fa-arrow-left"></i>
               <div id="Bl">Back to Boards </div>
             </div>
           <%end%>
@@ -58,10 +59,11 @@
           <h2>Find your <span>Accommodation</span></h2>
           <%= link_to "+ Add Accommodation", new_accommodation_board_accommodation_path(@board), class: "add"%>
         </div>
-        <% @accommodations.each do |acc| %>
+        <% @accommodations.each_with_index do |acc, index| %>
           <div class="accom-card-link" >
             <%= link_to ("#{acc.url}"), target: :_blank do %>
-              <div class="accom-card <%= 'voted' if current_user.liked? acc %>" >
+              <div class="accom-card <%= 'voted' if current_user.liked? acc %>
+                justify-content-around" id="<%= 'accommodation-winner' if index == 0 %>">
                 <div class="accom-card-content">
                   <div class="accom-card-map">
                     <div
@@ -76,18 +78,28 @@
                     <div class="accom-header">
                       <h3><strong><%=acc.name%></strong></h3>
                       <% if current_user.liked? acc%>
+                      <div class="votes-cta">
+                        <div class="pr-2">
+                            <p> Voted! </p>
+                        </div>
                         <p>
                           <%= link_to accommodation_accommodation_votes_path(acc), method: :delete do %>
                             <i class="fas fa-check-square fa-2x"></i>
                           <% end %>
                         </p>
+                      </div>
                       <% else %>
+                      <div class="votes-cta">
+                        <div class="pr-2">
+                          <p> Vote here! </p>
+                        </div>
                         <p>
                           <%= link_to accommodation_accommodation_votes_path(acc), method: :post do %>
                             <!-- <i class="far fa-check-square fa-2x"></i> -->
                             <i class="far fa-square fa-2x"></i>
                           <% end %>
                         </p>
+                      </div>
                       <% end %>
                     </div>
 
@@ -114,10 +126,15 @@
                         </ul>
                       </div>
                       <div class="accom-action-list">
-                        <%= link_to "Edit", edit_accommodation_path(acc), class: "accom-btn" %>
-                        <%= link_to "Delete", accommodation_path(acc),
+                        <%= link_to edit_accommodation_path(acc), class: "accom-edit" do %>
+                          <i class="far fa-edit"></i>
+                        <% end %>
+                        <%= link_to accommodation_path(acc),
                             method: :delete,
-                            data: { confirm: "Are you sure you want to delete this Accommodation?" }, class: "accom-btn"%>
+                            data: { confirm: "Are you sure you want to delete this Transportation?" },
+                            class: "accom-delete" do %>
+                              <i class="far fa-trash-alt"></i>
+                        <% end %>
                       </div>
                     </div>
                   </div>
