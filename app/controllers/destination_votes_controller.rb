@@ -8,6 +8,9 @@ class DestinationVotesController < ApplicationController
     else
       flash[:alert] = "Sorry, you cannot chose all options!"
     end
+    if params[:winning].present?
+     @destination.winning = true
+   end
     redirect_to destination_board_destinations_path(@destination.board)
   end
 
@@ -21,6 +24,6 @@ class DestinationVotesController < ApplicationController
   private
 
   def destination_params
-    params.require(:destination).permit(:name, :description)
+    params.require(:destination).permit(:name, :description, :winning)
   end
 end

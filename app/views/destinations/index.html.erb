@@ -68,7 +68,7 @@
               <% if current_user.liked? dest%>
                 <p>
                   <%= link_to destination_destination_votes_path(dest), method: :delete do %>
-                    <i class="fas fa-check-square fa-2x"></i>
+                   <i class="fas fa-check-square fa-2x"></i>
                   <% end %>
                 </p>
               <% else %>
