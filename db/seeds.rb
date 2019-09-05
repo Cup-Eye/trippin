@@ -92,7 +92,12 @@ trip1 = Trip.create!(
   }
 )
 
-dest_board = trip1.destination_board
+dest_board = trip1.create_destination_board!({
+  title: "Destination",
+  status: "In Progress",
+  description: "Decide where you want to go!"
+})
+
 
 Destination.create([
     {
