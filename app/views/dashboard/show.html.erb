@@ -28,7 +28,7 @@
       <%= link_to trip_path(participant.trip) do %>
       <div class = "trip-card">
         <div class="trip-card-content">
-          <% unless participant.trip.photo.nil? %>
+          <% unless participant.trip.photo.blank? %>
             <div style="background-size: cover; background-image: url(<%= cl_image_path participant.trip.photo %>)" class="trip-photo"></div>
           <% end %>
           <h4><%= participant.trip.name %><%=participant.trip.destination %></h4>
