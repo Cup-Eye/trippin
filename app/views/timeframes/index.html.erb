@@ -52,12 +52,7 @@
     </div>
 
   <div class="col-12 col-lg-10">
-        <div>
 
-        <p>Your trip starts <strong><%= (@trip.start_date).strftime('%a %e. %B %Y') %></strong>  </p>
-        <p>and ends <strong><%= (@trip.end_date).strftime('%a %e. %B %Y') %></strong></p>
-
-      </div>
     <!-- prevent users from submitting a timeframe overlapping another of their own timeframes -->
     <div class="time-header">
 
@@ -125,34 +120,35 @@
       </div>
     <% end %>
       </div>
+              <% if @trip.user == current_user %>
+      <div class="large-time-container">
+            <div class="time-sub-header">
+              <h1>Please set the final timeframe</h1>
+            </div>
+            <div class="form-container-index">
+            <%= form_for([@board, @trip], url: trip_path(@trip.id), method: :patch) do |f| %>
+            <div class="index-cont">
+                <div class="form-field">
+                  <%= f.label :start_date %>
+                <%= f.text_field :start_date, as: :string, label: "Start", id:"final_range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
+                </div>
+                <div class="form-field">
+                  <%= f.label :end_date %>
+                  <%= f.text_field :end_date, as: :string, label: "Start", id:"final_range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
+                </div>
+
+               <%= f.submit "Set final travel time", class: "submit-button" %>
+            </div>
+          <% end %>
+        </div>
     </div>
   </div>
-</div>
-</div>
-
-<% if @trip.user == current_user %>
-<div class="large-time-container">
-      <div class="time-sub-header">
-        <h1>Please set the final timeframe</h1>
-      </div>
-      <div class="form-container-index">
-      <%= form_for([@board, @trip], url: trip_path(@trip.id), method: :patch) do |f| %>
-      <div class="index-cont">
-          <div class="form-field">
-            <%= f.label :start_date %>
-          <%= f.text_field :start_date, as: :string, label: "Start", id:"final_range_start", class: "datepicker", placeholder: Time.now.strftime("%B %e, %Y") %>
-          </div>
-          <div class="form-field">
-            <%= f.label :end_date %>
-            <%= f.text_field :end_date, as: :string, label: "Start", id:"final_range_end", class: "datepicker form-control", placeholder: Time.now.strftime("%B %e, %Y") %>
-          </div>
-
-         <%= f.submit "Set final travel time", class: "submit-button" %>
-      </div>
-    <% end %>
-      </div>
     </div>
   <% end %>
+</div>
+</div>
+
+
 <!--
   <br>
   <br>
