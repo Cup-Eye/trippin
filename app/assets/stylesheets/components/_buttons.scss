@@ -15,6 +15,11 @@ $time_color: #5ca0d3;
 //   }
 // }
 
+.forgot{
+  color: black;
+  margin: 20px 0;
+}
+
 .trip-btn{
   color: white;
   background: $trip_color;
@@ -23,7 +28,7 @@ $time_color: #5ca0d3;
   box-shadow: 0 4px 4px 0 rgba(0,0,0,0.14), 0 3px 7px 0 rgba(0,0,0,0.12), 0 5px 3px -5px rgba(0,0,0,0.2);
   transition: box-shadow .2s ease;
   font-size: 17px;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 .trip-btn:hover{
