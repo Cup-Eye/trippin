@@ -91,6 +91,16 @@ trip1 = Trip.create!(
     name: "Wine Trip"
   }
 )
+trip2 = Trip.create!(
+  {
+    user: User.first,
+    name: "Skiing in Vail"
+})
+trip3 = Trip.create!(
+{
+  user: User.first,
+  name: "London 💍"
+})
 
 dest_board = trip1.create_destination_board!({
   title: "Destination",
@@ -187,7 +197,7 @@ board.accommodations.create!(
     },
     {
       user: ross,
-      name: "Romantic's French Feel Notre Dame",
+      name: "Romantic's French Feel",
       url: "https://www.airbnb.de/rooms/2530537?adults=6&source_impression_id=p3_1567609409_sSFsO97wLktUvK8k",
       kind: "Airbnb",
       price: "315€",
@@ -203,7 +213,7 @@ board.accommodations.create!(
     },
      {
       user: phoebe,
-      name: "Stylish Haussmann Apartment Centre",
+      name: "Stylish Haussmann Apartment",
       url: "https://www.airbnb.de/rooms/22714972?adults=6&source_impression_id=p3_1567613803_%2BkVH5WIjvdRItoed",
       kind: "Airbnb",
       price: "418",
@@ -211,7 +221,7 @@ board.accommodations.create!(
     },
      {
       user: chandler,
-      name: "The Residence Luxury Apt Center",
+      name: "The Residence Luxury Apt",
       url: "https://www.airbnb.de/rooms/25155033?adults=6&source_impression_id=p3_1567614654_kUjbT9qWWR%2BRXche&s=zLXes-md",
       kind: "Airbnb",
       price: "589",
@@ -219,7 +229,7 @@ board.accommodations.create!(
     },
      {
       user: ross,
-      name: "Central Paris, Beaubourg, 3 bdrms",
+      name: "Central Paris, Beaubourg",
       url: "https://www.airbnb.de/rooms/11453841?adults=6&source_impression_id=p3_1567667805_cBqd1CL28w2foD1Y&s=zLXes-md",
       kind: "Airbnb",
       price: "300",
