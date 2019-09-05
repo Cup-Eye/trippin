@@ -27,7 +27,7 @@
   color: black;
   &.accom-edit{
     font-size: 25px;
-    color: #00bdaa;
+    color: #1c4f6d;
     margin: 0 10px;
     &:hover{
       text-decoration: none;
@@ -36,7 +36,7 @@
   }
   &.accom-delete{
     font-size: 25px;
-    color: #00bdaa;
+    color: #1c4f6d;
     margin: 0 10px;
     &:hover{
       text-decoration: none;
@@ -74,7 +74,7 @@
   justify-content: space-between;
   color: black;
   & h3{
-    color: black;
+    color: #1c4f6d;
   }
   & .fas{
     color: #00e3e3;
@@ -100,10 +100,6 @@
 
 .vote-list li{
   display: inline;
-}
-
-.voted {
-  border: 4px solid #00e3e3;
 }
 
 .accom-vote-info{

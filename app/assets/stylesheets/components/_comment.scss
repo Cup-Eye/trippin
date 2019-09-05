@@ -1,6 +1,6 @@
 .comment-container{
   padding: 5px;
-  height: 100vh;
+  height: 100%;
   border-left: solid 1px #d4d7dd;
   box-shadow: 1px 1px 10px #d3d3d37a;
 }
@@ -39,8 +39,8 @@
 }
 
 .current_user-message{
-  color: white;
-  background: #5bbeaa;
+  color: #1c4f6d;
+  background: #87eced;
   border-radius: 27px 27px 0 27px;
   padding: 12px;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.14);
@@ -52,6 +52,8 @@
   padding: 11px 21px;
   border-radius: 27px 27px 27px 0;
   width: 155px;
+  background: #1c4f6d;
+  color: white;
 }
 
 .comment-form{
@@ -63,7 +65,9 @@
 
 .send-btn{
   color: white;
-  background: #8bbabb;
+  background: #1c4f6d;
   border-radius: 2px;
+  width: 100%;
+  padding: 5px 0;
 }
 

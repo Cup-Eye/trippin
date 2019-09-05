@@ -32,20 +32,24 @@
           <%if board.type == "TimeframeBoard"
 
             link = timeframe_board_timeframes_path(board)
+            svg_name = 'calendar.svg'
           elsif board.type == "AccommodationBoard"
             link = accommodation_board_accommodations_path(board)
+            svg_name = 'house.svg'
           elsif board.type == "TransportationBoard"
             link = transportation_board_transportations_path(board)
+            svg_name = 'plane.svg'
           elsif board.type == "DestinationBoard"
             link = destination_board_destinations_path(board)
+            svg_name = 'world.svg'
           end%>
             <div class="board-container-card">
                 <%= link_to link do %>
               <div class=<%="board-card-#{board.type}"%>>
-                <span class="icon"></span>
+                <%= image_tag svg_name, class: "svg-img" %>
                 <h2><%=board.name %></h2>
-                <p class="desc"><%=board.description%></p>
-                <p class="status"><em><%=board.status&.capitalize%></em></p>
+                <p class="desc" style="color: #00000094; margin: auto; line-height: 22px; font-size: 16px;"><%=board.description%></p>
+                <p style="margin-top: 13px" class="status"><em class="<%=board.status%>" style="padding: 6px;font-size: 14px; border-radius: 2px;"><%=board.status&.capitalize%></em></p>
               </div>
               <% end %>
           </div>

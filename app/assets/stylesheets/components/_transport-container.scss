@@ -4,6 +4,12 @@
 
 .trans-container{
   margin-top: 10px;
+  p {
+    color: #1C4F76;
+  }
+  h2{
+    color: #1C4F76;
+  }
 }
 
 .transport-container {
@@ -22,6 +28,7 @@
   font-weight: normal;
   font-size: 15px;
   line-height: 27px;
+  opacity: 1 !important;
   }
   h1 {
   font-family: "Roboto", sans-serif;
@@ -47,7 +54,7 @@
 
 .trans-edit{
   font-size: 25px;
-  color: #6bc5d2;
+  color: #1c4f6d;
   &:hover{
     text-decoration: none;
     color: #626d71;
@@ -56,7 +63,7 @@
 
 .trans-delete{
   font-size: 25px;
-  color: #6bc5d2;
+  color: #1c4f6d;
   &:hover{
     text-decoration: none;
     color: #626d71;
