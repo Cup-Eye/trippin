@@ -1,37 +1,34 @@
 <div class= "container-index">
   <div class="banner-index">
-    <br>
-    <h1> <strong>Trip Dashboard  </strong> </h1>
-    <br>
-    <h2><%= @trip.name %></h2>
-    <br>
-    <div class="trip-participants">
-      <div>
-        <% @trip.participants.each do |participant| %>
-          <%= cl_image_tag participant.user.photo,
-            width: 40, height: 40, gravity: :face, class: "trip-dash-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-        <% end %>
+    <div class="banner-index-content">
+      <h2><%= @trip.name %></h2>
+      <%= link_to edit_trip_path(@trip), class: "edit" do %>
+        <i class="far fa-edit"></i>
+      <% end %>
+      <br>
+      <div class="trip-participants">
+        <div id="ptc-box" class="d-flex justify-content-center">
+          <% @trip.participants.each do |participant| %>
+            <%= cl_image_tag participant.user.photo,
+              width: 40, height: 40, gravity: :face, class: "trip-dash-avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+          <% end %>
+          <%= link_to "+", new_trip_participant_path(@trip), class: "trip-dash-avatar ptc-btn" %>
+        </div>
       </div>
-      <%= link_to "Add participants", new_trip_participant_path(@trip), class: "ptc-btn" %>
     </div>
   </div>
 
- <% if @trip.accommodation_board.status == "Completed" && @trip.transportation_board.status == "Completed" && @trip.timeframe_board.status == "Completed" && @trip.destination_board.status == "Completed"  %>
+ <% if @trip.accommodation_board.status == "Completed" && @trip.transportation_board.status == "Completed" && @trip.timeframe_board.status == "Completed" && @trip.destination_board.status == "Completed" && @trip.start_date.present? && @trip.end_date.present? %>
       <div class="summary-container">
           <h4>🎉 Congrats! You're ready to go on your trip 🎉 </h4>
           <div class="summary">
             <p>Destination: <strong><%= @trip.winning_destination.name  %></strong> </p>
-            <p>Arrival: <strong><%= (@trip.winning_timeframe.start_date).strftime('%a %e. %B %Y') %> </p>
-            <p>Departure: <strong><%= (@trip.winning_timeframe.end_date).strftime('%a %e. %B %Y') %></strong> </p>
+            <p>Arrival: <strong><%= (@trip.start_date).strftime('%a %e. %B %Y') %> </p>
+            <p>Departure: <strong><%= (@trip.end_date).strftime('%a %e. %B %Y') %></strong> </p>
              <p>  Accommodation: <strong><%= @trip.winning_accommodation.name %></strong> </p>
           </div>
       </div>
 <% end %>
-
-  <div class="trip-show-action">
-    <p><%= link_to "Back", dashboard_path(@user), class: "trip-btn" %></p>
-    <p><%= link_to "Edit Trip", edit_trip_path(@trip), class: "trip-btn" %></p>
-  </div>
   <div class="home-container">
       <div class="index-container">
             <% @boards.each do |board| %>
@@ -51,7 +48,7 @@
                 <span class="icon"></span>
                 <h2><%=board.name %></h2>
                 <p class="desc"><%=board.description%></p>
-                <p class="status">Status: <em><%=board.status&.capitalize%></em></p>
+                <p class="status"><em><%=board.status&.capitalize%></em></p>
               </div>
               <% end %>
           </div>

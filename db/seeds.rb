@@ -16,6 +16,48 @@ User.destroy_all
 puts "Creating users...."
 User.create!(
   [
+     {
+      email: "ross@example.com",
+      password: "123456",
+      first_name: "Ross",
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606131/Ross2_rld4kh.png"
+    },
+    {
+      email: "monica@example.com",
+      password: "123456",
+      first_name: "Monica",
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Monica2_skhmqf.png"
+    },
+    {
+      email: "joey@example.com",
+      password: "123456",
+      first_name: "Joey",
+      last_name: "Tribbiani",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Joey2_p6aemw.jpg"
+    },
+    {
+      email: "rachel@example.com",
+      password: "123456",
+      first_name: "Rachel",
+      last_name: "Green",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Rachel2_dghzkh.jpg"
+    },
+    {
+      email: "phoebe@example.com",
+      password: "123456",
+      first_name: "Phoebe",
+      last_name: "Buffay",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Phoebe2_ua1zkg.jpg"
+    },
+    {
+      email: "chandler@example.com",
+      password: "123456",
+      first_name: "Chandler",
+      last_name: "Bing",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Chandler2_j9udlh.jpg"
+    },
     {
       email: "ann@example.com",
       password: "123456",
@@ -23,48 +65,6 @@ User.create!(
       last_name: "Smith",
       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570154/mz1dxgkq3prjnnainmou.jpg"
     },
-    {
-      email: "monica@example.com",
-      password: "123456",
-      first_name: "Monica",
-      last_name: "Geller",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570158/yqrjbhytbilqvfm27oy3.jpg"
-    },
-    {
-      email: "ross@example.com",
-      password: "123456",
-      first_name: "Ross",
-      last_name: "Geller",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570154/y3uy4ntpemrotqhcjwlf.jpg"
-    },
-    {
-      email: "joey@example.com",
-      password: "123456",
-      first_name: "Joey",
-      last_name: "Tribbiani",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567495080/jared-sluyter-das6NrjLoM0-unsplash_ngwylp.jpg"
-    },
-    {
-      email: "rachel@example.com",
-      password: "123456",
-      first_name: "Rachel",
-      last_name: "Green",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570160/jkchsgick9gufqhycn2u.jpg"
-    },
-    {
-      email: "phoebe@example.com",
-      password: "123456",
-      first_name: "Phoebe",
-      last_name: "Buffay",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/v1566570156/vlimetua3o1d9ocvgrfh.jpg"
-    },
-    {
-      email: "chandler@example.com",
-      password: "123456",
-      first_name: "Chandler",
-      last_name: "Bing",
-      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567495083/ivana-cajina-_7LbC5J-jw4-unsplash_dku2xe.jpg"
-    }
   ]
 )
 
@@ -76,8 +76,8 @@ puts "Creating trips..."
 # Trip.skip_callback(:commit, :after, :create_four_boards)
 trip1 = Trip.create!(
   {
-    user: User.third,
-    name: "Europe Trip"
+    user: User.first,
+    name: "Wine & Cheese"
   }
 )
 
@@ -86,23 +86,27 @@ dest_board = trip1.destination_board
 Destination.create([
     {
       user: User.fourth,
-      name: "Italy",
+      name: "Paris",
       board: dest_board,
-      winning: true
     },
     {
       user: User.fifth,
-      name: "Spain",
+      name: "Nice",
       board: dest_board
     },
     {
       user: User.third,
-      name: "Greece",
+      name: "Bordeaux",
       board: dest_board
     },
     {
+      user: User.second,
+      name: "Biaritz",
+      board: dest_board,
+    },
+    {
       user: User.fourth,
-      name: "Portugal",
+      name: "Montpellier",
       board: dest_board
     },
   ])
@@ -148,17 +152,51 @@ board.accommodations.create!(
   [
     {
       user: User.fourth,
-      name: "Rome Villa",
-      kind: "Private House",
-      price: 300,
-      address: "Via Vittorio Veneto, 70, 00187 Roma RM, Italy"
+      name: "Little house in Paris, Loft, Canal",
+      kind: "Airbnb",
+      url: "https://www.airbnb.de/rooms/2749954?adults=6&source_impression_id=p3_1567609394_0jb%2FCZZDTjn03uj9",
+      price: "620€",
+      address: "10 Rue de la Grange aux Belles, 75010 Paris, France"
     },
     {
       user: User.fifth,
-      name: "Barcelona Airbnb",
+      name: "Paris-Notre Dame ... a Romantic's French Feel",
+      url: "https://www.airbnb.de/rooms/2530537?adults=6&source_impression_id=p3_1567609409_sSFsO97wLktUvK8k",
       kind: "Airbnb",
-      price: 150,
-      address: "Passeig de Gràcia, 92, 08008 Barcelona, Spain"
+      price: "315€",
+      address: "44 Boulevard Saint-Germain, 75005 Paris, France"
+    },
+    {
+      user: User.third,
+      name: "Apartment Eiffel Signature",
+      url: "https://www.airbnb.de/rooms/4461412?adults=6&source_impression_id=p3_1567613790_5822Hv5nHn%2FpzWCk",
+      kind: "Airbnb",
+      price: "595",
+      address: "211 Rue de l'Université, 75007 Paris, France"
+    },
+     {
+      user: User.third,
+      name: "Stylish Haussmann Apartment - Paris Centre",
+      url: "https://www.airbnb.de/rooms/22714972?adults=6&source_impression_id=p3_1567613803_%2BkVH5WIjvdRItoed",
+      kind: "Airbnb",
+      price: "418",
+      address: "28 Rue de Châteaudun, 75009 Paris, France"
+    },
+     {
+      user: User.first,
+      name: "THE RESIDENCE - LUXURY APARTMENTS PARIS CENTER 1",
+      url: "https://www.airbnb.de/rooms/25155033?adults=6&source_impression_id=p3_1567614654_kUjbT9qWWR%2BRXche&s=zLXes-md",
+      kind: "Airbnb",
+      price: "589",
+      address: "8 Rue de Belzunce, 75010 Paris, France"
+    },
+     {
+      user: User.second,
+      name: "Central Paris, Beaubourg, 3 bdrms",
+      url: "https://www.airbnb.de/rooms/11453841?adults=6&source_impression_id=p3_1567667805_cBqd1CL28w2foD1Y&s=zLXes-md",
+      kind: "Airbnb",
+      price: "300",
+      address: "72 Rue Rambuteau, 75001 Paris, France"
     },
   ]
 )
@@ -175,15 +213,50 @@ board = trip.create_timeframe_board!({
 })
 board.timeframes.create!(
   [
-    {
-      user: User.third,
-      start_date: 8.weeks.from_now,
-      end_date: 10.weeks.from_now
+     {
+      user: User.first,
+      start_date: 4.days.from_now,
+      end_date: 14.days.from_now
     },
     {
+      user: User.second,
+      start_date: 1.days.from_now,
+      end_date: 2.days.from_now
+    },
+    {
+      user: User.second,
+      start_date: 4.days.from_now,
+      end_date: 14.days.from_now
+    },
+    {
+      user: User.third,
+      start_date: 1.days.from_now,
+      end_date: 3.days.from_now
+    },
+    {
+      user: User.third,
+      start_date: 5.days.from_now,
+      end_date: 13.days.from_now
+    },
+     {
+      user: User.fourth,
+      start_date: 1.days.from_now,
+      end_date: 2.days.from_now
+    },
+    {
+      user: User.fourth,
+      start_date: 4.days.from_now,
+      end_date: 14.days.from_now
+    },
+     {
       user: User.fifth,
-      start_date: 10.weeks.from_now,
-      end_date: 12.weeks.from_now
+      start_date: 3.days.from_now,
+      end_date: 13.days.from_now
+    },
+     {
+      user: User.find_by(first_name: "Chandler"),
+      start_date: 2.days.from_now,
+      end_date: 14.days.from_now
     },
   ]
 )
@@ -209,10 +282,10 @@ board.transportations.create!(
       kind: "Plane",
       booking_number: "A45666YTZ",
       route_number: "AF1080",
-      departure_location: "Paris",
-      arrival_location: "Ibiza",
-      departure_time: (8.weeks.from_now + 12.hours),
-      arrival_time: (8.weeks.from_now + 14.hours)
+      departure_location: "Berlin",
+      arrival_location: "Paris",
+      departure_time: (8.days.from_now+ 12.hours),
+      arrival_time: (8.days.from_now + 14.hours)
     }
   ]
 )
