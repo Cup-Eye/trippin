@@ -1,5 +1,5 @@
 <div class="transportation-container-large">
-  <div class="row">
+  <div style="min-height: 100vh" class="row">
 
     <div class="col-12 col-lg-2">
       <div class="side-menu">
@@ -9,6 +9,7 @@
         <div class=side-link>
           <%= link_to (trip_path(@trip)) do %>
             <div class="side-button" id="B">
+              <i class="fas fa-arrow-left"></i>
               <div id="Bl">Back to Boards </div>
             </div>
           <%end%>

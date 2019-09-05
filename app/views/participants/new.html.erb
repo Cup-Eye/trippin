@@ -11,7 +11,9 @@
           <%= f.input :email, placeholder: "Enter email", label: false%>
           <%= f.submit "Add", class: "ptc-btn-submit"%>
         </div>
-        <div class= "finish-btn"><%= link_to "Finish", trip_path(@trip), class: "fbtn"%></div>
+        <%= link_to trip_path(@trip), class: "fbtn" do%>
+          <div class= "finish-btn">Finish</div>
+        <% end %>
       <% end %>
     </div>
 </div>
