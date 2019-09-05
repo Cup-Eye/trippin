@@ -79,10 +79,15 @@
             <div class="one" style='grid-column: <%= 1 + (timeframe.start_date - @earliest_date).to_i %> / <%= (timeframe.start_date - @earliest_date).to_i + 2 + (timeframe.end_date - timeframe.start_date).to_i %>; grid-row: <%= index + 3 %>/ <%= index + 3 %> ;'>
               <%= user.first_name %>
               <div class="time-action-list">
-                <%= link_to "✏️", edit_timeframe_path(timeframe), class: "time-action" %>
-                <%= link_to "🗑", timeframe_path(timeframe),
-                  method: :delete,
-                  data: { confirm: "Are you sure you want to delete this Timeframe?" }, class: "time-action"%>
+                <%= link_to edit_timeframe_path(timeframe), class: "time-edit" do %>
+                  <i class="far fa-edit"></i>
+                <% end %>
+                <%= link_to timeframe_path(timeframe),
+                    method: :delete,
+                    data: { confirm: "Are you sure you want to delete this Transportation?" },
+                    class: "time-delete" do %>
+                      <i class="far fa-trash-alt"></i>
+                <% end %>
               </div>
             </div>
           <% end %>

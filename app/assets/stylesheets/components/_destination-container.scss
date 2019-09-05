@@ -76,11 +76,6 @@
 }
 
 
-.votes-cta{
-  display: flex;
-  align-items: center;
-}
-
 .dest-vote-info{
   display: flex;
   justify-content: space-between;
@@ -110,5 +105,25 @@
 }
 
 #destination-winner {
-  border: 4px solid pink;
+  border: 4px solid limegreen;
+}
+
+.dest-edit{
+  font-size: 25px;
+  color: #30e3ca;
+  margin: 0 10px;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+.dest-delete{
+  font-size: 25px;
+  color: #30e3ca;
+  margin: 0 10px;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
 }

@@ -45,8 +45,21 @@
   justify-content: space-bewteen !important;
 }
 
-.title-con p {
-  font-style: "Roboto";
-  font-size: 30px;
+.trans-edit{
+  font-size: 25px;
+  color: #6bc5d2;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
+}
+
+.trans-delete{
+  font-size: 25px;
+  color: #6bc5d2;
+  &:hover{
+    text-decoration: none;
+    color: #626d71;
+  }
 }
 

@@ -68,10 +68,15 @@
                   <%= cl_image_tag transport.user.photo,
                         width: 40, height: 40, gravity: :face, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
                   <div class="buttons-container">
-                    <%= link_to "Edit", edit_transportation_path(transport), class: "trans-btn" %>
-                    <%= link_to "Delete", transportation_path(transport),
-                        method: :delete,
-                        data: { confirm: "Are you sure you want to delete this Transportation?" }, class: "trans-btn"%>
+                    <%= link_to edit_transportation_path(transport), class: "trans-edit" do %>
+                      <i class="far fa-edit"></i>
+                    <% end %>
+                    <%= link_to transportation_path(transport),
+                         method: :delete,
+                        data: { confirm: "Are you sure you want to delete this Transportation?" },
+                        class: "trans-delete" do %>
+                      <i class="far fa-trash-alt"></i>
+                    <% end %>
                   </div>
                 </div>
                 <br>
