@@ -170,11 +170,11 @@ board.accommodations.create!(
     },
     {
       user: User.third,
-      name: "[110m2] Eiffel Signature",
+      name: "Apartment Eiffel Signature",
       url: "https://www.airbnb.de/rooms/4461412?adults=6&source_impression_id=p3_1567613790_5822Hv5nHn%2FpzWCk",
       kind: "Airbnb",
       price: "595",
-      address: "211 Rue de l'Université, 75007 Paris, Frankreich"
+      address: "211 Rue de l'Université, 75007 Paris, France"
     },
      {
       user: User.third,
@@ -182,7 +182,7 @@ board.accommodations.create!(
       url: "https://www.airbnb.de/rooms/22714972?adults=6&source_impression_id=p3_1567613803_%2BkVH5WIjvdRItoed",
       kind: "Airbnb",
       price: "418",
-      address: "28 Rue de Châteaudun, 75009 Paris, Frankreich"
+      address: "28 Rue de Châteaudun, 75009 Paris, France"
     },
      {
       user: User.first,
@@ -190,9 +190,16 @@ board.accommodations.create!(
       url: "https://www.airbnb.de/rooms/25155033?adults=6&source_impression_id=p3_1567614654_kUjbT9qWWR%2BRXche&s=zLXes-md",
       kind: "Airbnb",
       price: "589",
-      address: "8 Rue de Belzunce, 75010 Paris, Frankreich"
+      address: "8 Rue de Belzunce, 75010 Paris, France"
     },
-
+     {
+      user: User.second,
+      name: "Central Paris, Beaubourg, 3 bdrms",
+      url: "https://www.airbnb.de/rooms/11453841?adults=6&source_impression_id=p3_1567667805_cBqd1CL28w2foD1Y&s=zLXes-md",
+      kind: "Airbnb",
+      price: "300",
+      address: "72 Rue Rambuteau, 75001 Paris, France"
+    },
   ]
 )
 
