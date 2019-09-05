@@ -64,7 +64,7 @@
              <div class="dest-title"><h1><%= dest.name %></h1><p>suggested by <%=dest.user.first_name%></p></div>
              <% if current_user.liked? dest%>
              <div class="votes-cta">
-              <div class="pr-1">
+              <div class="pr-2">
                 <p> Voted! </p>
               </div>
             <p>
@@ -75,7 +75,7 @@
             </div>
             <% else %>
             <div class="votes-cta">
-              <div class="pr-1">
+              <div class="pr-2">
                 <p> Vote here! </p>
               </div>
               <p>
