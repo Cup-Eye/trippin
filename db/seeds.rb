@@ -213,7 +213,7 @@ board.accommodations.create!(
     },
      {
       user: phoebe,
-      name: "Stylish Haussmann Apartment",
+      name: "Stylish Paris Apartment",
       url: "https://www.airbnb.de/rooms/22714972?adults=6&source_impression_id=p3_1567613803_%2BkVH5WIjvdRItoed",
       kind: "Airbnb",
       price: "418",

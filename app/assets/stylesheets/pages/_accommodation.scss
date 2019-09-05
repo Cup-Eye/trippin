@@ -4,6 +4,9 @@
 
 .accom-container{
   margin-top: 10px;
+  & .head{
+    padding: 27px 13px;
+  }
 }
 
 .accom-action{
@@ -75,6 +78,7 @@
   color: black;
   & h3{
     color: #1c4f6d;
+    font-size: 23px;
   }
   & .fas{
     color: #00e3e3;

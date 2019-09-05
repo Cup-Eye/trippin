@@ -523,6 +523,12 @@ h1, h2, p{
  .fa-arrow-left {
   margin-right: 6px;
  }
+ .fas{
+  font-size: 22px;
+ }
+ .far{
+  font-size: 22px;
+ }
 }
 
 .side-link a:link{
@@ -535,7 +541,7 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 190px;
+    width: 168px;
     border-radius: 3px;
     border: 2px solid #1c4f6d;
     // &:hover{
@@ -549,6 +555,7 @@ h1, h2, p{
     // }
     #Al{
       color:white;
+      font-size: 22px;
     }
   }
 
@@ -557,23 +564,12 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: #1c4f6d;
-    width: 190px;
+    width: 168px;
     justify-content: flex-start;
     &:hover{
       font-weight: bold;
   }
 }
-
-  .side-button-btn{
-    background: #1c4f6d;
-    opacity: 1;
-    padding: 8px;
-    margin: 10px;
-    color: white;
-    width: 190px;
-    border-radius: 3px;
-    border: 2px solid #1c4f6d;
-  }
 
   #D{
     background: #1c4f6d;
@@ -581,11 +577,12 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 190px;
+    width: 168px;
     border-radius: 3px;
     border: 2px solid #1c4f6d;
     #Dl{
       color:white;
+      font-size: 22px;
     }
   }
 
@@ -595,11 +592,12 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 190px;
+    width: 168px;
     border-radius: 3px;
     border: 2px solid #1c4f6d;
     #TFl{
       color: white;
+      font-size: 22px;
     }
   }
 
@@ -609,11 +607,12 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: white;
-    width: 190px;
+    width: 168px;
     border-radius: 3px;
     border: 2px solid #1c4f6d;
     #Tl{
       color: white;
+      font-size: 22px;
     }
   }
 
@@ -623,16 +622,18 @@ h1, h2, p{
     padding: 8px;
     margin: 10px;
     color: #b7b7b7de;
-    width: 190px;
+    width: 168px;
     border-radius: 3px;
     border: 1px solid #d9d9d9;
     box-shadow: 1px 1px 10px lightgrey;
+    font-size: 17px;
     &:hover{
       text-decoration: none;
       color: #797979;
       #Active{
         color: #d9d9d9;
         text-decoration: none;
+        font-size: 22px;
       }
     }
     #Active{
@@ -641,7 +642,7 @@ h1, h2, p{
   }
 
   .head{
-    padding: 27px 61px;
+    padding: 27px 15px;
     display: flex;
     justify-content: space-between;
     & h2{
