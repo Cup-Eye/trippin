@@ -16,68 +16,68 @@ User.destroy_all
 # puts "Creating users...."
 
 
-# ross = User.create!(
-#      {
-#       email: "ross@example.com",
-#       password: "123456",
-#       first_name: "Ross",
-#       last_name: "Geller",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606131/Ross2_rld4kh.png"
-#     })
+ross = User.create!(
+     {
+      email: "ross@example.com",
+      password: "123456",
+      first_name: "Ross",
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606131/Ross2_rld4kh.png"
+    })
 
-# monica = User.create!(
-#     {
-#       email: "monica@example.com",
-#       password: "123456",
-#       first_name: "Monica",
-#       last_name: "Geller",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Monica2_skhmqf.png"
-#     })
+monica = User.create!(
+    {
+      email: "monica@example.com",
+      password: "123456",
+      first_name: "Monica",
+      last_name: "Geller",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Monica2_skhmqf.png"
+    })
 
-# joey = User.create!(
-#     {
-#       email: "joey@example.com",
-#       password: "123456",
-#       first_name: "Joey",
-#       last_name: "Tribbiani",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Joey2_p6aemw.jpg"
-#     })
+joey = User.create!(
+    {
+      email: "joey@example.com",
+      password: "123456",
+      first_name: "Joey",
+      last_name: "Tribbiani",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Joey2_p6aemw.jpg"
+    })
 
-# rachel = User.create!(
-#     {
-#       email: "rachel@example.com",
-#       password: "123456",
-#       first_name: "Rachel",
-#       last_name: "Green",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Rachel2_dghzkh.jpg"
-#     })
+rachel = User.create!(
+    {
+      email: "rachel@example.com",
+      password: "123456",
+      first_name: "Rachel",
+      last_name: "Green",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606130/Rachel2_dghzkh.jpg"
+    })
 
-# phoebe = User.create!(
-#     {
-#       email: "phoebe@example.com",
-#       password: "123456",
-#       first_name: "Phoebe",
-#       last_name: "Buffay",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Phoebe2_ua1zkg.jpg"
-#     })
+phoebe = User.create!(
+    {
+      email: "phoebe@example.com",
+      password: "123456",
+      first_name: "Phoebe",
+      last_name: "Buffay",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Phoebe2_ua1zkg.jpg"
+    })
 
-# chandler = User.create!(
-#     {
-#       email: "chandler@example.com",
-#       password: "123456",
-#       first_name: "Chandler",
-#       last_name: "Bing",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Chandler2_j9udlh.jpg"
-#     })
+chandler = User.create!(
+    {
+      email: "chandler@example.com",
+      password: "123456",
+      first_name: "Chandler",
+      last_name: "Bing",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/ar_1:1,b_rgb:262c35,bo_0px_solid_rgb:000000,c_fill,g_auto,r_max,w_1000/v1567606129/Chandler2_j9udlh.jpg"
+    })
 
-# janine = User.create!(
-#     {
-#       email: "janine@example.com",
-#       password: "123456",
-#       first_name: "Janine",
-#       last_name: "LaCroix",
-#       remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567690611/Janine2_qcbyqd.jpg"
-#     })
+janine = User.create!(
+    {
+      email: "janine@example.com",
+      password: "123456",
+      first_name: "Janine",
+      last_name: "LaCroix",
+      remote_photo_url: "https://res.cloudinary.com/mmohn/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,bo_5px_solid_red,b_rgb:262c35/v1567690611/Janine2_qcbyqd.jpg"
+    })
 
 # # puts "Updating users..."
 # # User.first.update()
