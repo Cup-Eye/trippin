@@ -19,10 +19,10 @@
       <div class="summary-container">
           <h4>🎉 Congrats! You're ready to go on your trip 🎉 </h4>
           <div class="summary">
-            <p>Destination: <strong><%= @trip.winning_destination.name  %></strong> </p>
+            <p>Destination: <strong><%= @winning_destination %></strong> </p>
             <p>Arrival: <strong><%= (@trip.start_date).strftime('%a %e. %B %Y') %> </p>
             <p>Departure: <strong><%= (@trip.end_date).strftime('%a %e. %B %Y') %></strong> </p>
-             <p>  Accommodation: <strong><%= @trip.winning_accommodation.name %></strong> </p>
+             <p>  Accommodation: <strong><%= @winning_accommodation %></strong> </p>
           </div>
       </div>
 <% end %>
