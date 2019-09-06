@@ -3,6 +3,9 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
     @boards = @trip.boards
     @user = @trip.user
+    @winning_destination = @trip.winning_destination=(@trip.destinations.first).name
+    @winning_accommodation = @trip.winning_accommodation=(@trip.accommodations.first).name
+
   end
 
   def new
